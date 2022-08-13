@@ -42,27 +42,8 @@ class TempFragment : BaseFragment<FragmentTempBinding, TempViewModel>() {
         }
 
         Handler(Looper.getMainLooper()).postDelayed({
-
-            dataStoreProvider.token.asLiveData().observe(requireActivity(),
-            Observer {
-
-                val token = it
-                Log.d("Databsae Token ", token.toString())
-
-                if (token == null) {
-                        navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment)
-                        navController.navigate(R.id.signInFragment, null,options)
-
-
-                    } else {
-                    navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment)
-                    navController.navigate(R.id.homeFragment2, null, options)
-
-
-                    }
-
-            })
-
+            navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment)
+            navController.navigate(R.id.signInFragment, null,options)
 
         }, 2000)
 

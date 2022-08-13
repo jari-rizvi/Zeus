@@ -17,4 +17,8 @@
         android:name="com.teamx.zeus.ui.fragments.temp.TempFragment"
         android:label="TempFragment"
         tools:layout="@layout/fragment_temp"/>
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.teamx.zeus.ui.fragments.Signup.SignUpFragment"
+        android:label="SignUpFragment" />
 </navigation>

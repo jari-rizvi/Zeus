@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="app_name">Multi Vendor</string>
-    <string name="forgot_password" translatable="false">تعديل الملف الشخصي</string>
-    <string name="password">تعديل الملف الشخصي</string>
-    <string name="login">تسجيل </string>
-    <string name="top_selling"> تسجيل </string>
-
-</resources>

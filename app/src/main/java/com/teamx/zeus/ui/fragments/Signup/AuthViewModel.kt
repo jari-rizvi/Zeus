@@ -1,4 +1,4 @@
-package com.teamx.zeus.ui.fragments.SignInFragment
+package com.teamx.zeus.ui.fragments.Signup
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

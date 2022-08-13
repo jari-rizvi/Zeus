@@ -1,4 +1,4 @@
-package com.teamx.zeus.ui.fragments.SignInFragment
+package com.teamx.zeus.ui.fragments.Signup
 
 import android.os.Bundle
 import android.text.TextUtils
@@ -19,6 +19,7 @@ import com.teamx.zeus.R
 import com.teamx.zeus.baseclasses.BaseFragment
 import com.teamx.zeus.data.remote.Resource
 import com.teamx.zeus.databinding.FragmentSignInBinding
+import com.teamx.zeus.databinding.FragmentSignUpBinding
 import com.teamx.zeus.localization.LocaleManager
 import com.teamx.zeus.utils.DialogHelperClass
 import dagger.hilt.android.AndroidEntryPoint
@@ -28,10 +29,10 @@ import org.json.JSONException
 
 
 @AndroidEntryPoint
-class SignInFragment() : BaseFragment<FragmentSignInBinding, AuthViewModel>() {
+class SignUpFragment() : BaseFragment<FragmentSignUpBinding, AuthViewModel>() {
 
     override val layoutId: Int
-        get() = R.layout.fragment_sign_in
+        get() = R.layout.fragment_sign_up
     override val viewModel: Class<AuthViewModel>
         get() = AuthViewModel::class.java
     override val bindingVariable: Int
@@ -41,6 +42,7 @@ class SignInFragment() : BaseFragment<FragmentSignInBinding, AuthViewModel>() {
     private lateinit var options: NavOptions
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
 
 
 
@@ -59,10 +61,6 @@ class SignInFragment() : BaseFragment<FragmentSignInBinding, AuthViewModel>() {
                 popEnter = R.anim.nav_default_pop_enter_anim
                 popExit = R.anim.nav_default_pop_exit_anim
             }
-        }
-        mViewDataBinding.btnLogin.setOnClickListener {
-            navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment)
-            navController.navigate(R.id.signUpFragment, null,options)
         }
 
 
