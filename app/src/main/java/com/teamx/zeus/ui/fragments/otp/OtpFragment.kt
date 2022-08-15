@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.text.TextUtils
 import android.util.Log
 import android.view.View
+import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavOptions
@@ -19,6 +20,7 @@ import com.teamx.zeus.R
 import com.teamx.zeus.baseclasses.BaseFragment
 import com.teamx.zeus.data.remote.Resource
 import com.teamx.zeus.databinding.FragmentForgotPassBinding
+import com.teamx.zeus.databinding.FragmentOTPBinding
 import com.teamx.zeus.databinding.FragmentSignInBinding
 import com.teamx.zeus.localization.LocaleManager
 import com.teamx.zeus.utils.DialogHelperClass
@@ -29,7 +31,7 @@ import org.json.JSONException
 
 
 @AndroidEntryPoint
-class OtpFragment() : BaseFragment<FragmentForgotPassBinding, OtpViewModel>() {
+class OtpFragment() : BaseFragment<FragmentOTPBinding, OtpViewModel>() {
 
     override val layoutId: Int
         get() = R.layout.fragment_o_t_p
@@ -57,6 +59,11 @@ class OtpFragment() : BaseFragment<FragmentForgotPassBinding, OtpViewModel>() {
                 exit = R.anim.exit_to_left
                 popEnter = R.anim.nav_default_pop_enter_anim
                 popExit = R.anim.nav_default_pop_exit_anim
+            }
+
+            mViewDataBinding.btnVerify.setOnClickListener {
+                navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment)
+                navController.navigate(R.id.createNewPassFragment, null,options)
             }
         }
 

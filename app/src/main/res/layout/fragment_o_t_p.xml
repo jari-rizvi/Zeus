@@ -80,23 +80,23 @@
 
 
                     <androidx.cardview.widget.CardView
-                        android:layout_marginTop="30dp"
+                        android:id="@+id/btnVerify"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:cardCornerRadius="10dp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_marginTop="15dp"
                         android:elevation="1dp"
+                        app:cardCornerRadius="10dp"
                         app:cardElevation="1dp"
                         app:cardMaxElevation="1dp">
 
                         <TextView
-                            android:id="@+id/btnVerifyOtp"
+                            style="@style/ubuntu_light_white_medium"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:text="@string/verify"
+                            android:background="@drawable/button_gredient"
+                            android:gravity="center"
                             android:padding="10dp"
-                            style="@style/ubuntu_light_white_medium"
-                            android:gravity="center_horizontal"
-                            android:background="@drawable/button_gredient"/>
+                            android:text="@string/verify" />
 
                     </androidx.cardview.widget.CardView>
 
@@ -111,9 +111,6 @@
                         android:layout_gravity="center_horizontal"
                         android:textStyle="bold"
                         style="@style/ubuntu_regular_medium"/>
-
-
-
 
                 </LinearLayout>
 

@@ -19,7 +19,7 @@
     <string name="enter_your_email">Enter your email</string>
     <string name="mobile_number">Mobile Number</string>
     <string name="enter_your_mobile_number">Enter your mobile number</string>
-    <string name="eneter_your_password">Eneter your password</string>
+    <string name="enter_your_password">Enter your password</string>
     <string name="register">Register</string>
     <string name="new_user">New User</string>
     <string name="email_address_phone_number">Email address/ Phone Number</string>
@@ -27,6 +27,10 @@
     <string name="enter_otp">Enter OTP</string>
     <string name="please_enter_the_otp_sent_to_your_mobile_number">Please enter the OTP sent to your mobile number</string>
     <string name="verify">Verify</string>
+    <string name="create_a_nnew_password">Create a \nNew Password</string>
+    <string name="new_password">New Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="done">Done</string>
 
 
 </resources>

@@ -33,4 +33,8 @@
         android:id="@+id/forgotPassFragment"
         android:name="com.teamx.zeus.ui.fragments.forgotPass.ForgotPassFragment"
         android:label="ForgotPassFragment" />
+    <fragment
+        android:id="@+id/createNewPassFragment"
+        android:name="com.teamx.zeus.ui.fragments.CreatePassword.CreateNewPassFragment"
+        android:label="CreateNewPassFragment" />
 </navigation>
