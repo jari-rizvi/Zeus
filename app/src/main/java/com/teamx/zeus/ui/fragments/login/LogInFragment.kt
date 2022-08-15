@@ -48,7 +48,11 @@ class LogInFragment() : BaseFragment<FragmentLogInBinding, LoginViewModel>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        mViewDataBinding.btnForgot.setOnClickListener {
+        mViewDataBinding.btnLogin.setOnClickListener {
+            navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment)
+            navController.navigate(R.id.forgotPassFragment, null,options)
+        }
+        mViewDataBinding.btnRegister.setOnClickListener {
             navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment)
             navController.navigate(R.id.forgotPassFragment, null,options)
         }

@@ -1,23 +1,40 @@
-package com.teamx.zeus.ui.fragments.forgotPass
+package com.teamx.zeus.ui.fragments.otp
 
 import android.os.Bundle
+import android.text.TextUtils
+import android.util.Log
 import android.view.View
+import androidx.lifecycle.Observer
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavOptions
 import androidx.navigation.Navigation
 import androidx.navigation.navOptions
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInClient
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.gson.JsonObject
 import com.teamx.zeus.BR
+import com.teamx.zeus.MainApplication
 import com.teamx.zeus.R
 import com.teamx.zeus.baseclasses.BaseFragment
+import com.teamx.zeus.data.remote.Resource
 import com.teamx.zeus.databinding.FragmentForgotPassBinding
+import com.teamx.zeus.databinding.FragmentSignInBinding
+import com.teamx.zeus.localization.LocaleManager
+import com.teamx.zeus.utils.DialogHelperClass
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import org.json.JSONException
+
 
 @AndroidEntryPoint
-class ForgotPassFragment() : BaseFragment<FragmentForgotPassBinding, ForgotPassViewModel>() {
+class OtpFragment() : BaseFragment<FragmentForgotPassBinding, OtpViewModel>() {
 
     override val layoutId: Int
-        get() = R.layout.fragment_forgot_pass
-    override val viewModel: Class<ForgotPassViewModel>
-        get() = ForgotPassViewModel::class.java
+        get() = R.layout.fragment_o_t_p
+    override val viewModel: Class<OtpViewModel>
+        get() = OtpViewModel::class.java
     override val bindingVariable: Int
         get() = BR.viewModel
 
@@ -25,6 +42,7 @@ class ForgotPassFragment() : BaseFragment<FragmentForgotPassBinding, ForgotPassV
     private lateinit var options: NavOptions
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
 
 
 
@@ -42,10 +60,6 @@ class ForgotPassFragment() : BaseFragment<FragmentForgotPassBinding, ForgotPassV
             }
         }
 
-        mViewDataBinding.btnSend.setOnClickListener {
-            navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment)
-            navController.navigate(R.id.otpFragment, null,options)
-        }
 
 
 
