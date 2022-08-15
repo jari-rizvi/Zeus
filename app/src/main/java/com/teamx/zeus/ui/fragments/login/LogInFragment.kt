@@ -50,11 +50,11 @@ class LogInFragment() : BaseFragment<FragmentLogInBinding, LoginViewModel>() {
 
         mViewDataBinding.btnLogin.setOnClickListener {
             navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment)
-            navController.navigate(R.id.forgotPassFragment, null,options)
+            navController.navigate(R.id.logInFragment, null,options)
         }
         mViewDataBinding.btnRegister.setOnClickListener {
             navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment)
-            navController.navigate(R.id.forgotPassFragment, null,options)
+            navController.navigate(R.id.signUpFragment, null,options)
         }
 
 
