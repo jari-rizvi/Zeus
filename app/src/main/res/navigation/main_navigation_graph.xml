@@ -37,4 +37,8 @@
         android:id="@+id/createNewPassFragment"
         android:name="com.teamx.zeus.ui.fragments.CreatePassword.CreateNewPassFragment"
         android:label="CreateNewPassFragment" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.teamx.zeus.ui.fragments.settings.SettingsFragment"
+        android:label="SettingsFragment" />
 </navigation>
