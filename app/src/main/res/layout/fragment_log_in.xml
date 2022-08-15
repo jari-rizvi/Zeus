@@ -120,7 +120,7 @@
                             android:layout_alignParentBottom="true"
                             android:layout_marginTop="@dimen/_5sdp"
                             android:background="@android:color/transparent"
-                            android:hint="@string/eneter_your_password"
+                            android:hint="@string/enter_your_password"
                             android:imeOptions="actionNext"
                             android:inputType="textEmailAddress"
                             android:maxLines="1"

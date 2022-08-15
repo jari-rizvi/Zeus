@@ -65,6 +65,11 @@ class SignInFragment() : BaseFragment<FragmentSignInBinding, AuthViewModel>() {
             navController.navigate(R.id.logInFragment, null,options)
         }
 
+        mViewDataBinding.login.setOnClickListener {
+            navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment)
+            navController.navigate(R.id.logInFragment, null,options)
+        }
+
 
 
 
