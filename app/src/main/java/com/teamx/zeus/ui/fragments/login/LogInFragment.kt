@@ -1,4 +1,4 @@
-package com.teamx.zeus.ui.fragments.SignInFragment
+package com.teamx.zeus.ui.fragments.login
 
 import android.os.Bundle
 import android.text.TextUtils
@@ -18,6 +18,7 @@ import com.teamx.zeus.MainApplication
 import com.teamx.zeus.R
 import com.teamx.zeus.baseclasses.BaseFragment
 import com.teamx.zeus.data.remote.Resource
+import com.teamx.zeus.databinding.FragmentLogInBinding
 import com.teamx.zeus.databinding.FragmentSignInBinding
 import com.teamx.zeus.localization.LocaleManager
 import com.teamx.zeus.utils.DialogHelperClass
@@ -28,12 +29,12 @@ import org.json.JSONException
 
 
 @AndroidEntryPoint
-class SignInFragment() : BaseFragment<FragmentSignInBinding, AuthViewModel>() {
+class LogInFragment() : BaseFragment<FragmentLogInBinding, LoginViewModel>() {
 
     override val layoutId: Int
-        get() = R.layout.fragment_sign_in
-    override val viewModel: Class<AuthViewModel>
-        get() = AuthViewModel::class.java
+        get() = R.layout.fragment_log_in
+    override val viewModel: Class<LoginViewModel>
+        get() = LoginViewModel::class.java
     override val bindingVariable: Int
         get() = BR.viewModel
 
@@ -42,13 +43,15 @@ class SignInFragment() : BaseFragment<FragmentSignInBinding, AuthViewModel>() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-
-
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        mViewDataBinding.btnForgot.setOnClickListener {
+            navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment)
+            navController.navigate(R.id.forgotPassFragment, null,options)
+        }
 
 
 
@@ -59,10 +62,6 @@ class SignInFragment() : BaseFragment<FragmentSignInBinding, AuthViewModel>() {
                 popEnter = R.anim.nav_default_pop_enter_anim
                 popExit = R.anim.nav_default_pop_exit_anim
             }
-        }
-        mViewDataBinding.btnLogin.setOnClickListener {
-            navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment)
-            navController.navigate(R.id.logInFragment, null,options)
         }
 
 

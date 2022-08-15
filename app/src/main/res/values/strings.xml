@@ -20,6 +20,10 @@
     <string name="mobile_number">Mobile Number</string>
     <string name="enter_your_mobile_number">Enter your mobile number</string>
     <string name="eneter_your_password">Eneter your password</string>
+    <string name="register">Register</string>
+    <string name="new_user">New User</string>
+    <string name="email_address_phone_number">Email address/ Phone Number</string>
+    <string name="send">Send</string>
 
 
 </resources>
