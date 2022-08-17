@@ -36,6 +36,10 @@
     <string name="rate_our_app">Rate Our App</string>
     <string name="faq">FAQ</string>
     <string name="notifications">Notifications</string>
+    <string name="profile">Profile</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="enter_phone_number">Enter Phone Number</string>
+    <string name="your_order_has_been_placed_successfully">Your Order has been Placed successfully.</string>
 
 
 </resources>

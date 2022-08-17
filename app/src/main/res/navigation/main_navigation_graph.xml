@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_navigation_graph"
-    app:startDestination="@id/tempFragment">
+    app:startDestination="@id/notificationFragment">
 
 
     <fragment
@@ -41,4 +41,12 @@
         android:id="@+id/settingsFragment"
         android:name="com.teamx.zeus.ui.fragments.settings.SettingsFragment"
         android:label="SettingsFragment" />
+    <fragment
+        android:id="@+id/editProfileFragment"
+        android:name="com.teamx.zeus.ui.fragments.editProfile.EditProfileFragment"
+        android:label="EditProfileFragment" />
+    <fragment
+        android:id="@+id/notificationFragment"
+        android:name="com.teamx.zeus.ui.fragments.notification.NotificationFragment"
+        android:label="NotificationFragment" />
 </navigation>
