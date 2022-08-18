@@ -40,6 +40,8 @@
     <string name="phone_number">Phone Number</string>
     <string name="enter_phone_number">Enter Phone Number</string>
     <string name="your_order_has_been_placed_successfully">Your Order has been Placed successfully.</string>
+    <string name="english">English</string>
+    <string name="arabic">Arabic</string>
 
 
 </resources>

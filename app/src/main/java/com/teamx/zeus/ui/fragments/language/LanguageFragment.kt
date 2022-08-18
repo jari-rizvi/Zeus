@@ -1,4 +1,4 @@
-package com.teamx.zeus.ui.fragments.notification
+package com.teamx.zeus.ui.fragments.language
 
 import android.os.Bundle
 import android.text.TextUtils
@@ -21,10 +21,7 @@ import com.teamx.zeus.MainApplication
 import com.teamx.zeus.R
 import com.teamx.zeus.baseclasses.BaseFragment
 import com.teamx.zeus.data.remote.Resource
-import com.teamx.zeus.databinding.FragmentForgotPassBinding
-import com.teamx.zeus.databinding.FragmentNotificationBinding
-import com.teamx.zeus.databinding.FragmentOTPBinding
-import com.teamx.zeus.databinding.FragmentSignInBinding
+import com.teamx.zeus.databinding.*
 import com.teamx.zeus.localization.LocaleManager
 import com.teamx.zeus.ui.fragments.otp.OtpViewModel
 import com.teamx.zeus.utils.DialogHelperClass
@@ -35,18 +32,17 @@ import org.json.JSONException
 
 
 @AndroidEntryPoint
-class NotificationFragment() : BaseFragment<FragmentNotificationBinding, OtpViewModel>() {
+class LanguageFragment() : BaseFragment<FragmentLanguageBinding, OtpViewModel>() {
 
     override val layoutId: Int
-        get() = R.layout.fragment_notification
+        get() = R.layout.fragment_language
     override val viewModel: Class<OtpViewModel>
         get() = OtpViewModel::class.java
     override val bindingVariable: Int
         get() = BR.viewModel
 
     private lateinit var options: NavOptions
-    lateinit var notificationAdapter: NotificationAdapter
-    lateinit var notificationArrayList: ArrayList<Notifications>
+
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -63,23 +59,6 @@ class NotificationFragment() : BaseFragment<FragmentNotificationBinding, OtpView
 
         }
 
-        initalizeAdapter()
-
-    }
-    private fun initalizeAdapter() {
-
-        notificationArrayList = ArrayList()
-        notificationArrayList.add(Notifications("Your Order has been Placed successfully.","2 days ago",R.drawable.rate_us,"Smiley’s Store, #1982984"))
-        notificationArrayList.add(Notifications("Your Order has been Placed successfully.","2 days ago",R.drawable.rate_us,"Smiley’s Store, #1982984"))
-        notificationArrayList.add(Notifications("Your Order has been Placed successfully.","2 days ago",R.drawable.rate_us,"Smiley’s Store, #1982984"))
-        notificationArrayList.add(Notifications("Your Order has been Placed successfully.","2 days ago",R.drawable.rate_us,"Smiley’s Store, #1982984"))
-
-
-        val linearLayoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
-        mViewDataBinding.notificationRecyclerView.setLayoutManager(linearLayoutManager)
-
-        notificationAdapter = NotificationAdapter(context,notificationArrayList)
-        mViewDataBinding.notificationRecyclerView.adapter = notificationAdapter
     }
 
 
