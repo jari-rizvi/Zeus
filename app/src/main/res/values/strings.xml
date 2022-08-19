@@ -42,6 +42,8 @@
     <string name="your_order_has_been_placed_successfully">Your Order has been Placed successfully.</string>
     <string name="english">English</string>
     <string name="arabic">Arabic</string>
+    <string name="how_would_you_rate_our_app_n_expirence">How would you rate our App \n Expirence ?</string>
+    <string name="submit">Submit</string>
 
 
 </resources>

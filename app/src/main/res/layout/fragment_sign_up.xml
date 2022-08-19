@@ -178,11 +178,11 @@
 
 
                         <ImageView
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:layout_marginTop="@dimen/_5sdp"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
                             android:layout_alignParentStart="true"
                             android:layout_alignParentBottom="true"
+                            android:layout_marginTop="@dimen/_5sdp"
                             android:src="@drawable/ic_phone" />
 
 
@@ -229,9 +229,9 @@
                         <ImageView
                             android:layout_width="20dp"
                             android:layout_height="20dp"
-                            android:layout_marginTop="@dimen/_5sdp"
                             android:layout_alignParentStart="true"
                             android:layout_alignParentBottom="true"
+                            android:layout_marginTop="@dimen/_5sdp"
                             android:src="@drawable/ic_pass" />
 
 
