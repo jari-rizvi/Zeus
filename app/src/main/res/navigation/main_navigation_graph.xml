@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_navigation_graph"
-    app:startDestination="@id/rateAppFragment">
+    app:startDestination="@id/rateShopFragment">
 
 
     <fragment
@@ -57,4 +57,8 @@
         android:id="@+id/rateAppFragment"
         android:name="com.teamx.zeus.ui.fragments.rateApp.RateAppFragment"
         android:label="RateAppFragment" />
+    <fragment
+        android:id="@+id/rateShopFragment"
+        android:name="com.teamx.zeus.ui.fragments.rateShop.RateShopFragment"
+        android:label="RateShopFragment" />
 </navigation>

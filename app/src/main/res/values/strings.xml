@@ -43,7 +43,11 @@
     <string name="english">English</string>
     <string name="arabic">Arabic</string>
     <string name="how_would_you_rate_our_app_n_expirence">How would you rate our App \n Expirence ?</string>
+    <string name="how_would_you_rate_your_order_n_expirence">How would you rate your Order \n Expirence ?</string>
     <string name="submit">Submit</string>
+    <string name="add_review">Add Review</string>
+    <string name="share_your_feedback">Share Your Feedback</string>
+    <string name="tell_us_what_you_think">Tell us what you think</string>
 
 
 </resources>
