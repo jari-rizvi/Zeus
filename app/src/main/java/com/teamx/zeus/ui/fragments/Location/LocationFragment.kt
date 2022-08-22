@@ -1,4 +1,4 @@
-package com.teamx.zeus.ui.fragments.rateApp
+package com.teamx.zeus.ui.fragments.Location
 
 import android.os.Bundle
 import android.text.TextUtils
@@ -19,10 +19,7 @@ import com.teamx.zeus.MainApplication
 import com.teamx.zeus.R
 import com.teamx.zeus.baseclasses.BaseFragment
 import com.teamx.zeus.data.remote.Resource
-import com.teamx.zeus.databinding.FragmentForgotPassBinding
-import com.teamx.zeus.databinding.FragmentOTPBinding
-import com.teamx.zeus.databinding.FragmentRateAppBinding
-import com.teamx.zeus.databinding.FragmentSignInBinding
+import com.teamx.zeus.databinding.*
 import com.teamx.zeus.localization.LocaleManager
 import com.teamx.zeus.ui.fragments.otp.OtpViewModel
 import com.teamx.zeus.utils.DialogHelperClass
@@ -32,10 +29,10 @@ import kotlinx.coroutines.launch
 import org.json.JSONException
 
 @AndroidEntryPoint
-class RateAppFragment() : BaseFragment<FragmentRateAppBinding, OtpViewModel>() {
+class LocationFragment() : BaseFragment<FragmentLocationBinding, OtpViewModel>() {
 
     override val layoutId: Int
-        get() = R.layout.fragment_rate_app
+        get() = R.layout.fragment_location
     override val viewModel: Class<OtpViewModel>
         get() = OtpViewModel::class.java
     override val bindingVariable: Int
@@ -60,8 +57,6 @@ class RateAppFragment() : BaseFragment<FragmentRateAppBinding, OtpViewModel>() {
             }
 
         }
-
-
 
     }
 

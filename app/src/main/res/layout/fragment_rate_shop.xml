@@ -89,10 +89,7 @@
 
                 </RelativeLayout>
 
-
-
             </androidx.cardview.widget.CardView>
-
 
             <TextView
                 style="@style/ubuntu_medium_Extra_large"

@@ -48,6 +48,15 @@
     <string name="add_review">Add Review</string>
     <string name="share_your_feedback">Share Your Feedback</string>
     <string name="tell_us_what_you_think">Tell us what you think</string>
+    <string name="about_us">About Us</string>
+    <string name="we_will_need_your_location_to_give_you_better_expirence">We will need your location to \n give you better expirence</string>
+    <string name="find_resturants_and_n_shops_near_you">Find Resturants and \n Shops near you!</string>
+    <string name="allow_location">Allow Location</string>
+    <string name="contact_us">Contact Us</string>
+    <string name="your_name">Your Name</string>
+    <string name="your_email_address">Your Email Address</string>
+    <string name="subject">Subject</string>
+    <string name="message">Message</string>
 
 
 </resources>
