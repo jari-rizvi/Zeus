@@ -38,6 +38,9 @@ class LogInFragment() : BaseFragment<FragmentLogInBinding, LoginViewModel>() {
     override val bindingVariable: Int
         get() = BR.viewModel
 
+    private var userEmail: String? = null
+    private var password: String? = null
+
 
     private lateinit var options: NavOptions
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -59,6 +62,26 @@ class LogInFragment() : BaseFragment<FragmentLogInBinding, LoginViewModel>() {
             navController.navigate(R.id.forgotPassFragment, null,options)
         }
 
+        mViewDataBinding.btnLogin.setOnClickListener {
+            when {
+                TextUtils.isEmpty(mViewDataBinding.userEmail.text.toString()) -> {
+                    mViewDataBinding.userEmail.error = "Enter Email"
+                    mViewDataBinding.userEmail.requestFocus()
+                }
+
+                TextUtils.isEmpty(mViewDataBinding.userPass.text.toString()) -> {
+                    mViewDataBinding.userPass.error = "Enter Passwpord"
+                    mViewDataBinding.userPass.requestFocus()
+
+                }
+                else -> {
+                    subscribeToNetworkLiveData()
+//            naviagteFragment(R.id.signUpFragment, true)
+
+                }
+            }
+        }
+
 
 
         options = navOptions {
@@ -70,10 +93,53 @@ class LogInFragment() : BaseFragment<FragmentLogInBinding, LoginViewModel>() {
             }
         }
 
+    }
+
+    private fun initialization() {
+        userEmail = mViewDataBinding.userEmail.getText().toString().trim()
+        password = mViewDataBinding.userPass.getText().toString().trim()
+    }
 
 
+    override fun subscribeToNetworkLiveData() {
+        super.subscribeToNetworkLiveData()
 
+        initialization()
 
+        if (!userEmail!!.isEmpty() || !password!!.isEmpty()) {
+
+            val params = JsonObject()
+            try {
+                params.addProperty("email", userEmail)
+                params.addProperty("password", password)
+            } catch (e: JSONException) {
+                e.printStackTrace()
+            }
+
+            Log.e("UserData", params.toString())
+
+            mViewModel.login(params)
+
+            mViewModel.loginResponse.observe(requireActivity(), Observer {
+                when (it.status) {
+                    Resource.Status.LOADING -> {
+                        loadingDialog.show()
+                    }
+                    Resource.Status.SUCCESS -> {
+                        loadingDialog.dismiss()
+                        it.data?.let { data ->
+                            navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment)
+                            navController.navigate(R.id.homeFragment, null,options)
+
+                        }
+                    }
+                    Resource.Status.ERROR -> {
+                        loadingDialog.dismiss()
+                        DialogHelperClass.errorDialog(requireContext(), it.message!!)
+                    }
+                }
+            })
+        }
     }
 
 

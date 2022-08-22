@@ -8,7 +8,7 @@ object AppConstants {
     @StringDef(ApiConfiguration.BASE_URL)
     annotation class ApiConfiguration {
         companion object {
-            const val BASE_URL = "https://multivendorbackend.herokuapp.com/api/"
+            const val BASE_URL = "https://api.teamxmv.com/api/"
         }
     }
 

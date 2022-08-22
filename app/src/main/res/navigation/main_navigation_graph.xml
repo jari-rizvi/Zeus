@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_navigation_graph"
-    app:startDestination="@id/contactUsFragment">
+    app:startDestination="@id/tempFragment">
 
 
     <fragment
@@ -73,4 +73,8 @@
         android:id="@+id/contactUsFragment"
         android:name="com.teamx.zeus.ui.fragments.ContactUs.ContactUsFragment"
         android:label="ContactUsFragment" />
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.teamx.zeus.ui.fragments.Home.HomeFragment"
+        android:label="HomeFragment" />
 </navigation>

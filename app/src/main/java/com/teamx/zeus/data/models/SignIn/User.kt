@@ -1,12 +1,14 @@
 package com.teamx.zeus.data.models.SignIn
 
 data class User(
+    val __v: Int,
     val _id: String,
-    val address: String,
+    val address: List<Any>,
     val email: String,
-    val firstName: String,
-    val fullName: String,
-    val lastName: String,
-    val phone: String,
-    val role: String
+    val is_active: Boolean,
+    val name: String,
+    val password: String,
+    val profile: Profile,
+    val roles: List<String>,
+    val shops: List<Any>
 )

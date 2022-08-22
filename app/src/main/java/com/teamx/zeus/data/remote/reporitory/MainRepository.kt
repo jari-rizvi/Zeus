@@ -12,17 +12,7 @@ class MainRepository @Inject constructor(
     private val apiService: ApiService,
     localDataSource: AppDao
 ) {
-
-
-
     suspend fun login(@Body param : JsonObject) = apiService.login(param)
-
-
-
-
-
-
-
 
 
 }

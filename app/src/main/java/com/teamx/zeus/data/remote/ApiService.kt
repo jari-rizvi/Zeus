@@ -9,8 +9,6 @@ import retrofit2.http.*
 
 interface ApiService {
 
-
-
     @POST(NetworkCallPoints.LOGIN)
     suspend fun login(@Body params: JsonObject?): Response<SignInResponse>
 }
