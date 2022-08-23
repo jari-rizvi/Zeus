@@ -58,6 +58,14 @@
     <string name="subject">Subject</string>
     <string name="message">Message</string>
     <string name="find_cool_products_n_fit_your_style">Find Cool Products \nFit Your Style</string>
+    <string name="reviews">Reviews</string>
+    <string name="payment_method">Payment Method</string>
+    <string name="coupons">Coupons</string>
+    <string name="reward">Reward</string>
+    <string name="order_history">Order History</string>
+    <string name="address">Address</string>
+    <string name="support">Support</string>
+    <string name="logout">Logout</string>
 
 
 </resources>

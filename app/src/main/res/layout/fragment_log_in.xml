@@ -122,7 +122,7 @@
                             android:background="@android:color/transparent"
                             android:hint="@string/enter_your_password"
                             android:imeOptions="actionNext"
-                            android:inputType="textEmailAddress"
+                            android:inputType="textPassword"
                             android:maxLines="1"
                             android:paddingStart="30dp"
                             android:paddingTop="25dp"
