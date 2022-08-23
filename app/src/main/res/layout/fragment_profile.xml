@@ -141,8 +141,10 @@
 
                             <ImageView
                                 android:id="@+id/imgOrder"
-                                android:layout_width="@dimen/_20sdp"
-                                android:layout_height="@dimen/_20sdp"
+                                android:layout_width="@dimen/_15sdp"
+                                android:layout_height="@dimen/_15sdp"
+                                android:layout_marginStart="@dimen/_5sdp"
+
                                 android:layout_alignParentStart="true"
                                 android:layout_centerVertical="true"
                                 android:src="@drawable/ic_order_history" />
@@ -183,8 +185,9 @@
 
                             <ImageView
                                 android:id="@+id/imgAddress"
-                                android:layout_width="@dimen/_20sdp"
-                                android:layout_height="@dimen/_20sdp"
+                                android:layout_width="@dimen/_15sdp"
+                                android:layout_height="@dimen/_15sdp"
+                                android:layout_marginStart="@dimen/_5sdp"
                                 android:layout_alignParentStart="true"
                                 android:layout_centerVertical="true"
                                 android:src="@drawable/ic_address" />
@@ -224,9 +227,10 @@
 
                             <ImageView
                                 android:id="@+id/imgPayment"
-                                android:layout_width="@dimen/_20sdp"
-                                android:layout_height="@dimen/_20sdp"
+                                android:layout_width="@dimen/_15sdp"
+                                android:layout_height="@dimen/_15sdp"
                                 android:layout_alignParentStart="true"
+                                android:layout_marginStart="@dimen/_5sdp"
                                 android:layout_centerVertical="true"
                                 android:src="@drawable/ic_payment_method" />
                         </RelativeLayout>
@@ -264,10 +268,11 @@
 
                             <ImageView
                                 android:id="@+id/imgCoupons"
-                                android:layout_width="@dimen/_20sdp"
-                                android:layout_height="@dimen/_20sdp"
+                                android:layout_width="@dimen/_15sdp"
+                                android:layout_height="@dimen/_15sdp"
                                 android:layout_alignParentStart="true"
                                 android:layout_centerVertical="true"
+                                android:layout_marginStart="@dimen/_5sdp"
                                 android:src="@drawable/ic_coupouns" />
                         </RelativeLayout>
 
@@ -306,8 +311,9 @@
 
                             <ImageView
                                 android:id="@+id/imgReward"
-                                android:layout_width="@dimen/_20sdp"
-                                android:layout_height="@dimen/_20sdp"
+                                android:layout_width="@dimen/_15sdp"
+                                android:layout_height="@dimen/_15sdp"
+                                android:layout_marginStart="@dimen/_5sdp"
                                 android:layout_alignParentStart="true"
                                 android:layout_centerVertical="true"
                                 android:src="@drawable/ic_reward" />
@@ -348,9 +354,10 @@
 
                             <ImageView
                                 android:id="@+id/imgSettings"
-                                android:layout_width="@dimen/_20sdp"
-                                android:layout_height="@dimen/_20sdp"
+                                android:layout_width="@dimen/_15sdp"
+                                android:layout_height="@dimen/_15sdp"
                                 android:layout_alignParentStart="true"
+                                android:layout_marginStart="@dimen/_5sdp"
                                 android:layout_centerVertical="true"
                                 android:src="@drawable/ic_settings" />
                         </RelativeLayout>
@@ -389,10 +396,11 @@
 
                             <ImageView
                                 android:id="@+id/imgSupport"
-                                android:layout_width="@dimen/_20sdp"
-                                android:layout_height="@dimen/_20sdp"
+                                android:layout_width="@dimen/_15sdp"
+                                android:layout_height="@dimen/_15sdp"
                                 android:layout_alignParentStart="true"
                                 android:layout_centerVertical="true"
+                                android:layout_marginStart="@dimen/_5sdp"
                                 android:src="@drawable/ic_support" />
                         </RelativeLayout>
 
@@ -429,10 +437,11 @@
 
                             <ImageView
                                 android:id="@+id/imgLogout"
-                                android:layout_width="@dimen/_20sdp"
-                                android:layout_height="@dimen/_20sdp"
+                                android:layout_width="@dimen/_15sdp"
+                                android:layout_height="@dimen/_15sdp"
                                 android:layout_alignParentStart="true"
                                 android:layout_centerVertical="true"
+                                android:layout_marginStart="@dimen/_5sdp"
                                 android:src="@drawable/ic_logout" />
                         </RelativeLayout>
 
