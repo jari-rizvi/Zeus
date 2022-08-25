@@ -52,8 +52,8 @@
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:orientation="vertical"
                         android:layout_marginTop="@dimen/_5sdp"
+                        android:orientation="vertical"
                         android:padding="2dp">
 
                         <com.google.android.material.textview.MaterialTextView
@@ -91,6 +91,7 @@
 
 
                     </RelativeLayout>
+
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
@@ -101,8 +102,8 @@
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:orientation="vertical"
                         android:layout_marginTop="@dimen/_5sdp"
+                        android:orientation="vertical"
                         android:padding="2dp">
 
                         <com.google.android.material.textview.MaterialTextView
@@ -129,7 +130,6 @@
                             android:paddingEnd="10dp"
                             android:textCursorDrawable="@color/black" />
 
-
                         <ImageView
                             android:layout_width="20dp"
                             android:layout_height="20dp"
@@ -138,8 +138,8 @@
                             android:layout_marginTop="@dimen/_5sdp"
                             android:src="@drawable/ic_pass" />
 
-
                     </RelativeLayout>
+
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"

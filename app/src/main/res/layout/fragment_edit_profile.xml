@@ -58,7 +58,6 @@
                         android:layout_marginEnd="20dp"
                         android:layout_weight="1">
 
-
                         <de.hdodenhof.circleimageview.CircleImageView
                             android:id="@+id/profilePicture"
                             android:layout_width="90dp"
@@ -70,7 +69,6 @@
                             android:src="@drawable/notification" />
 
                     </RelativeLayout>
-
 
                     <TextView
                         style="@style/noah_secondary_bold_medium"
@@ -100,7 +98,6 @@
                             android:layout_height="match_parent"
                             android:orientation="vertical"
                             android:padding="10dp">
-
 
                             <EditText
                                 android:id="@+id/userName"
@@ -158,7 +155,6 @@
                             android:orientation="vertical"
                             android:padding="10dp">
 
-
                             <EditText
                                 android:id="@+id/PhoneNumber"
                                 style="@style/noah_light_medium"
@@ -172,7 +168,6 @@
                                 android:maxLines="1"
                                 android:paddingStart="10dp"
                                 android:textCursorDrawable="@color/black" />
-
 
                             <ImageView
                                 android:id="@+id/imgPhone"
@@ -271,7 +266,6 @@
                             android:orientation="vertical"
                             android:padding="10dp">
 
-
                             <EditText
                                 android:id="@+id/Pass"
                                 style="@style/noah_light_medium"
@@ -286,7 +280,6 @@
                                 android:paddingStart="10dp"
                                 android:textCursorDrawable="@color/black" />
 
-
                             <ImageView
                                 android:id="@+id/imgPass"
                                 android:layout_width="@dimen/_15sdp"
@@ -296,12 +289,9 @@
                                 android:src="@drawable/ic_pass" />
                         </RelativeLayout>
 
-
                     </androidx.cardview.widget.CardView>
 
-
                 </LinearLayout>
-
 
             </ScrollView>
 
