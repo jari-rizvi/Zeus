@@ -43,7 +43,7 @@
                     android:orientation="vertical">
 
                     <TextView
-                        style="@style/title_text_dark"
+                        style="@style/noah_dark"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/sign_up" />
@@ -51,12 +51,12 @@
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:orientation="vertical"
                         android:layout_marginTop="@dimen/_10sdp"
+                        android:orientation="vertical"
                         android:padding="2dp">
 
                         <com.google.android.material.textview.MaterialTextView
-                            style="@style/ubuntu_regular_medium"
+                            style="@style/noah_regular_large"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
@@ -64,7 +64,7 @@
 
                         <EditText
                             android:id="@+id/userName"
-                            style="@style/ubuntu_light_medium"
+                            style="@style/noah_light_medium"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_alignParentBottom="true"
@@ -74,7 +74,7 @@
                             android:imeOptions="actionNext"
                             android:inputType="text"
                             android:maxLines="1"
-                            android:paddingStart="30dp"
+                            android:paddingStart="35dp"
                             android:paddingTop="25dp"
                             android:paddingEnd="10dp"
                             android:textCursorDrawable="@color/black" />
@@ -90,6 +90,7 @@
 
 
                     </RelativeLayout>
+
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
@@ -100,12 +101,12 @@
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:orientation="vertical"
                         android:layout_marginTop="@dimen/_5sdp"
+                        android:orientation="vertical"
                         android:padding="2dp">
 
                         <com.google.android.material.textview.MaterialTextView
-                            style="@style/ubuntu_regular_medium"
+                            style="@style/noah_regular_large"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
@@ -113,7 +114,7 @@
 
                         <EditText
                             android:id="@+id/userEmail"
-                            style="@style/ubuntu_light_medium"
+                            style="@style/noah_light_medium"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_alignParentBottom="true"
@@ -123,7 +124,7 @@
                             android:imeOptions="actionNext"
                             android:inputType="textEmailAddress"
                             android:maxLines="1"
-                            android:paddingStart="30dp"
+                            android:paddingStart="35dp"
                             android:paddingTop="25dp"
                             android:paddingEnd="10dp"
                             android:textCursorDrawable="@color/black" />
@@ -139,6 +140,7 @@
 
 
                     </RelativeLayout>
+
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
@@ -153,7 +155,7 @@
                         android:padding="2dp">
 
                         <com.google.android.material.textview.MaterialTextView
-                            style="@style/ubuntu_regular_medium"
+                            style="@style/noah_regular_medium"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
@@ -161,7 +163,7 @@
 
                         <EditText
                             android:id="@+id/userPhone"
-                            style="@style/ubuntu_light_medium"
+                            style="@style/noah_light_medium"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_alignParentBottom="true"
@@ -171,7 +173,7 @@
                             android:imeOptions="actionNext"
                             android:inputType="phone"
                             android:maxLines="1"
-                            android:paddingStart="30dp"
+                            android:paddingStart="35dp"
                             android:paddingTop="25dp"
                             android:paddingEnd="10dp"
                             android:textCursorDrawable="@color/black" />
@@ -187,6 +189,7 @@
 
 
                     </RelativeLayout>
+
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
@@ -197,12 +200,12 @@
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:orientation="vertical"
                         android:layout_marginTop="@dimen/_5sdp"
+                        android:orientation="vertical"
                         android:padding="2dp">
 
                         <com.google.android.material.textview.MaterialTextView
-                            style="@style/ubuntu_regular_medium"
+                            style="@style/noah_regular_medium"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
@@ -210,7 +213,7 @@
 
                         <EditText
                             android:id="@+id/userPass"
-                            style="@style/ubuntu_light_medium"
+                            style="@style/noah_light_medium"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_alignParentBottom="true"
@@ -220,7 +223,7 @@
                             android:imeOptions="actionNext"
                             android:inputType="textEmailAddress"
                             android:maxLines="1"
-                            android:paddingStart="30dp"
+                            android:paddingStart="35dp"
                             android:paddingTop="25dp"
                             android:paddingEnd="10dp"
                             android:textCursorDrawable="@color/black" />
@@ -236,6 +239,7 @@
 
 
                     </RelativeLayout>
+
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
@@ -244,7 +248,7 @@
                         android:background="@color/grey" />
 
                     <TextView
-                        style="@style/ubuntu_light_small"
+                        style="@style/noah_light_small"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20sp"
@@ -257,13 +261,13 @@
 
                         <TextView
                             android:id="@+id/btnTermsnCondition"
-                            style="@style/ubunto_bold_black_small"
+                            style="@style/noah_bold_black_small"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Terms &amp; Conditions" />
 
                         <TextView
-                            style="@style/ubuntu_light_small"
+                            style="@style/noah_light_small"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:paddingStart="@dimen/_2sdp"
@@ -272,7 +276,7 @@
 
                         <TextView
                             android:id="@+id/btnPrivacyPolicy"
-                            style="@style/ubunto_bold_black_small"
+                            style="@style/noah_bold_black_small"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Privacy Policy" />
@@ -291,7 +295,7 @@
                         app:cardMaxElevation="1dp">
 
                         <TextView
-                            style="@style/ubuntu_light_white_medium"
+                            style="@style/noah_light_white_medium"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:background="@drawable/button_gredient"
@@ -300,7 +304,6 @@
                             android:text="@string/sign_up" />
 
                     </androidx.cardview.widget.CardView>
-
 
 
                 </LinearLayout>

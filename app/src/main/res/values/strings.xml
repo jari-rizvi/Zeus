@@ -66,6 +66,8 @@
     <string name="address">Address</string>
     <string name="support">Support</string>
     <string name="logout">Logout</string>
+    <string name="email_address">Email address</string>
+    <string name="change">Change</string>
 
 
 </resources>

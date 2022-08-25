@@ -45,7 +45,7 @@
 
                     <TextView
                         android:id="@+id/notificationDescription"
-                        style="@style/ubuntu_light_medium"
+                        style="@style/noah_light_medium"
                         android:layout_width="wrap_content"
                         android:maxLines="1"
                         android:layout_height="wrap_content"

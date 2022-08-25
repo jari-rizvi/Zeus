@@ -76,7 +76,7 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapte
         wordCollectionList = Arrays.asList(notification.getBoldWords().split(","));
 
         final SpannableStringBuilder sb = new SpannableStringBuilder(notification.getNotificationDescription());
-        Typeface CUSTOM_TYPEFACE = ResourcesCompat.getFont(context, R.font.ubuntu_bold);
+        Typeface CUSTOM_TYPEFACE = ResourcesCompat.getFont(context, R.font.noah_bold);
 
 
 //        for (int q=0; q < wordCollectionList.size(); q++){

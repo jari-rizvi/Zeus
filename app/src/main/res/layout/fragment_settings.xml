@@ -42,9 +42,9 @@
             <TextView
                 style="@style/title_regular"
                 android:layout_width="match_parent"
-                android:gravity="center"
-                android:layout_below="@id/btnNotification"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/btnNotification"
+                android:gravity="center"
                 android:text="@string/settings" />
 
         </RelativeLayout>
@@ -97,7 +97,7 @@
                             android:src="@drawable/language" />
 
                         <TextView
-                            style="@style/ubuntu_secondary_bold_medium"
+                            style="@style/noah_secondary_bold_medium"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
@@ -140,7 +140,7 @@
                             android:src="@drawable/notification" />
 
                         <TextView
-                            style="@style/ubuntu_secondary_bold_medium"
+                            style="@style/noah_secondary_bold_medium"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
@@ -190,7 +190,7 @@
                             android:src="@drawable/rate_us" />
 
                         <TextView
-                            style="@style/ubuntu_secondary_bold_medium"
+                            style="@style/noah_secondary_bold_medium"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
@@ -234,7 +234,7 @@
                             android:src="@drawable/faq" />
 
                         <TextView
-                            style="@style/ubuntu_secondary_bold_medium"
+                            style="@style/noah_secondary_bold_medium"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"

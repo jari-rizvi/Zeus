@@ -43,7 +43,7 @@
                     android:orientation="vertical">
 
                     <TextView
-                        style="@style/title_text_dark"
+                        style="@style/noah_dark"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/login" />
@@ -57,15 +57,15 @@
                         android:padding="2dp">
 
                         <com.google.android.material.textview.MaterialTextView
-                            style="@style/ubuntu_regular_medium"
+                            style="@style/noah_regular_large"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
-                            android:text="@string/email" />
+                            android:text="@string/email_address" />
 
                         <EditText
                             android:id="@+id/userEmail"
-                            style="@style/ubuntu_light_medium"
+                            style="@style/noah_light_medium"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_alignParentBottom="true"
@@ -75,7 +75,7 @@
                             android:imeOptions="actionNext"
                             android:inputType="textEmailAddress"
                             android:maxLines="1"
-                            android:paddingStart="30dp"
+                            android:paddingStart="35dp"
                             android:paddingTop="25dp"
                             android:paddingEnd="10dp"
                             android:textCursorDrawable="@color/black" />
@@ -106,7 +106,7 @@
                         android:padding="2dp">
 
                         <com.google.android.material.textview.MaterialTextView
-                            style="@style/ubuntu_regular_medium"
+                            style="@style/noah_regular_large"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
@@ -114,7 +114,7 @@
 
                         <EditText
                             android:id="@+id/userPass"
-                            style="@style/ubuntu_light_medium"
+                            style="@style/noah_light_medium"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_alignParentBottom="true"
@@ -124,7 +124,7 @@
                             android:imeOptions="actionNext"
                             android:inputType="textPassword"
                             android:maxLines="1"
-                            android:paddingStart="30dp"
+                            android:paddingStart="35dp"
                             android:paddingTop="25dp"
                             android:paddingEnd="10dp"
                             android:textCursorDrawable="@color/black" />
@@ -149,7 +149,7 @@
 
                     <TextView
                         android:id="@+id/btnForgot"
-                        style="@style/ubuntu_light_small"
+                        style="@style/noah_secondary_bold_medium_dark"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="end"
@@ -167,7 +167,7 @@
                         app:cardMaxElevation="1dp">
 
                         <TextView
-                            style="@style/ubuntu_light_white_medium"
+                            style="@style/noah_light_white_medium"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:background="@drawable/button_gredient"
@@ -186,26 +186,22 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            style="@style/ubuntu_regular_medium"
+                            style="@style/noah_medium_medium"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/new_user" />
 
                         <TextView
                             android:id="@+id/btnRegister"
-                            style="@style/ubuntu_regular_medium"
+                            style="@style/noah_secondary_bold_medium_dark"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="5dp"
-                            android:text="@string/register"
-                            android:textStyle="bold" />
+                            android:text="@string/register" />
 
                     </LinearLayout>
 
-
-
                 </LinearLayout>
-
 
             </ScrollView>
 

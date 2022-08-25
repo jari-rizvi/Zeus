@@ -57,7 +57,7 @@
 
 
             <TextView
-                style="@style/ubuntu_medium_Extra_large"
+                style="@style/noah_medium_Extra_large"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_20sdp"
@@ -84,7 +84,7 @@
                 app:cardMaxElevation="1dp">
 
                 <TextView
-                    style="@style/ubuntu_light_white_medium"
+                    style="@style/noah_white_bold_medium"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/button_gredient"
@@ -95,7 +95,7 @@
             </androidx.cardview.widget.CardView>
 
             <TextView
-                style="@style/ubuntu_medium_medium"
+                style="@style/noah_medium_medium"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_30sdp"

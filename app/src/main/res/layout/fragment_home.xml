@@ -81,7 +81,7 @@
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/edit_search"
-                        style="@style/ubuntu_medium_large"
+                        style="@style/noah_medium_large"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_toEndOf="@id/btnSearch"

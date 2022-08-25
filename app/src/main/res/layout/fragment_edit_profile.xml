@@ -73,7 +73,7 @@
 
 
                     <TextView
-                        style="@style/ubuntu_secondary_bold_medium"
+                        style="@style/noah_secondary_bold_medium"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_32sdp"
@@ -104,7 +104,7 @@
 
                             <EditText
                                 android:id="@+id/userName"
-                                style="@style/ubuntu_light_medium"
+                                style="@style/noah_light_medium"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:layout_toRightOf="@id/imgpProfile"
@@ -131,7 +131,7 @@
 
 
                     <TextView
-                        style="@style/ubuntu_secondary_bold_medium"
+                        style="@style/noah_secondary_bold_medium"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="15dp"
@@ -161,7 +161,7 @@
 
                             <EditText
                                 android:id="@+id/PhoneNumber"
-                                style="@style/ubuntu_light_medium"
+                                style="@style/noah_light_medium"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:layout_toRightOf="@id/imgPhone"
@@ -187,7 +187,7 @@
                     </androidx.cardview.widget.CardView>
 
                     <TextView
-                        style="@style/ubuntu_secondary_bold_medium"
+                        style="@style/noah_secondary_bold_medium"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="15dp"
@@ -217,7 +217,7 @@
 
                             <EditText
                                 android:id="@+id/userEmail"
-                                style="@style/ubuntu_light_medium"
+                                style="@style/noah_light_medium"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:layout_toRightOf="@id/img"
@@ -244,7 +244,7 @@
 
 
                     <TextView
-                        style="@style/ubuntu_secondary_bold_medium"
+                        style="@style/noah_secondary_bold_medium"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="15dp"
@@ -274,7 +274,7 @@
 
                             <EditText
                                 android:id="@+id/Pass"
-                                style="@style/ubuntu_light_medium"
+                                style="@style/noah_light_medium"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:layout_toRightOf="@id/imgPass"

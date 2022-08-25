@@ -57,7 +57,7 @@
             android:orientation="vertical">
 
             <TextView
-                style="@style/ubuntu_secondary_bold_medium"
+                style="@style/noah_secondary_bold_medium"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
@@ -88,7 +88,7 @@
 
                     <EditText
                         android:id="@+id/userName"
-                        style="@style/ubuntu_light_medium"
+                        style="@style/noah_regular_medium"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="@android:color/transparent"
@@ -105,7 +105,7 @@
 
 
             <TextView
-                style="@style/ubuntu_secondary_bold_medium"
+                style="@style/noah_secondary_bold_medium"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
@@ -136,7 +136,7 @@
 
                     <EditText
                         android:id="@+id/userEmail"
-                        style="@style/ubuntu_light_medium"
+                        style="@style/noah_regular_medium"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="@android:color/transparent"
@@ -153,7 +153,7 @@
 
 
             <TextView
-                style="@style/ubuntu_secondary_bold_medium"
+                style="@style/noah_secondary_bold_medium"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
@@ -184,7 +184,7 @@
 
                     <EditText
                         android:id="@+id/userSubject"
-                        style="@style/ubuntu_light_medium"
+                        style="@style/noah_regular_medium"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="@android:color/transparent"
@@ -202,7 +202,7 @@
 
 
             <TextView
-                style="@style/ubuntu_secondary_bold_medium"
+                style="@style/noah_secondary_bold_medium"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
@@ -233,7 +233,7 @@
 
                     <EditText
                         android:id="@+id/userMessage"
-                        style="@style/ubuntu_light_medium"
+                        style="@style/noah_regular_medium"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="@android:color/transparent"
@@ -260,7 +260,7 @@
                 app:cardMaxElevation="1dp">
 
                 <TextView
-                    style="@style/ubuntu_light_white_medium"
+                    style="@style/noah_white_bold_large"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/button_gredient"
