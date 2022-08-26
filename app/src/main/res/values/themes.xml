@@ -30,7 +30,7 @@
     <style name="noah_bold_black_medium" parent="Widget.AppCompat.TextView">
         <item name="android:textSize">16sp</item>
         <item name="android:textColor">@color/textPrimaryColor</item>
-        <item name="android:fontFamily">@font/noah_regular</item>
+        <item name="android:fontFamily">@font/noah_bold</item>
     </style>
 
     <style name="noah_bold_black_small" parent="Widget.AppCompat.TextView">
@@ -133,6 +133,14 @@
         <item name="android:textColor">@color/textSecondaryColor</item>
         <item name="android:fontFamily">@font/noah_regular</item>
     </style>
+
+    <style name="secondary_regular_medium_bold" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/textSecondaryColor</item>
+        <item name="android:fontFamily">@font/noah_bold</item>
+    </style>
+
+
 
     <style name="secondary_regular_small" parent="Widget.AppCompat.TextView">
         <item name="android:textSize">14sp</item>
