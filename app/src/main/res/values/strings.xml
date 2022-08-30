@@ -60,7 +60,7 @@
     <string name="message">Message</string>
     <string name="find_cool_products_n_fit_your_style">Find Cool Products \nFit Your Style</string>
     <string name="reviews">Reviews</string>
-    <string name="payment_method">Payment Method</string>
+    <string name="payment_method">Payment Methods</string>
     <string name="coupons">Coupons</string>
     <string name="reward">Reward</string>
     <string name="order_history">Order History</string>
@@ -69,6 +69,11 @@
     <string name="logout">Logout</string>
     <string name="email_address">Email address</string>
     <string name="change">Change</string>
+    <string name="copy_code">Copy code</string>
+    <string name="name_of_card">Name of Card</string>
+    <string name="card_number">Card Number</string>
+    <string name="expiry_date">Expiry Date</string>
+    <string name="add">Add</string>
 
 
 </resources>

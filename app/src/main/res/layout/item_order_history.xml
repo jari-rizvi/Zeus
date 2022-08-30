@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="@drawable/card_background"
+        android:elevation="1dp"
+        android:layout_height="@dimen/_90sdp"
+        android:layout_marginTop="@dimen/_10sdp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:weightSum="3"
+                android:orientation="horizontal">
+
+
+                <ImageView
+                    android:id="@+id/img"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.8"
+                    android:background="@drawable/shape_left_round_fill_white"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/icon_search_home" />
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:paddingStart="10dp"
+                    android:layout_weight="2"
+                    android:paddingTop="10dp">
+
+                    <TextView
+                        android:id="@+id/orderId"
+                        style="@style/secondary_manrope_regular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:maxLines="1"
+                        android:text="order id # 1234" />
+
+
+
+
+                    <TextView
+                        android:id="@+id/ProductName"
+                        style="@style/noah_secondary_bold_large"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/orderId"
+                        android:text="Coffe" />
+
+                    <TextView
+                        android:id="@+id/ProductCate"
+                        style="@style/secondary_manrope_regular"
+                        android:textSize="@dimen/_12sdp"
+                        android:layout_below="@id/ProductName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Black" />
+
+
+                    <TextView
+                        android:id="@+id/orderQty"
+                        style="@style/secondary_manrope_regular"
+                        android:layout_below="@id/ProductCate"
+                        android:layout_width="wrap_content"
+                        android:maxLines="1"
+                        android:layout_height="wrap_content"
+                        android:text="Qty: 1" />
+
+                    <TextView
+                        android:id="@+id/orderPrice"
+                        style="@style/noah_secondary_bold_medium_dark"
+                        android:layout_below="@id/orderQty"
+                        android:layout_width="wrap_content"
+                        android:maxLines="1"
+                        android:layout_height="wrap_content"
+                        android:text="AED 1.7" />
+
+
+                    <TextView
+                        android:id="@+id/orderType"
+                        style="@style/noah_medium_medium_dark"
+                        android:layout_below="@id/orderQty"
+                        android:layout_alignParentEnd="true"
+                        android:layout_width="wrap_content"
+                        android:maxLines="1"
+                        android:layout_height="wrap_content"
+                        android:text="Picked on Arrival" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+    </RelativeLayout>
+
+
+
+
+</layout>

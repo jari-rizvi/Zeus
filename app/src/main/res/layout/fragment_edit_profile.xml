@@ -81,51 +81,41 @@
                         android:paddingEnd="10dp"
                         android:text="@string/full_name" />
 
-
-                    <androidx.cardview.widget.CardView
+                    <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/_40sdp"
                         android:layout_marginStart="@dimen/_5sdp"
                         android:layout_marginTop="10dp"
                         android:layout_marginEnd="@dimen/_5sdp"
                         android:layout_marginBottom="5dp"
+                        android:background="@drawable/card_background"
                         android:elevation="1dp"
-                        app:cardCornerRadius="10dp"
-                        app:cardElevation="1dp">
+                        android:orientation="vertical"
+                        android:padding="10dp">
 
-                        <RelativeLayout
+                        <EditText
+                            android:id="@+id/userName"
+                            style="@style/noah_light_medium"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:orientation="vertical"
-                            android:padding="10dp">
-
-                            <EditText
-                                android:id="@+id/userName"
-                                style="@style/noah_light_medium"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:layout_toRightOf="@id/imgpProfile"
-                                android:background="@android:color/transparent"
-                                android:hint="@string/enter_your_email"
-                                android:imeOptions="actionNext"
-                                android:inputType="textEmailAddress"
-                                android:maxLines="1"
-                                android:paddingStart="10dp"
-                                android:textCursorDrawable="@color/black" />
+                            android:layout_toRightOf="@id/imgpProfile"
+                            android:background="@android:color/transparent"
+                            android:hint="@string/enter_your_email"
+                            android:imeOptions="actionNext"
+                            android:inputType="textEmailAddress"
+                            android:maxLines="1"
+                            android:paddingStart="10dp"
+                            android:textCursorDrawable="@color/black" />
 
 
-                            <ImageView
-                                android:id="@+id/imgpProfile"
-                                android:layout_width="@dimen/_15sdp"
-                                android:layout_height="@dimen/_15sdp"
-                                android:layout_alignParentStart="true"
-                                android:layout_centerVertical="true"
-                                android:src="@drawable/ic_profile" />
-                        </RelativeLayout>
-
-
-                    </androidx.cardview.widget.CardView>
-
+                        <ImageView
+                            android:id="@+id/imgpProfile"
+                            android:layout_width="@dimen/_15sdp"
+                            android:layout_height="@dimen/_15sdp"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/ic_profile" />
+                    </RelativeLayout>
 
                     <TextView
                         style="@style/noah_secondary_bold_medium"
@@ -138,48 +128,40 @@
                         android:paddingEnd="10dp"
                         android:text="@string/phone_number" />
 
-                    <androidx.cardview.widget.CardView
+                    <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/_40sdp"
                         android:layout_marginStart="@dimen/_5sdp"
                         android:layout_marginTop="10dp"
                         android:layout_marginEnd="@dimen/_5sdp"
                         android:layout_marginBottom="5dp"
+                        android:background="@drawable/card_background"
                         android:elevation="1dp"
-                        app:cardCornerRadius="10dp"
-                        app:cardElevation="1dp">
+                        android:orientation="vertical"
+                        android:padding="10dp">
 
-                        <RelativeLayout
+                        <EditText
+                            android:id="@+id/PhoneNumber"
+                            style="@style/noah_light_medium"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:orientation="vertical"
-                            android:padding="10dp">
+                            android:layout_toRightOf="@id/imgPhone"
+                            android:background="@android:color/transparent"
+                            android:hint="@string/enter_phone_number"
+                            android:imeOptions="actionNext"
+                            android:inputType="textEmailAddress"
+                            android:maxLines="1"
+                            android:paddingStart="10dp"
+                            android:textCursorDrawable="@color/black" />
 
-                            <EditText
-                                android:id="@+id/PhoneNumber"
-                                style="@style/noah_light_medium"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:layout_toRightOf="@id/imgPhone"
-                                android:background="@android:color/transparent"
-                                android:hint="@string/enter_phone_number"
-                                android:imeOptions="actionNext"
-                                android:inputType="textEmailAddress"
-                                android:maxLines="1"
-                                android:paddingStart="10dp"
-                                android:textCursorDrawable="@color/black" />
-
-                            <ImageView
-                                android:id="@+id/imgPhone"
-                                android:layout_width="22dp"
-                                android:layout_height="27dp"
-                                android:layout_alignParentStart="true"
-                                android:layout_alignParentBottom="true"
-                                android:src="@drawable/ic_phone" />
-                        </RelativeLayout>
-
-
-                    </androidx.cardview.widget.CardView>
+                        <ImageView
+                            android:id="@+id/imgPhone"
+                            android:layout_width="22dp"
+                            android:layout_height="27dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentBottom="true"
+                            android:src="@drawable/ic_phone" />
+                    </RelativeLayout>
 
                     <TextView
                         style="@style/noah_secondary_bold_medium"
@@ -192,51 +174,42 @@
                         android:paddingEnd="10dp"
                         android:text="@string/email" />
 
-                    <androidx.cardview.widget.CardView
+                    <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/_40sdp"
                         android:layout_marginStart="@dimen/_5sdp"
                         android:layout_marginTop="10dp"
                         android:layout_marginEnd="@dimen/_5sdp"
                         android:layout_marginBottom="5dp"
+                        android:background="@drawable/card_background"
                         android:elevation="1dp"
-                        app:cardCornerRadius="10dp"
-                        app:cardElevation="1dp">
+                        android:orientation="vertical"
+                        android:padding="10dp">
 
-                        <RelativeLayout
+
+                        <EditText
+                            android:id="@+id/userEmail"
+                            style="@style/noah_light_medium"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:orientation="vertical"
-                            android:padding="10dp">
+                            android:layout_toRightOf="@id/img"
+                            android:background="@android:color/transparent"
+                            android:hint="@string/enter_your_email"
+                            android:imeOptions="actionNext"
+                            android:inputType="textEmailAddress"
+                            android:maxLines="1"
+                            android:paddingStart="10dp"
+                            android:textCursorDrawable="@color/black" />
 
 
-                            <EditText
-                                android:id="@+id/userEmail"
-                                style="@style/noah_light_medium"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:layout_toRightOf="@id/img"
-                                android:background="@android:color/transparent"
-                                android:hint="@string/enter_your_email"
-                                android:imeOptions="actionNext"
-                                android:inputType="textEmailAddress"
-                                android:maxLines="1"
-                                android:paddingStart="10dp"
-                                android:textCursorDrawable="@color/black" />
-
-
-                            <ImageView
-                                android:id="@+id/img"
-                                android:layout_width="@dimen/_15sdp"
-                                android:layout_height="@dimen/_15sdp"
-                                android:layout_alignParentStart="true"
-                                android:layout_centerVertical="true"
-                                android:src="@drawable/ic_email" />
-                        </RelativeLayout>
-
-
-                    </androidx.cardview.widget.CardView>
-
+                        <ImageView
+                            android:id="@+id/img"
+                            android:layout_width="@dimen/_15sdp"
+                            android:layout_height="@dimen/_15sdp"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/ic_email" />
+                    </RelativeLayout>
 
                     <TextView
                         style="@style/noah_secondary_bold_medium"
@@ -249,47 +222,40 @@
                         android:paddingEnd="10dp"
                         android:text="@string/password" />
 
-                    <androidx.cardview.widget.CardView
+                    <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/_40sdp"
                         android:layout_marginStart="@dimen/_5sdp"
                         android:layout_marginTop="10dp"
                         android:layout_marginEnd="@dimen/_5sdp"
                         android:layout_marginBottom="5dp"
+                        android:background="@drawable/card_background"
                         android:elevation="1dp"
-                        app:cardCornerRadius="10dp"
-                        app:cardElevation="1dp">
+                        android:orientation="vertical"
+                        android:padding="10dp">
 
-                        <RelativeLayout
+                        <EditText
+                            android:id="@+id/Pass"
+                            style="@style/noah_light_medium"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:orientation="vertical"
-                            android:padding="10dp">
+                            android:layout_toRightOf="@id/imgPass"
+                            android:background="@android:color/transparent"
+                            android:hint="@string/enter_your_password"
+                            android:imeOptions="actionNext"
+                            android:inputType="textEmailAddress"
+                            android:maxLines="1"
+                            android:paddingStart="10dp"
+                            android:textCursorDrawable="@color/black" />
 
-                            <EditText
-                                android:id="@+id/Pass"
-                                style="@style/noah_light_medium"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:layout_toRightOf="@id/imgPass"
-                                android:background="@android:color/transparent"
-                                android:hint="@string/enter_your_password"
-                                android:imeOptions="actionNext"
-                                android:inputType="textEmailAddress"
-                                android:maxLines="1"
-                                android:paddingStart="10dp"
-                                android:textCursorDrawable="@color/black" />
-
-                            <ImageView
-                                android:id="@+id/imgPass"
-                                android:layout_width="@dimen/_15sdp"
-                                android:layout_height="@dimen/_15sdp"
-                                android:layout_alignParentStart="true"
-                                android:layout_centerVertical="true"
-                                android:src="@drawable/ic_pass" />
-                        </RelativeLayout>
-
-                    </androidx.cardview.widget.CardView>
+                        <ImageView
+                            android:id="@+id/imgPass"
+                            android:layout_width="@dimen/_15sdp"
+                            android:layout_height="@dimen/_15sdp"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/ic_pass" />
+                    </RelativeLayout>
 
                 </LinearLayout>
 

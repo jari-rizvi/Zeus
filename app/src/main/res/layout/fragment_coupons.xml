@@ -16,29 +16,28 @@
 
 
         <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:paddingTop="20dp">
-
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:paddingTop="20dp"
+            android:layout_weight="0.5">
 
             <ImageView
                 android:id="@+id/btnBack"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
+                android:layout_centerVertical="true"
                 android:layout_marginStart="20dp"
                 android:padding="5dp"
                 android:src="@drawable/back" />
 
-
-
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 style="@style/noah_title"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/btnBack"
-                android:gravity="center"
-                android:text="@string/payment_method" />
+                android:layout_centerInParent="true"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/coupons" />
 
         </RelativeLayout>
 

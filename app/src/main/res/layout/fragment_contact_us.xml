@@ -39,7 +39,7 @@
                 android:src="@drawable/notification" />
 
             <TextView
-                style="@style/title_regular"
+                style="@style/noah_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/btnNotification"

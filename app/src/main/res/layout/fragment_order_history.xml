@@ -28,22 +28,13 @@
                 android:src="@drawable/back" />
 
 
-            <ImageView
-                android:id="@+id/btnNotification"
-                android:layout_width="40dp"
-                android:layout_height="35dp"
-                android:layout_alignParentEnd="true"
-                android:layout_marginEnd="@dimen/_20sdp"
-                android:padding="5dp"
-                android:src="@drawable/notification" />
-
             <TextView
                 style="@style/noah_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/btnNotification"
+                android:layout_below="@id/btnBack"
                 android:gravity="center"
-                android:text="@string/reviews" />
+                android:text="@string/order_history" />
 
         </RelativeLayout>
 
