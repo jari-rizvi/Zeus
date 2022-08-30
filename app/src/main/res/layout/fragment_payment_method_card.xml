@@ -169,8 +169,7 @@
                 android:maxLines="1"
                 android:padding="10dp"
                 android:textCursorDrawable="@color/black" />
-
-
+            
         </RelativeLayout>
 
         <androidx.cardview.widget.CardView
