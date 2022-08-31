@@ -338,5 +338,12 @@
 
     </style>
 
+
+    <style name="manrope_regular_black" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:fontFamily">@font/manrope_regular</item>
+    </style>
+
 </resources>
 

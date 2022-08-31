@@ -75,6 +75,11 @@
     <string name="expiry_date">Expiry Date</string>
     <string name="add">Add</string>
     <string name="redeem_points">Redeem Points</string>
+    <string name="we_are_missing_you_street">We are missing you street</string>
+    <string name="add_a_address">Add a Address</string>
+    <string name="optional_note_to_shopkeeper">Optional (Note to shopkeeper)</string>
+    <string name="save_address">Save Address</string>
+    <string name="search">Search</string>
 
 
 </resources>

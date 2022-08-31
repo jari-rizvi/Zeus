@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <fragment
+            android:id="@+id/mapFragment"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="416dp"
+            android:layout_height="318dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/editTextTextPersonName"
+            style="@style/secondary_light_medium"
+            android:layout_width="350dp"
+            android:layout_height="53dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/card_background"
+            android:elevation="@dimen/_1sdp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:paddingStart="@dimen/_10sdp"
+            android:text="street"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.491"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+        <EditText
+            android:id="@+id/editTextTextPersonName2"
+            style="@style/secondary_light_medium"
+            android:layout_width="350dp"
+            android:layout_height="53dp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/card_background"
+            android:elevation="@dimen/_1sdp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:paddingStart="@dimen/_10sdp"
+            android:text="Area, City"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.491"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+
+        <EditText
+            android:id="@+id/editTextTextPersonName3"
+            style="@style/secondary_light_medium"
+            android:layout_width="350dp"
+            android:layout_height="53dp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/card_background"
+            android:elevation="@dimen/_1sdp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:paddingStart="@dimen/_10sdp"
+            android:text="@string/optional_note_to_shopkeeper"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.491"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
+
+        <TextView
+            android:id="@+id/textView9"
+            style="@style/noah_regular_bold_black_large"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/add_a_address"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mapFragment" />
+
+        <!--        <TextView-->
+        <!--            android:id="@+id/textView11"-->
+        <!--            android:layout_width="261dp"-->
+        <!--            android:layout_height="48dp"-->
+        <!--            android:layout_marginStart="166dp"-->
+        <!--            style="@style/noah_light_white_medium"-->
+        <!--            android:layout_marginTop="40dp"-->
+        <!--            android:layout_marginEnd="159dp"-->
+        <!--            android:gravity="center"-->
+        <!--            android:background="@drawable/button_gredient"-->
+        <!--            android:elevation="@dimen/_1sdp"-->
+        <!--            android:text="@string/save_address"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent"-->
+        <!--            app:layout_constraintHorizontal_bias="0.52"-->
+        <!--            app:layout_constraintStart_toStartOf="parent"-->
+        <!--            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3" />-->
+
+
+        <TextView
+            android:id="@+id/textView10"
+            style="@style/noah_regular_bold_black_large"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_24sdp"
+            android:layout_marginTop="20dp"
+            android:text="@string/we_are_missing_you_street"
+            app:layout_constraintTop_toBottomOf="@+id/textView9"
+            tools:layout_editor_absoluteX="28dp" />
+
+        <TextView
+            style="@style/noah_light_white_medium"
+            android:layout_width="286dp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginStart="62dp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="63dp"
+            android:layout_marginBottom="43dp"
+            android:background="@drawable/button_gredient"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="@string/sign_up"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3"
+            app:layout_constraintVertical_bias="0.909" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="42dp"
+            android:layout_height="27dp"
+            app:srcCompat="@drawable/back"
+            tools:layout_editor_absoluteX="5dp"
+            tools:layout_editor_absoluteY="23dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

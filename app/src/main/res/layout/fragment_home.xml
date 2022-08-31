@@ -11,73 +11,72 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingTop="20dp">
-
-
-            <ImageView
-                android:id="@+id/btnBack"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginStart="20dp"
-                android:padding="5dp"
-                android:src="@drawable/back" />
-
-
-            <ImageView
-                android:id="@+id/btnNotification"
-                android:layout_width="40dp"
-                android:layout_height="35dp"
-                android:layout_alignParentEnd="true"
-                android:layout_marginEnd="@dimen/_20sdp"
-                android:padding="5dp"
-                android:src="@drawable/notification" />
-
-            <TextView
-                style="@style/title_regular"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/btnNotification"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:gravity="start"
-                android:paddingStart="@dimen/_20sdp"
-                android:text="@string/find_cool_products_n_fit_your_style" />
-
-        </RelativeLayout>
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:weightSum="2"
-            android:layout_marginStart="@dimen/_10sdp"
-            android:orientation="horizontal">
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="20dp">
+
+
+                <ImageView
+                    android:id="@+id/btnBack"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="20dp"
+                    android:padding="5dp"
+                    android:src="@drawable/back" />
+
+
+                <ImageView
+                    android:id="@+id/btnNotification"
+                    android:layout_width="40dp"
+                    android:layout_height="35dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:padding="5dp"
+                    android:src="@drawable/notification" />
+
+                <TextView
+                    style="@style/noah_regular_bold_black_large"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/btnNotification"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:gravity="start"
+                    android:paddingStart="@dimen/_20sdp"
+                    android:text="@string/find_cool_products_n_fit_your_style" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:orientation="horizontal"
+                android:weightSum="2">
 
                 <RelativeLayout
                     android:layout_width="0dp"
-                    android:layout_weight="1.6"
-                    android:layout_height="55dp"
+                    android:layout_height="45dp"
                     android:layout_marginStart="@dimen/_10sdp"
-                    android:layout_marginBottom="20dp"
                     android:layout_marginTop="20dp"
-                    android:background="@drawable/search_background"
-                    >
+                    android:layout_marginBottom="20dp"
+                    android:layout_weight="1.6"
+                    android:background="@drawable/search_background">
 
                     <ImageView
                         android:id="@+id/btnSearch"
-                        android:layout_width="@dimen/_20sdp"
-                        android:layout_height="@dimen/_20sdp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_alignParentStart="true"
                         android:layout_centerVertical="true"
                         android:layout_marginStart="20dp"
-                        android:src="@drawable/icon_search_home" />
+                        android:src="@drawable/ic_search" />
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/edit_search"
@@ -86,37 +85,37 @@
                         android:layout_height="match_parent"
                         android:layout_toEndOf="@id/btnSearch"
                         android:background="@android:color/transparent"
-                        android:hint="Search "
+                        android:hint="@string/search"
                         android:paddingStart="20dp" />
 
                 </RelativeLayout>
 
-            <ImageView
-                android:id="@+id/btnFilter"
-                android:layout_width="0dp"
-                android:layout_weight="0.4"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:src="@drawable/ic_filter" />
+                <ImageView
+                    android:id="@+id/btnFilter"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="0.4"
+                    android:src="@drawable/ic_filter" />
 
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:spanCount="2"
+                tools:listitem="@layout/item_top_rated" />
 
         </LinearLayout>
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"/>
-
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-            app:spanCount="2"
-            tools:listitem="@layout/item_top_rated"
-            android:layout_marginTop="10dp"/>
-
-    </LinearLayout>
 
     </ScrollView>
 </layout>
