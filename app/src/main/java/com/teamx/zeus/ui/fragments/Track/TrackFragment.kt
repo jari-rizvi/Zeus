@@ -1,4 +1,4 @@
-package com.teamx.zeus.ui.fragments.ReviewList
+package com.teamx.zeus.ui.fragments.Track
 
 import android.os.Bundle
 import android.text.TextUtils
@@ -10,6 +10,8 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavOptions
 import androidx.navigation.Navigation
 import androidx.navigation.navOptions
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
@@ -21,6 +23,8 @@ import com.teamx.zeus.baseclasses.BaseFragment
 import com.teamx.zeus.data.remote.Resource
 import com.teamx.zeus.databinding.*
 import com.teamx.zeus.localization.LocaleManager
+import com.teamx.zeus.ui.fragments.notification.NotificationAdapter
+import com.teamx.zeus.ui.fragments.notification.Notifications
 import com.teamx.zeus.ui.fragments.otp.OtpViewModel
 import com.teamx.zeus.utils.DialogHelperClass
 import dagger.hilt.android.AndroidEntryPoint
@@ -30,25 +34,17 @@ import org.json.JSONException
 
 
 @AndroidEntryPoint
-class ReviewListFragment() : BaseFragment<FragmentReviewListBinding, OtpViewModel>() {
+class TrackFragment() : BaseFragment<FragmentTrackBinding, OtpViewModel>() {
 
     override val layoutId: Int
-        get() = R.layout.fragment_review_list
+        get() = R.layout.fragment_track
     override val viewModel: Class<OtpViewModel>
         get() = OtpViewModel::class.java
     override val bindingVariable: Int
         get() = BR.viewModel
 
-
     private lateinit var options: NavOptions
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
 
-
-
-
-
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -61,14 +57,13 @@ class ReviewListFragment() : BaseFragment<FragmentReviewListBinding, OtpViewMode
                 popExit = R.anim.nav_default_pop_exit_anim
             }
 
+
         }
 
 
-
-
-
-
     }
+
+
 
 
 }

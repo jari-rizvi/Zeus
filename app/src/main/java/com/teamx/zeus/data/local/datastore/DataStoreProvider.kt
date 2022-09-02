@@ -6,15 +6,15 @@ import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.booleanPreferencesKey
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.stringPreferencesKey
-import androidx.datastore.preferences.createDataStore
+import androidx.datastore.preferences.preferencesDataStore
 import com.teamx.zeus.constants.AppConstants
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 
-class DataStoreProvider(context: Context) {
+class DataStoreProvider(var context: Context) {
 
     //Create the dataStore
-    private val dataStore : DataStore<Preferences> = context.createDataStore(name = AppConstants.DataStore.DATA_STORE_NAME)
+    private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = AppConstants.DataStore.DATA_STORE_NAME)
 
     //Create some keys
     companion object {
@@ -26,7 +26,7 @@ class DataStoreProvider(context: Context) {
 
     //Store data
     suspend fun storeData(isLocalizationKey: Boolean, name: String,token: String, details:String) {
-        dataStore.edit {
+       context.dataStore.edit {
             it[IS_LOCALIZATION_KEY] = isLocalizationKey
             it[USER_NAME_KEY] = name
             it[TOKEN] = token
@@ -37,23 +37,23 @@ class DataStoreProvider(context: Context) {
 
 
     //get Token by using this
-    val token : Flow<String?> =  dataStore.data.map {
+    val token : Flow<String?> =  context.dataStore.data.map {
         it[TOKEN]
     }
 
-    val details : Flow<String?> =  dataStore.data.map {
+    val details : Flow<String?> =   context.dataStore.data.map {
         it[DETAILS]
     }
 
     //save token by using this functionn
     suspend fun saveUserToken(token: String){
-        dataStore.edit {
+        context.dataStore.edit {
             it[TOKEN] = token
         }
     }
 
     suspend fun saveUserDetails(firstname: String,email: String){
-        dataStore.edit {
+        context.dataStore.edit {
             it[DETAILS] = firstname
             it[DETAILS] = email
         }
@@ -61,7 +61,7 @@ class DataStoreProvider(context: Context) {
 
 
     //Create an Localization flow
-    val localizationFlow: Flow<Boolean> = dataStore.data.map {
+    val localizationFlow: Flow<Boolean> =  context.dataStore.data.map {
         it[IS_LOCALIZATION_KEY] ?: false
     }
 
