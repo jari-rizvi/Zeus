@@ -114,6 +114,12 @@
         <item name="android:fontFamily">@font/noah_regular</item>
     </style>
 
+    <style name="manrope_small_regular" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/textPrimaryColor</item>
+        <item name="android:fontFamily">@font/manrope_bold</item>
+    </style>
+
     <style name="noah_medium_small" parent="Widget.AppCompat.TextView">
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">@color/textPrimaryColor</item>
@@ -238,11 +244,13 @@
         <item name="android:textColor">@color/textPrimaryColor</item>
         <item name="android:fontFamily">@font/manrope_light</item>
     </style>
+
     <style name="noah_light_medium" parent="Widget.AppCompat.TextView">
         <item name="android:textSize">16sp</item>
         <item name="android:textColor">@color/textPrimaryColor</item>
         <item name="android:fontFamily">@font/manrope_light</item>
     </style>
+
     <style name="noah_light_small" parent="Widget.AppCompat.TextView">
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">@color/textPrimaryColor</item>
