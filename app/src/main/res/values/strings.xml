@@ -80,6 +80,9 @@
     <string name="optional_note_to_shopkeeper">Optional (Note to shopkeeper)</string>
     <string name="save_address">Save Address</string>
     <string name="search">Search</string>
+    <string name="rio_s_coffee_bar">Rio’s Coffee Bar |</string>
+    <string name="description">Description</string>
+    <string name="add_to_cart">Add to Cart</string>
 
 
 </resources>

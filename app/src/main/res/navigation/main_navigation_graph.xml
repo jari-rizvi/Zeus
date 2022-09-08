@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_navigation_graph"
-    app:startDestination="@id/trackFragment">
+    app:startDestination="@id/productFragment">
 
     <fragment
         android:id="@+id/signInFragment"
@@ -116,5 +116,9 @@
         android:id="@+id/trackFragment"
         android:name="com.teamx.zeus.ui.fragments.Track.TrackFragment"
         android:label="TrackFragment" />
+    <fragment
+        android:id="@+id/productFragment"
+        android:name="com.teamx.zeus.ui.fragments.product.ProductFragment"
+        android:label="ProductFragment" />
 
 </navigation>
