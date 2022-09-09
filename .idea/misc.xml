@@ -119,7 +119,10 @@
         <entry key="..\:/Jari's Projects/Zeus/app/src/main/res/layout/activity_main.xml" value="0.3047619047619048" />
         <entry key="..\:/Jari's Projects/Zeus/app/src/main/res/layout/call_now_dialog.xml" value="0.36666666666666664" />
         <entry key="..\:/Jari's Projects/Zeus/app/src/main/res/layout/dialog_layout_error.xml" value="0.3087719298245614" />
+        <entry key="..\:/Jari's Projects/Zeus/app/src/main/res/layout/fargment_cart.xml" value="0.3" />
         <entry key="..\:/Jari's Projects/Zeus/app/src/main/res/layout/fragment_about.xml" value="0.36666666666666664" />
+        <entry key="..\:/Jari's Projects/Zeus/app/src/main/res/layout/fragment_address.xml" value="0.36666666666666664" />
+        <entry key="..\:/Jari's Projects/Zeus/app/src/main/res/layout/fragment_cart.xml" value="0.36666666666666664" />
         <entry key="..\:/Jari's Projects/Zeus/app/src/main/res/layout/fragment_contact_us.xml" value="0.36666666666666664" />
         <entry key="..\:/Jari's Projects/Zeus/app/src/main/res/layout/fragment_create_password.xml" value="0.36666666666666664" />
         <entry key="..\:/Jari's Projects/Zeus/app/src/main/res/layout/fragment_edit_profile.xml" value="0.22" />
@@ -152,6 +155,7 @@
         <entry key="..\:/Jari's Projects/Zeus/app/src/main/res/layout/item_reviews_list.xml" value="0.36666666666666664" />
         <entry key="..\:/Jari's Projects/Zeus/app/src/main/res/layout/item_top_rated.xml" value="0.5" />
         <entry key="..\:/Jari's Projects/Zeus/app/src/main/res/layout/nav_header_main.xml" value="0.3087719298245614" />
+        <entry key="..\:/Jari's Projects/Zeus/app/src/main/res/layout/viewpager.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/TeamX Pakistan/StudioProjects/Zeus/app/src/main/res/layout/fragment_edit_profile.xml" value="0.25" />
         <entry key="..\:/Users/TeamX Pakistan/StudioProjects/Zeus/app/src/main/res/layout/fragment_log_in.xml" value="0.25" />
         <entry key="..\:/Users/TeamX Pakistan/StudioProjects/Zeus/app/src/main/res/layout/fragment_notification.xml" value="0.35104166666666664" />
