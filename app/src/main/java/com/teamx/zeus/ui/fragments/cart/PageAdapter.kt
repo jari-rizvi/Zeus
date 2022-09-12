@@ -1,9 +1,8 @@
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
-import com.teamx.zeus.dummyData.OrderDetails
 import com.teamx.zeus.ui.fragments.cart.CartFragment
-import com.teamx.zeus.ui.fragments.editProfile.EditProfileFragment
+import com.teamx.zeus.ui.fragments.checkout.CheckoutFragment
 import com.teamx.zeus.ui.fragments.paymentMethod.PaymentFragment
 import com.teamx.zeus.ui.fragments.profile.ProfileFragment
 import com.teamx.zeus.ui.fragments.rateApp.RateAppFragment
@@ -16,11 +15,11 @@ class PageAdapter(fm:FragmentManager) : FragmentPagerAdapter(fm) {
     override fun getItem(position: Int): Fragment {
         when(position) {
             0 -> {
-                return RateAppFragment()
+                return CartFragment()
             }
 
             1 ->  {
-                return ProfileFragment()
+                return CheckoutFragment()
 
             }
 

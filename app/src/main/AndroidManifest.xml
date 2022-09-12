@@ -31,9 +31,6 @@
             </intent-filter>
         </activity>
 
-<!--        <activity android:name="com.teamx.multivendor.ui.activity.mainActivity.MainActivity"-->
-<!--            />-->
-
     </application>
 
 </manifest>

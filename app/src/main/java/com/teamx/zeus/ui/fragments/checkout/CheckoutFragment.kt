@@ -1,4 +1,4 @@
-package com.teamx.zeus.ui.fragments.cart
+package com.teamx.zeus.ui.fragments.checkout
 
 import PageAdapter
 import android.os.Bundle
@@ -10,16 +10,17 @@ import com.teamx.zeus.BR
 import com.teamx.zeus.R
 import com.teamx.zeus.baseclasses.BaseFragment
 import com.teamx.zeus.databinding.FragmentCartBinding
+import com.teamx.zeus.databinding.FragmentCheckoutBinding
 import com.teamx.zeus.databinding.FragmentMainBinding
 import com.teamx.zeus.ui.fragments.forgotPass.ForgotPassViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_main.*
 
 @AndroidEntryPoint
-class CartFragment() : BaseFragment<FragmentCartBinding, ForgotPassViewModel>() {
+class CheckoutFragment() : BaseFragment<FragmentCheckoutBinding, ForgotPassViewModel>() {
 
     override val layoutId: Int
-        get() = R.layout.fragment_cart
+        get() = R.layout.fragment_checkout
     override val viewModel: Class<ForgotPassViewModel>
         get() = ForgotPassViewModel::class.java
     override val bindingVariable: Int

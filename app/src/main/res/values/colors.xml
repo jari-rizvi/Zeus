@@ -22,5 +22,6 @@
     <color name="upperGredient">#152B8C</color>
     <color name="lowerGredient">#000000</color>
     <color name="grey">#94959B</color>
+    <color name="light_grey">#D7D8DA</color>
     <color name="brown">#424242</color>
 </resources>
