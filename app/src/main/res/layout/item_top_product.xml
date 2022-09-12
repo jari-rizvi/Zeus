@@ -61,8 +61,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
+                    android:layout_marginStart="43dp"
                     android:layout_marginTop="5dp"
                     android:layout_marginEnd="@dimen/_5sdp"
+                    android:layout_toEndOf="@+id/productName"
                     android:ellipsize="end"
                     android:maxLines="1"
                     android:text="AED 7.8" />
@@ -104,15 +106,14 @@
                 </LinearLayout>
 
 
-
                 <me.zhanghai.android.materialratingbar.MaterialRatingBar
                     android:id="@+id/productRating"
                     style="@style/Widget.MaterialRatingBar.RatingBar.Indicator.Small"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:numStars="5"
-                    android:layout_marginStart="@dimen/_5sdp"
                     android:layout_below="@id/lnType"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:numStars="5"
                     android:progressBackgroundTint="@color/ratingBarColor"
                     app:mrb_progressTint="@color/ratingBarColor" />
 

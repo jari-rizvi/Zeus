@@ -14,6 +14,8 @@ class MainRepository @Inject constructor(
 ) {
     suspend fun login(@Body param : JsonObject) = apiService.login(param)
     suspend fun signup(@Body param : JsonObject) = apiService.signup(param)
+    suspend fun home() = apiService.home()
+
 
 
 }

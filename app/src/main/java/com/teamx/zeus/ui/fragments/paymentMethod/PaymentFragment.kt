@@ -33,8 +33,6 @@ class PaymentFragment : BaseFragment<FragmentPaymentMethodBinding, AuthViewModel
             popUpStack()
 
         }
-
-
         recomendedViewAdapter();
 
     }
