@@ -21,7 +21,7 @@ class ProductAdapter(val arrayList: ArrayList<PopularProduct>, val onTopProductL
     override fun onBindViewHolder(holder: TopProductViewHolder, position: Int) {
         val product : PopularProduct = arrayList[position]
         holder.binding.productName.text = product.name
-        holder.binding.productPrice.text = product.price.toString()
+        holder.binding.productPrice.text = "AED "+product.price.toString()
         holder.binding.productType.text = product.product_type
         Picasso.get().load(product.image).into(holder.binding.productImage)
 

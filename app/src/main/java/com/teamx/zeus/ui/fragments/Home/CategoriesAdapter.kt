@@ -20,6 +20,8 @@ class CategoriesAdapter(val arrayList: ArrayList<Categories>, val onTopCategorie
         val categories : Categories = arrayList[position]
         holder.binding.categoryName.text = categories.categoriesName
         holder.binding.categoryImage.setImageResource(categories.categoriesImage)
+        holder.binding.checkedTextView.isChecked = categories.isChecked
+        holder.binding.categoryName.isChecked = categories.isChecked
 
 
         holder.itemView.setOnClickListener {

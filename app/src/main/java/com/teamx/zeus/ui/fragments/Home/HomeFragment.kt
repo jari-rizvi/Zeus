@@ -63,6 +63,11 @@ class HomeFragment() : BaseFragment<FragmentHomeBinding, HomeViewModel>(), OnTop
 
         }
 
+        mViewDataBinding.btnFilter.setOnClickListener {
+            navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment)
+            navController.navigate(R.id.paymentFragment, null,options)
+        }
+
         productRecyclerview()
 
         mViewModel.home()
@@ -98,10 +103,10 @@ class HomeFragment() : BaseFragment<FragmentHomeBinding, HomeViewModel>(), OnTop
 
     private fun categoriesRecyclerview() {
         categoriesArrayList2 = ArrayList()
-        categoriesArrayList2.add(Categories("Shop", R.drawable.resturant))
-        categoriesArrayList2.add(Categories("Popular", R.drawable.resturant))
-        categoriesArrayList2.add(Categories("Service", R.drawable.resturant))
-        categoriesArrayList2.add(Categories("Resturant", R.drawable.resturant))
+        categoriesArrayList2.add(Categories("Shop", R.drawable.resturant,true))
+        categoriesArrayList2.add(Categories("Popular", R.drawable.resturant,false))
+        categoriesArrayList2.add(Categories("Service", R.drawable.resturant,false))
+        categoriesArrayList2.add(Categories("Resturant", R.drawable.resturant,false))
 
         val linearLayoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
         mViewDataBinding.categoriesRecycler.layoutManager = linearLayoutManager
@@ -113,7 +118,6 @@ class HomeFragment() : BaseFragment<FragmentHomeBinding, HomeViewModel>(), OnTop
     private fun productRecyclerview() {
         productArrayList = ArrayList()
 
-
         val linearLayoutManager = GridLayoutManager(context, 2, RecyclerView.VERTICAL, false)
         mViewDataBinding.ProductRecycler.layoutManager = linearLayoutManager
 
@@ -123,7 +127,13 @@ class HomeFragment() : BaseFragment<FragmentHomeBinding, HomeViewModel>(), OnTop
     }
 
     override fun onTopSellerClick(position: Int) {
-        TODO("Not yet implemented")
+        for(cat in categoriesArrayList2){
+            cat.isChecked = false
+
+
+        }
+        categoriesArrayList2.get(position).isChecked = true
+        categoriesAdapter.notifyDataSetChanged()
     }
 
 

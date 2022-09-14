@@ -2,7 +2,10 @@ package com.teamx.zeus.ui.fragments.paymentMethod
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.lifecycle.asLiveData
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
+import com.teamx.zeus.R
 import com.teamx.zeus.databinding.ItemPaymentBinding
 import com.teamx.zeus.dummyData.PaymentMethod
 import com.teamx.zeus.ui.fragments.Home.OnTopSellerListener
@@ -23,11 +26,13 @@ class PaymentAdapter(val arrayList: ArrayList<PaymentMethod>, val onTopSellerLis
         val payment : PaymentMethod = arrayList[position]
         holder.binding.paymentName.text = payment.paymentName
         holder.binding.paymentImage.setImageResource(payment.paymentImage)
-        holder.binding.paymentType.setChecked(row_index == position)
+//        holder.binding.paymentType.setChecked(row_index == position)
+        holder.binding.paymentType.isChecked = payment.value
 
         holder.itemView.setOnClickListener {
             onTopSellerListener.onTopSellerClick(position)
             row_index = position
+
             notifyDataSetChanged()
         }
 

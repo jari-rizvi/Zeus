@@ -1,7 +1,11 @@
 package com.teamx.zeus.ui.fragments.paymentMethod
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
+import androidx.lifecycle.asLiveData
+import androidx.lifecycle.lifecycleScope
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.teamx.zeus.BR
@@ -11,7 +15,11 @@ import com.teamx.zeus.databinding.FragmentPaymentMethodBinding
 import com.teamx.zeus.dummyData.PaymentMethod
 import com.teamx.zeus.ui.fragments.Home.OnTopSellerListener
 import com.teamx.zeus.ui.fragments.SignInFragment.AuthViewModel
+import com.teamx.zeus.utils.PrefHelper
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import java.time.LocalDate
 
 @AndroidEntryPoint
 class PaymentFragment : BaseFragment<FragmentPaymentMethodBinding, AuthViewModel>(),
@@ -23,34 +31,73 @@ class PaymentFragment : BaseFragment<FragmentPaymentMethodBinding, AuthViewModel
     override val bindingVariable: Int
         get() = BR.viewModel
 
-    lateinit var recomendedAdapter: PaymentAdapter
-    lateinit var recomendedArrayList: ArrayList<PaymentMethod>
+    lateinit var paymentAdapter: PaymentAdapter
+    lateinit var paymentArrayList: ArrayList<PaymentMethod>
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         mViewDataBinding.btnBack.setOnClickListener {
             popUpStack()
-
         }
-        recomendedViewAdapter();
+
+
+        paymentAdapter();
 
     }
 
-    private fun recomendedViewAdapter(){
-        recomendedArrayList = ArrayList()
-        recomendedArrayList.add(PaymentMethod(1,R.drawable.icon_master,getString(R.string.debit_card)))
-        recomendedArrayList.add(PaymentMethod(3,R.drawable.icon_cash,"Cash"))
+    private fun paymentAdapter(){
+        paymentArrayList = ArrayList()
+        if(PrefHelper.getInstance(requireContext()).payment.equals(1)){
+            paymentArrayList.add(PaymentMethod(1,R.drawable.icon_master,getString(R.string.debit_card)))
+            paymentArrayList.add(PaymentMethod(paymentId =  2,R.drawable.icon_cash,"Cash",true))
+        }
+        else{
+            paymentArrayList.add(PaymentMethod(1,R.drawable.icon_master,getString(R.string.debit_card),true))
+            paymentArrayList.add(PaymentMethod(2,R.drawable.icon_cash,"Cash"))
+        }
 
         val linearLayoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
         mViewDataBinding.paymentMethodRecyclerview.setLayoutManager(linearLayoutManager)
 
-        recomendedAdapter = PaymentAdapter(recomendedArrayList,this)
-        mViewDataBinding.paymentMethodRecyclerview.adapter = recomendedAdapter
+        paymentAdapter = PaymentAdapter(paymentArrayList,this)
+        mViewDataBinding.paymentMethodRecyclerview.adapter = paymentAdapter
+
     }
 
     override fun onTopSellerClick(position: Int) {
-        showToast(""+ recomendedArrayList[position].paymentName)
+
+        PrefHelper.getInstance(requireContext()).savePayment(position)
+
+        for(cat in paymentArrayList){
+            cat.value = false }
+        paymentArrayList.get(position).value = true
+        paymentAdapter.notifyDataSetChanged()
+
+
+
+//
+//        lifecycleScope.launch(Dispatchers.IO) {
+//        dataStoreProvider.savePaymentMethod(paymentArrayList[position].paymentId)
+//        }
+//
+//        dataStoreProvider.payment.asLiveData().observe(
+//            requireActivity()
+//        ) {
+//            val payment = it
+//            Log.e("valjueeeof", payment.toString())
+//            if (payment != null) {
+//
+//                paymentAdapter.row_index = 1
+//
+//            } else {
+//
+//            }
+//        }
+
+
+//        showToast(""+ recomendedArrayList[position].paymentName)
 
     }
 
