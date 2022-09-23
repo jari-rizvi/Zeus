@@ -98,7 +98,6 @@ class LogInFragment() : BaseFragment<FragmentLogInBinding, LoginViewModel>() {
         return pattern.matcher(email).matches()
     }
 
-
     override fun subscribeToNetworkLiveData() {
         super.subscribeToNetworkLiveData()
 
