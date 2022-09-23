@@ -36,9 +36,6 @@ class LogInFragment() : BaseFragment<FragmentLogInBinding, LoginViewModel>() {
     private var userEmail: String? = null
     private var password: String? = null
 
-    var regex = "^(.+)@(.+)$"
-
-
     private lateinit var options: NavOptions
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
