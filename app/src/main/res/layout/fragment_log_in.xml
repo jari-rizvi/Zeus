@@ -58,7 +58,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
-                            android:text="@string/email_address" />
+                            android:text="Email address / Phone number" />
 
                         <EditText
                             android:id="@+id/userEmail"
@@ -68,7 +68,7 @@
                             android:layout_alignParentBottom="true"
                             android:layout_marginTop="@dimen/_5sdp"
                             android:background="@android:color/transparent"
-                            android:hint="@string/enter_your_email"
+                            android:hint="Enter your email / phone"
                             android:imeOptions="actionNext"
                             android:inputType="textEmailAddress"
                             android:maxLines="1"

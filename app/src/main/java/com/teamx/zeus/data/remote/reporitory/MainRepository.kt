@@ -13,6 +13,7 @@ class MainRepository @Inject constructor(
     localDataSource: AppDao
 ) {
     suspend fun login(@Body param : JsonObject) = apiService.login(param)
+    suspend fun loginPhone(@Body param : JsonObject) = apiService.loginPhone(param)
     suspend fun signup(@Body param : JsonObject) = apiService.signup(param)
     suspend fun home() = apiService.home()
 

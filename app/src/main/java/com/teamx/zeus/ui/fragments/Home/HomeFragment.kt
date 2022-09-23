@@ -59,8 +59,6 @@ class HomeFragment() : BaseFragment<FragmentHomeBinding, HomeViewModel>(), OnTop
                 popEnter = R.anim.nav_default_pop_enter_anim
                 popExit = R.anim.nav_default_pop_exit_anim
             }
-
-
         }
 
         mViewDataBinding.btnFilter.setOnClickListener {
@@ -79,12 +77,14 @@ class HomeFragment() : BaseFragment<FragmentHomeBinding, HomeViewModel>(), OnTop
                     Log.e("ajdhsdsahkjhsd","start")
 
                 }
+
                 Resource.Status.SUCCESS -> {
                     loadingDialog.dismiss()
                     it.data?.let {
                         it.let {
                             productArrayList.addAll(it.popularProducts)
                             productAdapter.notifyDataSetChanged()
+
                         }
                     }
                 }
@@ -97,16 +97,15 @@ class HomeFragment() : BaseFragment<FragmentHomeBinding, HomeViewModel>(), OnTop
                 }
             }
         })
-
         categoriesRecyclerview()
     }
 
     private fun categoriesRecyclerview() {
         categoriesArrayList2 = ArrayList()
-        categoriesArrayList2.add(Categories("Shop", R.drawable.resturant,true))
-        categoriesArrayList2.add(Categories("Popular", R.drawable.resturant,false))
-        categoriesArrayList2.add(Categories("Service", R.drawable.resturant,false))
-        categoriesArrayList2.add(Categories("Resturant", R.drawable.resturant,false))
+        categoriesArrayList2.add(Categories("Shop", R.drawable.ic_resturant,true))
+        categoriesArrayList2.add(Categories("Popular", R.drawable.ic_resturant,false))
+        categoriesArrayList2.add(Categories("Service", R.drawable.ic_resturant,false))
+        categoriesArrayList2.add(Categories("Resturant", R.drawable.ic_resturant,false))
 
         val linearLayoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
         mViewDataBinding.categoriesRecycler.layoutManager = linearLayoutManager
@@ -129,8 +128,6 @@ class HomeFragment() : BaseFragment<FragmentHomeBinding, HomeViewModel>(), OnTop
     override fun onTopSellerClick(position: Int) {
         for(cat in categoriesArrayList2){
             cat.isChecked = false
-
-
         }
         categoriesArrayList2.get(position).isChecked = true
         categoriesAdapter.notifyDataSetChanged()

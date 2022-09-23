@@ -20,6 +20,8 @@ class DataStoreProvider(var context: Context) {
         val TOKEN = stringPreferencesKey(AppConstants.DataStore.TOKEN)
         val DETAILS = stringPreferencesKey(AppConstants.DataStore.DETAILS)
         val PAYMENT = intPreferencesKey(AppConstants.DataStore.PAYMENT)
+        val AVATAR = stringPreferencesKey(AppConstants.DataStore.AVATAR)
+        val NAME = stringPreferencesKey(AppConstants.DataStore.NAME)
     }
 
     //Store data
@@ -35,8 +37,19 @@ class DataStoreProvider(var context: Context) {
     }
 
     //get Token by using this
-    val token : Flow<String?> =  context.dataStore.data.map {
+    val token: Flow<String?> = context.dataStore.data.map {
         it[TOKEN]
+    }
+
+    val details: Flow<String?> = context.dataStore.data.map {
+        it[DETAILS]
+    }
+    val avatar: Flow<String?> = context.dataStore.data.map {
+        it[AVATAR]
+    }
+
+    val name: Flow<String?> = context.dataStore.data.map {
+        it[NAME]
     }
 
     val payment : Flow<Int?> =   context.dataStore.data.map {
@@ -51,10 +64,24 @@ class DataStoreProvider(var context: Context) {
         }
     }
 
-    suspend fun saveUserDetails(firstname: String,email: String){
+    suspend fun saveUserToken(token: String) {
+        context.dataStore.edit {
+            it[TOKEN] = token
+        }
+    }
+
+    suspend fun saveUserDetails(firstname: String, email: String, avatar: String) {
+        context.dataStore.edit {
+            it[NAME] = firstname
+            it[DETAILS] = email
+            it[AVATAR] = avatar
+        }
+    }
+
+    suspend fun saveUserDetails(firstname: String){
         context.dataStore.edit {
             it[DETAILS] = firstname
-            it[DETAILS] = email
+
         }
     }
 

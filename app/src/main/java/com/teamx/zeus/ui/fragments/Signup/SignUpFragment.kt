@@ -96,10 +96,6 @@ class SignUpFragment() : BaseFragment<FragmentSignUpBinding, SignupViewModel>() 
 
         }
 
-
-
-
-
     }
 
     private fun initialization() {
@@ -110,8 +106,7 @@ class SignUpFragment() : BaseFragment<FragmentSignUpBinding, SignupViewModel>() 
 
     }
 
-
-    override fun subscribeToNetworkLiveData() {
+   override fun subscribeToNetworkLiveData() {
         super.subscribeToNetworkLiveData()
 
         initialization()
@@ -131,7 +126,8 @@ class SignUpFragment() : BaseFragment<FragmentSignUpBinding, SignupViewModel>() 
 
 
 
-            mViewModel.signup(params)
+
+           mViewModel.signup(params)
 
             mViewModel.signupResponse.observe(requireActivity(), Observer {
                 when (it.status) {

@@ -1,6 +1,6 @@
-package com.teamx.zeus.data.models.SignIn
+package com.teamx.zeus.data.models.login
 
-data class SignInResponse(
+data class LoginData(
     val permissions: List<String>,
     val token: String,
     val user: User

@@ -3,29 +3,24 @@ package com.teamx.zeus.ui.fragments.login
 import android.os.Bundle
 import android.text.TextUtils
 import android.util.Log
+import android.util.Patterns
 import android.view.View
-import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavOptions
 import androidx.navigation.Navigation
 import androidx.navigation.navOptions
-import com.google.android.gms.auth.api.signin.GoogleSignIn
-import com.google.android.gms.auth.api.signin.GoogleSignInClient
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.gson.JsonObject
 import com.teamx.zeus.BR
-import com.teamx.zeus.MainApplication
 import com.teamx.zeus.R
 import com.teamx.zeus.baseclasses.BaseFragment
 import com.teamx.zeus.data.remote.Resource
 import com.teamx.zeus.databinding.FragmentLogInBinding
-import com.teamx.zeus.databinding.FragmentSignInBinding
-import com.teamx.zeus.localization.LocaleManager
 import com.teamx.zeus.utils.DialogHelperClass
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import org.json.JSONException
+import java.util.regex.Pattern
 
 
 @AndroidEntryPoint
@@ -40,6 +35,8 @@ class LogInFragment() : BaseFragment<FragmentLogInBinding, LoginViewModel>() {
 
     private var userEmail: String? = null
     private var password: String? = null
+
+    var regex = "^(.+)@(.+)$"
 
 
     private lateinit var options: NavOptions
@@ -76,13 +73,9 @@ class LogInFragment() : BaseFragment<FragmentLogInBinding, LoginViewModel>() {
                 }
                 else -> {
                     subscribeToNetworkLiveData()
-//            naviagteFragment(R.id.signUpFragment, true)
-
                 }
             }
         }
-
-
 
         options = navOptions {
             anim {
@@ -98,6 +91,11 @@ class LogInFragment() : BaseFragment<FragmentLogInBinding, LoginViewModel>() {
     private fun initialization() {
         userEmail = mViewDataBinding.userEmail.getText().toString().trim()
         password = mViewDataBinding.userPass.getText().toString().trim()
+    }
+
+    private fun isValidEmail(email: String): Boolean {
+        val pattern: Pattern = Patterns.EMAIL_ADDRESS
+        return pattern.matcher(email).matches()
     }
 
 
@@ -118,9 +116,14 @@ class LogInFragment() : BaseFragment<FragmentLogInBinding, LoginViewModel>() {
 
             Log.e("UserData", params.toString())
 
-            mViewModel.login(params)
+            if (isValidEmail(userEmail.toString())){
+                mViewModel.login(params)
+            }
+            else{
+                mViewModel.loginPhone(params)
+            }
 
-            mViewModel.loginResponse.observe(requireActivity(), Observer {
+            mViewModel.loginResponse.observe(requireActivity()) {
                 when (it.status) {
                     Resource.Status.LOADING -> {
                         loadingDialog.show()
@@ -128,9 +131,23 @@ class LogInFragment() : BaseFragment<FragmentLogInBinding, LoginViewModel>() {
                     Resource.Status.SUCCESS -> {
                         loadingDialog.dismiss()
                         it.data?.let { data ->
-                            navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment)
-                            navController.navigate(R.id.homeFragment, null,options)
+//                            if (data.flag == 1) {
+                            lifecycleScope.launch(Dispatchers.IO) {
+                                dataStoreProvider.saveUserToken(data.token)
+                                dataStoreProvider.saveUserDetails(
+                                    data.user.name.toString(),
+                                )
+                            }
+//                            sharedViewModel._profileData.value = it
 
+                            navController = Navigation.findNavController(
+                                requireActivity(),
+                                R.id.nav_host_fragment
+                            )
+                            navController.navigate(R.id.homeFragment, null, options)
+//                            } else {
+//                                showToast(data.message)
+//                            }
                         }
                     }
                     Resource.Status.ERROR -> {
@@ -138,9 +155,12 @@ class LogInFragment() : BaseFragment<FragmentLogInBinding, LoginViewModel>() {
                         DialogHelperClass.errorDialog(requireContext(), it.message!!)
                     }
                 }
-            })
+            }
         }
     }
+
+
+
 
 
 }

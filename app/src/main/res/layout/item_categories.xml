@@ -29,7 +29,7 @@
             android:layout_height="@dimen/_15sdp"
             android:layout_gravity="center_vertical"
             android:layout_marginTop="10dp"
-            android:src="@drawable/resturant"
+            android:src="@drawable/ic_resturant"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 

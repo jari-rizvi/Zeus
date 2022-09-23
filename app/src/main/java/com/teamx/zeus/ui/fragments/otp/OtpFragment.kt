@@ -45,9 +45,6 @@ class OtpFragment() : BaseFragment<FragmentOTPBinding, OtpViewModel>() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-
-
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -66,11 +63,6 @@ class OtpFragment() : BaseFragment<FragmentOTPBinding, OtpViewModel>() {
                 navController.navigate(R.id.createNewPassFragment, null,options)
             }
         }
-
-
-
-
-
 
     }
 
