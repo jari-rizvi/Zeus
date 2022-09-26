@@ -5,10 +5,10 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.google.gson.JsonObject
 import com.teamx.zeus.baseclasses.BaseViewModel
+import com.teamx.zeus.data.models.SignUp.RegisterData
 import com.teamx.zeus.data.remote.Resource
 import com.teamx.zeus.data.remote.reporitory.MainRepository
 import com.teamx.zeus.utils.NetworkHelper
-import com.teamx.zues.data.models.SignUp.SignUpResponse
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import org.json.JSONObject
@@ -20,8 +20,8 @@ class SignupViewModel @Inject constructor(
     private val networkHelper: NetworkHelper
 ) : BaseViewModel() {
 
-    private val _signupResponse = MutableLiveData<Resource<SignUpResponse>>()
-    val signupResponse: LiveData<Resource<SignUpResponse>>
+    private val _signupResponse = MutableLiveData<Resource<RegisterData>>()
+    val signupResponse: LiveData<Resource<RegisterData>>
         get() = _signupResponse
 
     fun signup(param : JsonObject) {

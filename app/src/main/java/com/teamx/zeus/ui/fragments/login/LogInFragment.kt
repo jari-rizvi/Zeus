@@ -37,23 +37,28 @@ class LogInFragment() : BaseFragment<FragmentLogInBinding, LoginViewModel>() {
     private var password: String? = null
 
     private lateinit var options: NavOptions
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        options = navOptions {
+            anim {
+                enter = R.anim.enter_from_left
+                exit = R.anim.exit_to_left
+                popEnter = R.anim.nav_default_pop_enter_anim
+                popExit = R.anim.nav_default_pop_exit_anim
+            }
+        }
+
 
         mViewDataBinding.btnRegister.setOnClickListener {
             navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment)
-            navController.navigate(R.id.signUpFragment, null,options)
+            navController.navigate(R.id.signUpFragment, null, options)
         }
 
         mViewDataBinding.btnForgot.setOnClickListener {
             navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment)
-            navController.navigate(R.id.forgotPassFragment, null,options)
+            navController.navigate(R.id.forgotPassFragment, null, options)
         }
 
         mViewDataBinding.btnLogin.setOnClickListener {
@@ -71,15 +76,6 @@ class LogInFragment() : BaseFragment<FragmentLogInBinding, LoginViewModel>() {
                 else -> {
                     subscribeToNetworkLiveData()
                 }
-            }
-        }
-
-        options = navOptions {
-            anim {
-                enter = R.anim.enter_from_left
-                exit = R.anim.exit_to_left
-                popEnter = R.anim.nav_default_pop_enter_anim
-                popExit = R.anim.nav_default_pop_exit_anim
             }
         }
 
@@ -112,10 +108,9 @@ class LogInFragment() : BaseFragment<FragmentLogInBinding, LoginViewModel>() {
 
             Log.e("UserData", params.toString())
 
-            if (isValidEmail(userEmail.toString())){
+            if (isValidEmail(userEmail.toString())) {
                 mViewModel.login(params)
-            }
-            else{
+            } else {
                 mViewModel.loginPhone(params)
             }
 
@@ -154,9 +149,6 @@ class LogInFragment() : BaseFragment<FragmentLogInBinding, LoginViewModel>() {
             }
         }
     }
-
-
-
 
 
 }

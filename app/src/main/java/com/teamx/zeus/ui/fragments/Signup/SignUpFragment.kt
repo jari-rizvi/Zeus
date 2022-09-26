@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.text.TextUtils
 import android.util.Log
 import android.view.View
+import androidx.core.os.bundleOf
 import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavOptions
@@ -111,18 +112,19 @@ class SignUpFragment() : BaseFragment<FragmentSignUpBinding, SignupViewModel>() 
 
         initialization()
 
-        if (!userEmail!!.isEmpty() || !password!!.isEmpty()) {
+        if (!userNumber!!.isEmpty() || !password!!.isEmpty() || name!!.isNotEmpty()) {
 
             val params = JsonObject()
             try {
                 params.addProperty("name", name.toString())
-                params.addProperty("email", userEmail.toString())
-                params.addProperty("phone", userNumber.toString())
+                params.addProperty("contact", userNumber.toString())
                 params.addProperty("password", password.toString())
+                params.addProperty("permission", "customer")
+                Log.e("UserData", params.toString())
             } catch (e: JSONException) {
                 e.printStackTrace()
             }
-            Log.e("UserData", params.toString())
+
 
 
 
@@ -137,8 +139,15 @@ class SignUpFragment() : BaseFragment<FragmentSignUpBinding, SignupViewModel>() 
                     Resource.Status.SUCCESS -> {
                         loadingDialog.dismiss()
                         it.data?.let { data ->
+
+                            val bundle = Bundle()
+                            bundle.putString("phone",data.phone_number)
+                            bundle.putString("Sid",data.twilio.sid)
+                            bundle.putString("otpid",data.id)
+
+
                             navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment)
-                            navController.navigate(R.id.otpFragment, null,options)
+                            navController.navigate(R.id.otpFragment, bundle,options)
                         }
                     }
                     Resource.Status.ERROR -> {

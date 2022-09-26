@@ -28,6 +28,7 @@ object AppConstants {
         DataStore.PAYMENT,
         DataStore.AVATAR,
         DataStore.NAME)
+
     annotation class DataStore {
         companion object {
             const val DATA_STORE_NAME = "BaseProject"
