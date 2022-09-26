@@ -160,5 +160,4 @@ class OtpFragment() : BaseFragment<FragmentOTPBinding, OtpViewModel>() {
 
         }
     }
-
 }
