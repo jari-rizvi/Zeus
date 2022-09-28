@@ -17,6 +17,11 @@
         android:usesCleartextTraffic="true">
 
 
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyBxd0kmiDo1QhnHURbzmCxh86eOpd9lpfs" />
+
+
 
         <service
             android:name=".PushNotificationService"

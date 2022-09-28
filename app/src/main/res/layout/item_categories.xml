@@ -9,6 +9,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="@dimen/_70sdp"
         android:layout_height="@dimen/_30sdp"
+        android:background="@drawable/card_background"
         android:layout_marginStart="@dimen/_5sdp"
         android:orientation="horizontal">
 
@@ -32,8 +33,6 @@
             android:src="@drawable/ic_resturant"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
-
 
         <CheckedTextView
             android:id="@+id/categoryName"

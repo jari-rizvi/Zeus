@@ -30,7 +30,6 @@ class ForgotPassFragment() : BaseFragment<FragmentForgotPassBinding, ForgotPassV
 
     private var userEmail: String? = null
 
-
     private lateinit var options: NavOptions
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -44,7 +43,6 @@ class ForgotPassFragment() : BaseFragment<FragmentForgotPassBinding, ForgotPassV
                 popExit = R.anim.nav_default_pop_exit_anim
             }
         }
-
 
         mViewDataBinding.btnSend.setOnClickListener {
             when {
@@ -114,6 +112,5 @@ class ForgotPassFragment() : BaseFragment<FragmentForgotPassBinding, ForgotPassV
             })
         }
     }
-
 
 }

@@ -9,7 +9,9 @@ import com.teamx.zeus.data.models.SignUp.RegisterData
 import com.teamx.zeus.data.models.forgotPass.ForgotData
 import com.teamx.zeus.data.models.login.LoginData
 import com.teamx.zeus.data.models.otpVerify.OtpVerifyData
+import com.teamx.zeus.data.models.productsShop.ShopProductsData
 import com.teamx.zeus.data.models.resendOtp.ResendOtpData
+import com.teamx.zeus.data.models.shopBySlug.ShopBySlugData
 import retrofit2.Response
 import retrofit2.http.*
 
@@ -38,6 +40,12 @@ interface ApiService {
 
     @GET(NetworkCallPoints.HOME)
     suspend fun home(): Response<DashboardResponse>
+
+    @GET(NetworkCallPoints.SHOP_BY_SLUG)
+    suspend fun shopBySlug(): Response<ShopBySlugData>
+
+    @GET(NetworkCallPoints.PRODUCTS_BY_ID)
+    suspend fun productsByShop(): Response<ShopProductsData>
 
 
 }

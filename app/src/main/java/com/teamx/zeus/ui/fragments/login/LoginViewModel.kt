@@ -19,7 +19,6 @@ class LoginViewModel @Inject constructor(
     private val networkHelper: NetworkHelper
 ) : BaseViewModel() {
 
-
     private val _loginResponse = MutableLiveData<Resource<LoginData>>()
     val loginResponse: LiveData<Resource<LoginData>>
         get() = _loginResponse
@@ -65,7 +64,5 @@ class LoginViewModel @Inject constructor(
             } else _loginResponse.postValue(Resource.error("No internet connection", null))
         }
     }
-
-
 
 }

@@ -23,11 +23,9 @@ class CategoriesAdapter(val arrayList: ArrayList<Categories>, val onTopCategorie
         holder.binding.checkedTextView.isChecked = categories.isChecked
         holder.binding.categoryName.isChecked = categories.isChecked
 
-
         holder.itemView.setOnClickListener {
             onTopCategoriesListener.onTopSellerClick(position)
         }
-
     }
 
     override fun getItemCount(): Int {

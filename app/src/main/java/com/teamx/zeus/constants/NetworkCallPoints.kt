@@ -10,6 +10,8 @@ class NetworkCallPoints {
         const val RESET_PASS ="reset-password";
         const val FORGOT_PASS ="forget-password";
         const val RESEND_OTP_VERIFY ="register/resend-otp";
+        const val SHOP_BY_SLUG ="shops/makeup-store";
+        const val PRODUCTS_BY_ID ="products?shop=6318a59c6937e0d2e791d94a";
 
    }
 

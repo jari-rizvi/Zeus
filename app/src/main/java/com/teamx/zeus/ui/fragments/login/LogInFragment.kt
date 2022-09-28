@@ -102,6 +102,7 @@ class LogInFragment() : BaseFragment<FragmentLogInBinding, LoginViewModel>() {
             try {
                 params.addProperty("email", userEmail)
                 params.addProperty("password", password)
+                params.addProperty("contact", userEmail)
             } catch (e: JSONException) {
                 e.printStackTrace()
             }

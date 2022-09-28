@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:tools="http://schemas.android.com/tools"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:tools="http://schemas.android.com/tools">
+
     <data>
 
     </data>
@@ -13,35 +14,35 @@
         <ImageView
             android:id="@+id/coverImg"
             android:layout_width="match_parent"
-            android:src="@drawable/cover_img"
             android:layout_height="@dimen/_200sdp"
             android:background="@drawable/shape_bottom_round_fill"
+            android:src="@drawable/cover_img"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/imageView5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="28dp"
-            android:layout_marginTop="16dp"
+            android:id="@+id/btnBack"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginStart="@dimen/_25sdp"
+            android:layout_marginTop="@dimen/_15sdp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_back" />
 
         <ImageView
-            android:id="@+id/imageView6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="28dp"
+            android:id="@+id/btnShare"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_25sdp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_share" />
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/shopName"
             style="@style/noah_regular_bold_black_large"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -52,7 +53,7 @@
             app:layout_constraintTop_toBottomOf="@+id/coverImg" />
 
         <TextView
-            android:id="@+id/textView6"
+            android:id="@+id/shopDistance"
             style="@style/manrope_medium_small"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -60,14 +61,14 @@
             android:layout_marginTop="@dimen/_4sdp"
             android:text="5 m away"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView4" />
+            app:layout_constraintTop_toBottomOf="@+id/shopName" />
 
         <TextView
-            android:id="@+id/textView7"
+            android:id="@+id/totalRating"
             style="@style/manrope_medium_small"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:layout_marginStart="12dp"
+            android:layout_marginStart="@dimen/_5sdp"
             android:text="100 + ratings"
             app:layout_constraintBottom_toBottomOf="@+id/ratingBar"
             app:layout_constraintStart_toEndOf="@+id/ratingBar"
@@ -79,10 +80,9 @@
             android:layout_height="20dp"
             android:layout_marginStart="4dp"
             android:layout_marginTop="@dimen/_4sdp"
-            app:layout_constraintStart_toEndOf="@+id/textView6"
-            app:layout_constraintTop_toBottomOf="@+id/textView4"
+            app:layout_constraintStart_toEndOf="@+id/shopDistance"
+            app:layout_constraintTop_toBottomOf="@+id/shopName"
             app:srcCompat="@drawable/ic_location_dark" />
-
 
         <me.zhanghai.android.materialratingbar.MaterialRatingBar
             android:id="@+id/ratingBar"
@@ -94,7 +94,7 @@
             android:numStars="5"
             android:progressBackgroundTint="@color/ratingBarColor"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView6"
+            app:layout_constraintTop_toBottomOf="@+id/shopDistance"
             app:mrb_progressTint="@color/ratingBarColor" />
 
         <View
@@ -103,17 +103,16 @@
             android:layout_marginTop="@dimen/_10sdp"
             android:background="@color/textSecondaryColor"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView7" />
+            app:layout_constraintTop_toBottomOf="@+id/totalRating" />
 
         <androidx.recyclerview.widget.RecyclerView
-
-            android:id="@+id/recyclerView"
+            android:id="@+id/ProductRecycler"
             android:layout_width="match_parent"
-            tools:listitem="@layout/item_shop_home_page"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="@dimen/_10sdp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView7" />
+            app:layout_constraintTop_toBottomOf="@+id/totalRating"
+            tools:listitem="@layout/item_shop_home_page" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

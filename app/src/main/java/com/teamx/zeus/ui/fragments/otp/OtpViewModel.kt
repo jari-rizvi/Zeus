@@ -26,7 +26,8 @@ class OtpViewModel @Inject constructor(
     val otpVerifyResponse: LiveData<Resource<OtpVerifyData>>
         get() = _otpVerifyResponse
 
-    fun otpVerify(param : JsonObject) {
+    fun otpVerify(param : JsonObject)
+     {
         viewModelScope.launch {
             _otpVerifyResponse.postValue(Resource.loading(null))
             if (networkHelper.isNetworkConnected()) {
@@ -73,7 +74,5 @@ class OtpViewModel @Inject constructor(
             } else _resendOtpResponse.postValue(Resource.error("No internet connection", null))
         }
     }
-
-
 
 }

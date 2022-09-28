@@ -13,14 +13,23 @@ class MainRepository @Inject constructor(
     localDataSource: AppDao
 ) {
     suspend fun login(@Body param : JsonObject) = apiService.login(param)
+
     suspend fun loginPhone(@Body param : JsonObject) = apiService.loginPhone(param)
+
     suspend fun signup(@Body param : JsonObject) = apiService.signup(param)
+
     suspend fun otpVerify(@Body param : JsonObject) = apiService.otpVerify(param)
+
     suspend fun resendOtp(@Body param : JsonObject) = apiService.resendOtp(param)
+
     suspend fun forogtPass(@Body param : JsonObject) = apiService.forgotPass(param)
+
     suspend fun resetPass(@Body param : JsonObject) = apiService.resetPass(param)
+
     suspend fun home() = apiService.home()
 
+    suspend fun shopBySlug() = apiService.shopBySlug()
 
+    suspend fun productsByShop() = apiService.productsByShop()
 
 }
