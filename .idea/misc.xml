@@ -148,6 +148,7 @@
         <entry key="..\:/Jari's Projects/Zeus/app/src/main/res/layout/fragment_rate_app.xml" value="0.36666666666666664" />
         <entry key="..\:/Jari's Projects/Zeus/app/src/main/res/layout/fragment_rate_shop.xml" value="0.33" />
         <entry key="..\:/Jari's Projects/Zeus/app/src/main/res/layout/fragment_review_list.xml" value="0.36666666666666664" />
+        <entry key="..\:/Jari's Projects/Zeus/app/src/main/res/layout/fragment_search.xml" value="0.36666666666666664" />
         <entry key="..\:/Jari's Projects/Zeus/app/src/main/res/layout/fragment_settings.xml" value="0.33" />
         <entry key="..\:/Jari's Projects/Zeus/app/src/main/res/layout/fragment_shop_home_page.xml" value="0.33" />
         <entry key="..\:/Jari's Projects/Zeus/app/src/main/res/layout/fragment_sign_in.xml" value="0.25" />
@@ -166,6 +167,7 @@
         <entry key="..\:/Jari's Projects/Zeus/app/src/main/res/layout/item_product.xml" value="0.36666666666666664" />
         <entry key="..\:/Jari's Projects/Zeus/app/src/main/res/layout/item_redeem_points.xml" value="0.36666666666666664" />
         <entry key="..\:/Jari's Projects/Zeus/app/src/main/res/layout/item_reviews_list.xml" value="0.36666666666666664" />
+        <entry key="..\:/Jari's Projects/Zeus/app/src/main/res/layout/item_search.xml" value="0.365625" />
         <entry key="..\:/Jari's Projects/Zeus/app/src/main/res/layout/item_shop_home_page.xml" value="0.36666666666666664" />
         <entry key="..\:/Jari's Projects/Zeus/app/src/main/res/layout/item_top_product.xml" value="0.36666666666666664" />
         <entry key="..\:/Jari's Projects/Zeus/app/src/main/res/layout/item_top_rated.xml" value="0.5" />
