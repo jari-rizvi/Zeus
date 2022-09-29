@@ -44,6 +44,7 @@ class OtpFragment() : BaseFragment<FragmentOTPBinding, OtpViewModel>() {
     private var phoneNumber: String? = null
     private var sid: String? = null
     private var otpid: String? = null
+
     private lateinit var options: NavOptions
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -109,7 +110,7 @@ class OtpFragment() : BaseFragment<FragmentOTPBinding, OtpViewModel>() {
                                 requireActivity(),
                                 R.id.nav_host_fragment
                             )
-                            navController.navigate(R.id.createNewPassFragment, null, options)
+                            navController.navigate(R.id.homeFragment, null, options)
 
                         }
                     }

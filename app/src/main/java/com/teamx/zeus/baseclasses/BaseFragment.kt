@@ -41,7 +41,6 @@ abstract class BaseFragment<T : ViewDataBinding, V : BaseViewModel> : Fragment()
     protected lateinit var loadingDialog: Dialog
     var lang = "en"
 
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,

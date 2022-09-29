@@ -32,4 +32,6 @@ class MainRepository @Inject constructor(
 
     suspend fun productsByShop() = apiService.productsByShop()
 
+    suspend fun productsBySlug() = apiService.productsBySlug()
+
 }

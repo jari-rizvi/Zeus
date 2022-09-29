@@ -9,6 +9,7 @@ import com.teamx.zeus.data.models.SignUp.RegisterData
 import com.teamx.zeus.data.models.forgotPass.ForgotData
 import com.teamx.zeus.data.models.login.LoginData
 import com.teamx.zeus.data.models.otpVerify.OtpVerifyData
+import com.teamx.zeus.data.models.productBySlug.ProductBySlugData
 import com.teamx.zeus.data.models.productsShop.ShopProductsData
 import com.teamx.zeus.data.models.resendOtp.ResendOtpData
 import com.teamx.zeus.data.models.shopBySlug.ShopBySlugData
@@ -29,11 +30,11 @@ interface ApiService {
     @POST(NetworkCallPoints.OTP_VERIFY)
     suspend fun otpVerify(@Body params: JsonObject?): Response<OtpVerifyData>
 
-    @POST(NetworkCallPoints.FORGOT_PASS)
-    suspend fun forgotPass(@Body params: JsonObject?): Response<ForgotData>
-
     @POST(NetworkCallPoints.RESEND_OTP_VERIFY)
     suspend fun resendOtp(@Body params: JsonObject?): Response<ResendOtpData>
+
+    @POST(NetworkCallPoints.FORGOT_PASS)
+    suspend fun forgotPass(@Body params: JsonObject?): Response<ForgotData>
 
     @POST(NetworkCallPoints.RESET_PASS)
     suspend fun resetPass(@Body params: JsonObject?): Response<ResetPassData>
@@ -46,6 +47,9 @@ interface ApiService {
 
     @GET(NetworkCallPoints.PRODUCTS_BY_ID)
     suspend fun productsByShop(): Response<ShopProductsData>
+
+    @GET(NetworkCallPoints.PRODUCTS_BY_SLUG)
+    suspend fun productsBySlug(): Response<ProductBySlugData>
 
 
 }
