@@ -321,6 +321,13 @@
 
     </style>
 
+    <style name="noah_brown_medium_regular" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/brown</item>
+        <item name="android:fontFamily">@font/noah_regular</item>
+
+    </style>
+
     <style name="noah_brown_medium" parent="Widget.AppCompat.TextView">
         <item name="android:textSize">16sp</item>
         <item name="android:textColor">@color/brown</item>
@@ -341,6 +348,12 @@
         <item name="android:fontFamily">@font/manrope_medium</item>
     </style>
 
+    <style name="manrope_regular_dark" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/upperGredient</item>
+        <item name="android:fontFamily">@font/manrope_regular</item>
+    </style>
+
     <style name="noah_secondary_bold_medium_dark" parent="Widget.AppCompat.TextView">
         <item name="android:textSize">16sp</item>
         <item name="android:textColor">@color/upperGredient</item>
@@ -348,11 +361,31 @@
     </style>
 
     <style name="noah_dark" parent="Widget.AppCompat.TextView">
-        <item name="android:textSize">26sp</item>
+
+    <item name="android:textSize">26sp</item>
+    <item name="android:textColor">@color/upperGredient</item>
+    <item name="android:fontFamily">@font/noah_bold</item>
+
+    </style>
+
+
+    <style name="noah_bold_dark" parent="Widget.AppCompat.TextView">
+
+        <item name="android:textSize">18sp</item>
         <item name="android:textColor">@color/upperGredient</item>
         <item name="android:fontFamily">@font/noah_bold</item>
 
     </style>
+
+    <style name="noah_bold_red" parent="Widget.AppCompat.TextView">
+
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/red</item>
+        <item name="android:fontFamily">@font/noah_bold</item>
+
+    </style>
+
+
 
 
     <style name="manrope_regular_black" parent="Widget.AppCompat.TextView">

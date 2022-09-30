@@ -1,19 +1,15 @@
 package com.teamx.zeus.ui.fragments.cart
 
-import PageAdapter
 import android.os.Bundle
 import android.view.View
-import androidx.fragment.app.Fragment
 import androidx.navigation.NavOptions
 import androidx.navigation.navOptions
 import com.teamx.zeus.BR
 import com.teamx.zeus.R
 import com.teamx.zeus.baseclasses.BaseFragment
 import com.teamx.zeus.databinding.FragmentCartBinding
-import com.teamx.zeus.databinding.FragmentMainBinding
 import com.teamx.zeus.ui.fragments.forgotPass.ForgotPassViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.android.synthetic.main.fragment_main.*
 
 @AndroidEntryPoint
 class CartFragment() : BaseFragment<FragmentCartBinding, ForgotPassViewModel>() {
@@ -27,15 +23,10 @@ class CartFragment() : BaseFragment<FragmentCartBinding, ForgotPassViewModel>() 
 
 
     private lateinit var options: NavOptions
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-
-
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         options = navOptions {
             anim {
                 enter = R.anim.enter_from_left

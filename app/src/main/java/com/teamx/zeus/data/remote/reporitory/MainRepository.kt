@@ -3,6 +3,7 @@ package com.teamx.zeus.data.remote.reporitory
 import com.google.gson.JsonObject
 import com.teamx.zeus.data.local.db.AppDao
 import com.teamx.zeus.data.remote.ApiService
+import com.teamx.zues.data.local.dbmodel.CartDao
 import retrofit2.http.Body
 import retrofit2.http.Path
 import retrofit2.http.Query
@@ -10,8 +11,10 @@ import javax.inject.Inject
 
 class MainRepository @Inject constructor(
     private val apiService: ApiService,
-    localDataSource: AppDao
-) {
+    localDataSource: AppDao,
+    var localDataSource2: CartDao
+
+    ) {
     suspend fun login(@Body param : JsonObject) = apiService.login(param)
 
     suspend fun loginPhone(@Body param : JsonObject) = apiService.loginPhone(param)

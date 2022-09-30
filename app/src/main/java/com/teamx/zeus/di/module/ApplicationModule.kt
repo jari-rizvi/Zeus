@@ -10,6 +10,7 @@ import com.teamx.zeus.data.remote.ApiService
 import com.teamx.zeus.data.remote.reporitory.MainRepository
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
+import com.teamx.zues.data.local.dbmodel.CartDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -61,6 +62,8 @@ class ApplicationModule {
     fun provideDatabase(@ApplicationContext appContext: Context) =
         AppDatabase.getDatabase(appContext)
 
+
+
     @Singleton
     @Provides
     fun provideDataStore(@ApplicationContext appContext: Context) = DataStoreProvider(appContext)
@@ -72,10 +75,18 @@ class ApplicationModule {
 
     @Singleton
     @Provides
+    fun provideCartDao(db: AppDatabase) = db.cartDao()
+
+    @Singleton
+    @Provides
     fun provideRepository(
         apiService: ApiService,
-        localDataSource: AppDao
-    ) =
-        MainRepository(apiService, localDataSource)
+        localDataSource: AppDao,
+        localDataSource2: CartDao,
+        ) =
+        MainRepository(apiService,
+            localDataSource,
+            localDataSource2,
+        )
 
 }

@@ -85,6 +85,11 @@
     <string name="add_to_cart">Add to Cart</string>
     <string name="price">Price</string>
     <string name="laundary">Laundary</string>
+    <string name="total">Total</string>
+    <string name="vat_5">VAT(5%)</string>
+    <string name="subtotal">Subtotal</string>
+    <string name="points">Points</string>
+    <string name="more_to_love">More to love</string>
 
 
 </resources>
