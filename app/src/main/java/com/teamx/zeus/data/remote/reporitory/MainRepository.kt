@@ -4,6 +4,7 @@ import com.google.gson.JsonObject
 import com.teamx.zeus.data.local.db.AppDao
 import com.teamx.zeus.data.remote.ApiService
 import com.teamx.zues.data.local.dbmodel.CartDao
+import com.teamx.zues.data.local.dbmodel.CartTable
 import retrofit2.http.Body
 import retrofit2.http.Path
 import retrofit2.http.Query
@@ -36,5 +37,10 @@ class MainRepository @Inject constructor(
     suspend fun productsByShop() = apiService.productsByShop()
 
     suspend fun productsBySlug() = apiService.productsBySlug()
+
+
+// Local Database
+    fun getAllProducts2(): List<CartTable> = localDataSource2.getAllProducts2()
+
 
 }

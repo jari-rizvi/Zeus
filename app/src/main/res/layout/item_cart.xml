@@ -18,7 +18,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout10"
-            android:layout_width="@dimen/_80sdp"
+            android:layout_width="@dimen/_90sdp"
             android:layout_height="match_parent"
             android:background="@drawable/shape_left_round_fill_white"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -27,46 +27,90 @@
 
 
             <ImageView
-                android:id="@+id/imageView12"
+                android:id="@+id/img"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:scaleType="fitXY"
-                app:srcCompat="@drawable/coffe"
-                tools:layout_editor_absoluteY="9dp" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/coffe" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <TextView
-            android:id="@+id/textView46"
+            android:id="@+id/productName"
+            style="@style/noah_brown_medium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="36dp"
-            style="@style/noah_brown_medium"
             android:text="Coffe"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:layout_editor_absoluteX="118dp" />
+            app:layout_constraintStart_toEndOf="@+id/constraintLayout10"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView47"
+            android:id="@+id/productModifier"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             style="@style/noah_brown_medium_regular"
             android:text="MOCHA"
-            app:layout_constraintEnd_toEndOf="@+id/textView46"
+            app:layout_constraintEnd_toEndOf="@+id/productName"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/textView46"
-            app:layout_constraintTop_toBottomOf="@+id/textView46" />
+            app:layout_constraintStart_toStartOf="@+id/productName"
+            app:layout_constraintTop_toBottomOf="@+id/productName" />
 
         <TextView
-            android:id="@+id/textView48"
+            android:id="@+id/productprice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:text="Aed 3"
             style="@style/noah_medium_medium_dark"
-            app:layout_constraintEnd_toEndOf="@+id/textView47"
+            app:layout_constraintEnd_toEndOf="@+id/productModifier"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/textView47"
-            app:layout_constraintTop_toBottomOf="@+id/textView47" />
+            app:layout_constraintStart_toStartOf="@+id/productModifier"
+            app:layout_constraintTop_toBottomOf="@+id/productModifier" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="82dp"
+            android:layout_height="25dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="@dimen/_6sdp"
+            android:background="@drawable/card_background"
+            android:backgroundTint="@color/Light_purple"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <ImageView
+                android:id="@+id/addProduct"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_baseline_add_circle_24" />
+
+            <ImageView
+                android:id="@+id/subProduct"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_baseline_remove_circle_24" />
+
+            <TextView
+                android:id="@+id/productQuantity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="11dp"
+                android:layout_marginEnd="12dp"
+                android:text="1"
+                style="@style/noah_bold_black_medium"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/subProduct"
+                app:layout_constraintStart_toEndOf="@+id/addProduct"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
