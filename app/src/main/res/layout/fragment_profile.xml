@@ -13,10 +13,10 @@
 
         <ImageView
             android:id="@+id/btnBack"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
+            android:layout_width="@dimen/_22sdp"
+            android:layout_height="@dimen/_22sdp"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_15sdp"
             android:padding="5dp"
             android:src="@drawable/back_white" />
 
@@ -98,9 +98,9 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="20dp"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
                 android:layout_marginBottom="25dp"
                 android:orientation="vertical">
 
@@ -109,7 +109,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_40sdp"
                     android:layout_marginStart="@dimen/_5sdp"
-                    android:layout_marginTop="30dp"
+                    android:layout_marginTop="@dimen/_22sdp"
                     android:layout_marginEnd="@dimen/_5sdp"
                     android:layout_marginBottom="@dimen/_5sdp"
                     android:background="@drawable/item_background"

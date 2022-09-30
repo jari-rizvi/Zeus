@@ -16,14 +16,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:paddingTop="20dp">
+            android:paddingTop="@dimen/_15sdp">
 
 
             <ImageView
                 android:id="@+id/btnBack"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginStart="20dp"
+                android:layout_width="@dimen/_22sdp"
+                android:layout_height="@dimen/_22sdp"
+                android:layout_marginStart="@dimen/_15sdp"
                 android:padding="5dp"
                 android:src="@drawable/back" />
 
@@ -93,7 +93,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="@dimen/_30sdp"
                 android:elevation="1dp"
-                app:cardCornerRadius="10dp"
+                app:cardCornerRadius="@dimen/_7sdp"
                 app:cardElevation="1dp"
                 app:cardMaxElevation="1dp">
 
@@ -103,7 +103,7 @@
                     android:layout_height="match_parent"
                     android:background="@drawable/button_gredient"
                     android:gravity="center"
-                    android:padding="10dp"
+                    android:padding="@dimen/_7sdp"
                     android:text="@string/submit" />
 
             </androidx.cardview.widget.CardView>

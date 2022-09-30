@@ -342,7 +342,7 @@
 
     </style>
 
-    <style name="noah_medium_medium_dark" parent="Widget.AppCompat.TextView">
+        <style name="noah_medium_medium_dark" parent="Widget.AppCompat.TextView">
         <item name="android:textSize">16sp</item>
         <item name="android:textColor">@color/upperGredient</item>
         <item name="android:fontFamily">@font/manrope_medium</item>

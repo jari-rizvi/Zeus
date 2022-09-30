@@ -37,9 +37,9 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginEnd="20dp"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
                     android:orientation="vertical">
 
                     <TextView
@@ -82,15 +82,15 @@
                             android:imeOptions="actionNext"
                             android:inputType="textEmailAddress"
                             android:maxLines="1"
-                            android:paddingStart="30dp"
+                            android:paddingStart="@dimen/_22sdp"
                             android:paddingTop="25dp"
-                            android:paddingEnd="10dp"
+                            android:paddingEnd="@dimen/_7sdp"
                             android:textCursorDrawable="@color/black" />
 
 
                         <ImageView
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
+                            android:layout_width="@dimen/_15sdp"
+                            android:layout_height="@dimen/_15sdp"
                             android:layout_alignParentStart="true"
                             android:layout_alignParentBottom="true"
                             android:layout_marginTop="@dimen/_5sdp"
@@ -111,7 +111,7 @@
                         android:layout_height="@dimen/_40sdp"
                         android:layout_marginTop="15dp"
                         android:elevation="1dp"
-                        app:cardCornerRadius="10dp"
+                        app:cardCornerRadius="@dimen/_7sdp"
                         app:cardElevation="1dp"
                         app:cardMaxElevation="1dp">
 
@@ -121,7 +121,7 @@
                             android:layout_height="match_parent"
                             android:background="@drawable/button_gredient"
                             android:gravity="center"
-                            android:padding="10dp"
+                            android:padding="@dimen/_7sdp"
                             android:text="@string/send" />
 
                     </androidx.cardview.widget.CardView>

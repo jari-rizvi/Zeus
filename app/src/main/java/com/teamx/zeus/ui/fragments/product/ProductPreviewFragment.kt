@@ -1,35 +1,21 @@
 package com.teamx.zeus.ui.fragments.product
 
 import android.os.Bundle
-import android.text.TextUtils
-import android.util.Log
 import android.view.View
-import androidx.databinding.ViewDataBinding
+import android.widget.Toast
 import androidx.lifecycle.Observer
-import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavOptions
 import androidx.navigation.Navigation
 import androidx.navigation.navOptions
-import com.google.android.gms.auth.api.signin.GoogleSignIn
-import com.google.android.gms.auth.api.signin.GoogleSignInClient
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions
-import com.google.gson.JsonObject
 import com.squareup.picasso.Picasso
 import com.teamx.zeus.BR
-import com.teamx.zeus.MainApplication
 import com.teamx.zeus.R
 import com.teamx.zeus.baseclasses.BaseFragment
-import com.teamx.zeus.data.models.productBySlug.Category
 import com.teamx.zeus.data.remote.Resource
 import com.teamx.zeus.databinding.*
-import com.teamx.zeus.localization.LocaleManager
-import com.teamx.zeus.ui.fragments.otp.OtpViewModel
 import com.teamx.zeus.utils.DialogHelperClass
+import com.teamx.zues.data.local.dbmodel.CartTable
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.android.synthetic.main.fragment_shop_home_page.*
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import org.json.JSONException
 
 
 @AndroidEntryPoint
@@ -59,32 +45,51 @@ class ProductPreviewFragment() : BaseFragment<FragmentProductBinding, ProductPre
 
         }
 
-        mViewModel.productPreview()
+        mViewDataBinding.btnAddtoCart.setOnClickListener {
+            mViewModel.productPreviewResponse.value?.data?.let {
+                mViewModel.insertCartProduct(CartTable(0, it))
 
-        mViewModel.productPreviewResponse.observe(requireActivity(), Observer {
-            when (it.status) {
-                Resource.Status.LOADING -> {
-                    loadingDialog.show()
-                }
-                Resource.Status.SUCCESS -> {
-                    loadingDialog.dismiss()
-                    it.data?.let { data ->
-                        mViewDataBinding.ProductName.text = data.name
-                        mViewDataBinding.productDescriptio.text = data.description
-                        mViewDataBinding.productPrice.text = data.price.toString()+" AED"
-                        Picasso.get().load(data.image).into(mViewDataBinding.img)
+                Toast.makeText(requireContext(), "Added To Cart Successfully", Toast.LENGTH_SHORT)
+                    .show()
+            }
 
+            mViewDataBinding.btnBack.setOnClickListener {
+                navController = Navigation.findNavController(
+                    requireActivity(),
+                    R.id.nav_host_fragment
+                )
+                navController.navigate(R.id.cartFragment, null, options)
+            }
+
+
+
+            mViewModel.productPreview()
+
+            mViewModel.productPreviewResponse.observe(requireActivity(), Observer {
+                when (it.status) {
+                    Resource.Status.LOADING -> {
+                        loadingDialog.show()
+                    }
+                    Resource.Status.SUCCESS -> {
+                        loadingDialog.dismiss()
+                        it.data?.let { data ->
+                            mViewDataBinding.ProductName.text = data.name
+                            mViewDataBinding.productDescriptio.text = data.description
+                            mViewDataBinding.productPrice.text = data.price.toString() + " AED"
+                            Picasso.get().load(data.image).into(mViewDataBinding.img)
+
+                        }
+                    }
+                    Resource.Status.ERROR -> {
+                        loadingDialog.dismiss()
+                        DialogHelperClass.errorDialog(requireContext(), it.message!!)
                     }
                 }
-                Resource.Status.ERROR -> {
-                    loadingDialog.dismiss()
-                    DialogHelperClass.errorDialog(requireContext(), it.message!!)
-                }
-            }
-        })
+            })
+
+
+        }
 
 
     }
-
-
 }

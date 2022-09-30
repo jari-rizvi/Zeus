@@ -20,14 +20,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:paddingTop="20dp">
+                android:paddingTop="@dimen/_15sdp">
 
 
                 <ImageView
                     android:id="@+id/btnBack"
                     android:layout_width="@dimen/_30sdp"
                     android:layout_height="@dimen/_25sdp"
-                    android:layout_marginStart="20dp"
+                    android:layout_marginStart="@dimen/_15sdp"
                     android:padding="5dp"
                     android:src="@drawable/back" />
 
@@ -64,8 +64,8 @@
                     android:layout_width="0dp"
                     android:layout_height="45dp"
                     android:layout_marginStart="@dimen/_10sdp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginBottom="@dimen/_15sdp"
                     android:layout_weight="1.6"
                     android:background="@drawable/search_background">
 
@@ -75,7 +75,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentStart="true"
                         android:layout_centerVertical="true"
-                        android:layout_marginStart="20dp"
+                        android:layout_marginStart="@dimen/_15sdp"
                         android:src="@drawable/ic_search" />
 
                     <com.google.android.material.textfield.TextInputEditText
@@ -86,7 +86,7 @@
                         android:layout_toEndOf="@id/btnSearch"
                         android:background="@android:color/transparent"
                         android:hint="@string/search"
-                        android:paddingStart="20dp" />
+                        android:paddingStart="@dimen/_15sdp" />
 
                 </RelativeLayout>
 
@@ -104,8 +104,8 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/categoriesRecycler"
                 android:layout_width="match_parent"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
                 android:layout_height="wrap_content"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 android:orientation="horizontal" />
@@ -113,12 +113,12 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/ProductRecycler"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
                 android:layout_width="match_parent"
                 android:orientation="vertical"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="@dimen/_7sdp"
                 app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                 app:spanCount="2"
                 tools:listitem="@layout/item_top_product" />

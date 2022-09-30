@@ -1,5 +1,6 @@
 package com.teamx.zeus.ui.fragments.product
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
@@ -8,7 +9,9 @@ import com.teamx.zeus.data.models.productBySlug.ProductBySlugData
 import com.teamx.zeus.data.remote.Resource
 import com.teamx.zeus.data.remote.reporitory.MainRepository
 import com.teamx.zeus.utils.NetworkHelper
+import com.teamx.zues.data.local.dbmodel.CartTable
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import org.json.JSONObject
 import javax.inject.Inject
@@ -47,6 +50,22 @@ class ProductPreviewViewModel @Inject constructor(
                     _productPreviewResponse.postValue(Resource.error("${e.message}", null))
                 }
             } else _productPreviewResponse.postValue(Resource.error("No internet connection", null))
+        }
+    }
+
+    fun insertCartProduct(cartTable: CartTable) {
+        Log.d("TAG", "getCarts:1 ")
+        viewModelScope.launch(Dispatchers.IO) {
+            if (networkHelper.isNetworkConnected()) {
+                try {
+                    mainRepository.insertCartProduct(cartTable)
+                } catch (e: Exception) {
+                    Log.d("TAG", "getCarts:3${e.printStackTrace()} ")
+                }
+            } else {
+
+            }
+
         }
     }
 

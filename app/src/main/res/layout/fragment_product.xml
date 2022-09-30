@@ -14,10 +14,10 @@
 
         <ImageView
             android:id="@+id/btnBack"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
+            android:layout_width="@dimen/_22sdp"
+            android:layout_height="@dimen/_22sdp"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_15sdp"
             android:padding="5dp"
             android:src="@drawable/back"
             app:layout_constraintStart_toStartOf="parent"
@@ -27,8 +27,8 @@
             android:id="@+id/btnNotification"
             android:layout_width="40dp"
             android:layout_height="35dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="20dp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
             android:padding="5dp"
             android:src="@drawable/notification"
             app:layout_constraintEnd_toEndOf="parent"
@@ -37,8 +37,8 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout3"
             android:layout_width="347dp"
-            android:layout_height="257dp"
-            android:layout_marginTop="12dp"
+            android:layout_height="@dimen/_170sdp"
+            android:layout_marginTop="@dimen/_10sdp"
             android:background="@drawable/card_background"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -59,7 +59,7 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="@dimen/_55sdp"
-                android:layout_height="27dp"
+                android:layout_height="@dimen/_20sdp"
                 android:layout_marginTop="@dimen/_12sdp"
                 android:layout_marginEnd="@dimen/_15sdp"
                 android:background="@drawable/card_background"
@@ -100,7 +100,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_5sdp"
             app:layout_constraintTop_toBottomOf="@+id/constraintLayout3"
             tools:layout_editor_absoluteX="0dp">
 
@@ -109,7 +109,7 @@
                 style="@style/noah_title"
                 android:layout_width="@dimen/_150sdp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
+                android:layout_marginStart="@dimen/_25sdp"
                 android:layout_marginTop="4dp"
                 android:ellipsize="end"
                 android:maxLines="1"
@@ -121,8 +121,8 @@
                 android:id="@+id/btnremove"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="52dp"
-                android:layout_marginTop="12dp"
+                android:layout_marginStart="@dimen/_45sdp"
+                android:layout_marginTop="@dimen/_8sdp"
                 app:layout_constraintStart_toEndOf="@+id/ProductName"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/ic_remove_btn" />
@@ -188,26 +188,25 @@
                 style="@style/noah_brown_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_marginStart="@dimen/_25sdp"
                 android:text="@string/description"
-                app:layout_constraintStart_toStartOf="@+id/recyclerView3"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/recyclerView3" />
 
             <TextView
                 android:id="@+id/productDescriptio"
                 style="@style/secondary_regular_extra_small"
                 android:layout_width="match_parent"
-                android:layout_height="75dp"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_marginStart="@dimen/_25sdp"
                 android:layout_marginEnd="24dp"
                 android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tristique tincidunt nunc eget venenatis. Duis accumsan lobortis sagittis. Cras sed eleifend purus, et condimentum augue. Aenean laoreet lacus quis"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/textView29"
-                app:layout_constraintHorizontal_bias="0.123"
+                app:layout_constraintHorizontal_bias="0.109"
                 app:layout_constraintStart_toStartOf="@+id/textView29"
                 app:layout_constraintTop_toBottomOf="@+id/textView29"
-                app:layout_constraintVertical_bias="0.012" />
+                app:layout_constraintVertical_bias="0.100" />
 
             <TextView
                 android:id="@+id/textView31"
@@ -221,8 +220,11 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerView2"
-                android:layout_width="355dp"
-                android:layout_height="25dp"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_marginStart="@dimen/_25sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_25sdp"
                 android:orientation="horizontal"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -235,15 +237,18 @@
                 style="@style/noah_brown_medium"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginStart="@dimen/_25sdp"
                 android:text="Size"
-                app:layout_constraintStart_toStartOf="@+id/recyclerView2"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/recyclerView2" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerView3"
-                android:layout_width="357dp"
-                android:layout_height="18dp"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_marginStart="@dimen/_25sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_25sdp"
                 android:orientation="horizontal"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -256,19 +261,19 @@
                 style="@style/noah_brown_medium"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_7sdp"
                 android:text="@string/price"
-                android:layout_marginTop="@dimen/_10sdp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/productDescriptio"
                 app:layout_constraintTop_toBottomOf="@+id/productDescriptio"
-                app:layout_constraintVertical_bias="0.19" />
+                app:layout_constraintVertical_bias="0.0" />
 
             <TextView
                 android:id="@+id/productPrice"
                 style="@style/noah_secondary_bold_medium_dark"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/_20sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
                 android:text="AED 7.00"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/textView34"
@@ -278,17 +283,18 @@
                 app:layout_constraintVertical_bias="0.0" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="170dp"
-                android:layout_height="49dp"
-                android:layout_marginStart="76dp"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:layout_marginBottom="8dp"
+                android:id="@+id/btnAddtoCart"
+                android:layout_width="@dimen/_140sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
                 android:background="@drawable/button_gredient"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.82"
                 app:layout_constraintStart_toEndOf="@+id/productPrice"
                 app:layout_constraintTop_toBottomOf="@+id/productDescriptio"
-                app:layout_constraintVertical_bias="0.619">
+                app:layout_constraintVertical_bias="0.0">
 
                 <TextView
                     android:id="@+id/textView17"

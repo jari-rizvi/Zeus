@@ -42,5 +42,8 @@ class MainRepository @Inject constructor(
 // Local Database
     fun getAllProducts2(): List<CartTable> = localDataSource2.getAllProducts2()
 
+    suspend fun insertCartProduct(cartTable: CartTable) = localDataSource2.insert(cartTable)
+
+
 
 }

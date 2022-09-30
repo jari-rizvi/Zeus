@@ -37,8 +37,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginEnd="20dp"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
                     android:orientation="vertical">
 
                     <androidx.cardview.widget.CardView
@@ -47,7 +47,7 @@
                         android:layout_height="@dimen/_40sdp"
                         android:layout_marginTop="50dp"
                         android:elevation="1dp"
-                        app:cardCornerRadius="10dp"
+                        app:cardCornerRadius="@dimen/_7sdp"
                         app:cardElevation="1dp"
                         app:cardMaxElevation="1dp">
 
@@ -57,7 +57,7 @@
                             android:layout_height="match_parent"
                             android:background="@drawable/button_gredient"
                             android:gravity="center"
-                            android:padding="10dp"
+                            android:padding="@dimen/_7sdp"
                             android:text="@string/guest_login" />
 
                     </androidx.cardview.widget.CardView>
@@ -66,9 +66,9 @@
                         android:id="@+id/btnLogin"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/_40sdp"
-                        android:layout_marginTop="30dp"
+                        android:layout_marginTop="@dimen/_22sdp"
                         android:elevation="1dp"
-                        app:cardCornerRadius="10dp"
+                        app:cardCornerRadius="@dimen/_7sdp"
                         app:cardElevation="1dp"
                         app:cardMaxElevation="1dp">
 
@@ -78,7 +78,7 @@
                             android:layout_height="match_parent"
                             android:background="@drawable/button_gredient"
                             android:gravity="center"
-                            android:padding="10dp"
+                            android:padding="@dimen/_7sdp"
                             android:text="@string/login" />
 
                     </androidx.cardview.widget.CardView>

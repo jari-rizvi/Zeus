@@ -16,14 +16,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:paddingTop="20dp">
+            android:paddingTop="@dimen/_15sdp">
 
 
             <ImageView
                 android:id="@+id/btnBack"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginStart="20dp"
+                android:layout_width="@dimen/_22sdp"
+                android:layout_height="@dimen/_22sdp"
+                android:layout_marginStart="@dimen/_15sdp"
                 android:padding="5dp"
                 android:src="@drawable/back" />
 
@@ -51,7 +51,7 @@
             android:id="@+id/notificationRecyclerView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="@dimen/_7sdp"
             android:padding="@dimen/_10sdp"
             tools:listitem="@layout/item_notification" />
 

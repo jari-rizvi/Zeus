@@ -42,9 +42,9 @@ class CartAdapter(var arrayList: ArrayList<Cart>, val onCartListener: OnCartList
 
             Picasso.get().load(cart.imageUrl).into(holder.binding.img)
 
-            holder.itemCartBinding.root.setOnClickListener {
-                onCartListener.onItemClickListener(position)
-            }
+//            holder.itemCartBinding.root.setOnClickListener {
+//                onCartListener.onItemClickListener(position)
+//            }
 
             holder.binding.addProduct.setOnClickListener {
                 onCartListener.onAddClickListener(position)
