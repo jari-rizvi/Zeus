@@ -93,15 +93,12 @@ class ForgotPassFragment() : BaseFragment<FragmentForgotPassBinding, ForgotPassV
                         loadingDialog.dismiss()
                         it.data?.let { data ->
 
-                            val token = data.token
-                            val email = data.email
-
                             val bundle = Bundle()
-                            bundle.putString("email", email).toString()
-                            bundle.putString("token", token).toString()
+                            bundle.putString("email",userEmail)
+
 
                             navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment)
-                            navController.navigate(R.id.createNewPassFragment, bundle,options)
+                            navController.navigate(R.id.otpForgotFragment, bundle,options)
                         }
                     }
                     Resource.Status.ERROR -> {

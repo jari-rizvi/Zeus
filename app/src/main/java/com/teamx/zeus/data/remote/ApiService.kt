@@ -9,6 +9,7 @@ import com.teamx.zeus.data.models.SignUp.RegisterData
 import com.teamx.zeus.data.models.forgotPass.ForgotData
 import com.teamx.zeus.data.models.login.LoginData
 import com.teamx.zeus.data.models.otpVerify.OtpVerifyData
+import com.teamx.zeus.data.models.otpVerifyForgot.OtpVerifyForgotData
 import com.teamx.zeus.data.models.productBySlug.ProductBySlugData
 import com.teamx.zeus.data.models.productsShop.ShopProductsData
 import com.teamx.zeus.data.models.resendOtp.ResendOtpData
@@ -29,6 +30,9 @@ interface ApiService {
 
     @POST(NetworkCallPoints.OTP_VERIFY)
     suspend fun otpVerify(@Body params: JsonObject?): Response<OtpVerifyData>
+
+    @POST(NetworkCallPoints.OTP_VERIFY_FORGOT)
+    suspend fun otpVerifyForgot(@Body params: JsonObject?): Response<OtpVerifyForgotData>
 
     @POST(NetworkCallPoints.RESEND_OTP_VERIFY)
     suspend fun resendOtp(@Body params: JsonObject?): Response<ResendOtpData>

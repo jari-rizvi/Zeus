@@ -51,6 +51,28 @@ OnCartListener{
             }
         }
 
+
+        cartArrayList?.observe(viewLifecycleOwner) {
+            var totalPrice = 0.0
+            for (cart in it) {
+                cart.productBySlug?.let { itt ->
+                    if (itt.product_type.toString().equals("simple")) {
+                        totalPrice += itt.price!! * cart.quantity
+//                        mViewDataBinding.productPrice.text = data.price.toString()
+                    } else {
+                        totalPrice += itt.price!! * cart.quantity
+//                        mViewDataBinding.productPrice.text = "${data.min_price.toString()}-${data.max_price.toString()}"
+                    }
+                }
+            }
+            mViewDataBinding.subTotal.text = "$totalPrice"
+
+        }
+
+
+
+
+
         loadCart()
         initializeAdapter()
         mViewModel.getCarts()
@@ -131,9 +153,6 @@ OnCartListener{
     }
 
     override fun onAddClickListener(position: Int) {
-        val snackBar = Snackbar.make(mViewDataBinding.cartRecyclerview, "1", Snackbar.LENGTH_SHORT)
-        snackBar.show()
-
         cartArrayList2!![position].quantity = cartArrayList2!![position].quantity + 1
         cartArrayList?.value = cartArrayList2
 
@@ -141,8 +160,7 @@ OnCartListener{
     }
 
     override fun onSubClickListener(position: Int) {
-        val snackBar = Snackbar.make(mViewDataBinding.cartRecyclerview, "2", Snackbar.LENGTH_SHORT)
-        snackBar.show()
+
         if (cartArrayList2!![position].quantity > 1) {
             cartArrayList2!![position].quantity = cartArrayList2!![position].quantity - 1
         }

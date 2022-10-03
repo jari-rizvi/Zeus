@@ -92,7 +92,6 @@ class CreateNewPassFragment() : BaseFragment<FragmentCreatePasswordBinding, Crea
             e.printStackTrace()
         }
 
-        Log.d("UserData", params.toString())
 
         mViewModel.resetPass(params)
 

@@ -27,8 +27,12 @@ class CartAdapter(var arrayList: ArrayList<Cart>, val onCartListener: OnCartList
         holder.binding.productName.text = cart.name
         holder.binding.productModifier.text = cart.modifier
         holder.binding.productQuantity.text = "${cart.quantity}"
+
         cart.productBySlug?.let {
             if (it.product_type.toString().equals("simple")) {
+
+                holder.binding.productprice.text = "${it.price ?: 0 * cart.quantity} AED"
+
 
 //            holder.binding.productPrice.text = "${it.price ?: 0 * cart.quantity} AED"
 ////                mViewDataBinding.productPrice.text = data.price.toString()
@@ -37,6 +41,7 @@ class CartAdapter(var arrayList: ArrayList<Cart>, val onCartListener: OnCartList
 //            holder.binding.productPrice.text = "${it.min_price ?: 0 * cart.quantity} AED"
 //            }
             }
+
 
 
 

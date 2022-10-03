@@ -3,16 +3,21 @@ package com.teamx.zeus.ui.fragments.product
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import androidx.navigation.NavOptions
 import androidx.navigation.Navigation
 import androidx.navigation.navOptions
+import com.google.android.material.snackbar.Snackbar
 import com.squareup.picasso.Picasso
 import com.teamx.zeus.BR
 import com.teamx.zeus.R
 import com.teamx.zeus.baseclasses.BaseFragment
 import com.teamx.zeus.data.remote.Resource
 import com.teamx.zeus.databinding.*
+import com.teamx.zeus.dummyData.Cart
+import com.teamx.zeus.ui.fragments.cart.CartAdapter
+import com.teamx.zeus.ui.fragments.cart.OnCartListener
 import com.teamx.zeus.utils.DialogHelperClass
 import com.teamx.zues.data.local.dbmodel.CartTable
 import dagger.hilt.android.AndroidEntryPoint
@@ -27,7 +32,6 @@ class ProductPreviewFragment() : BaseFragment<FragmentProductBinding, ProductPre
         get() = ProductPreviewViewModel::class.java
     override val bindingVariable: Int
         get() = BR.viewModel
-
 
     private lateinit var options: NavOptions
 
@@ -45,6 +49,7 @@ class ProductPreviewFragment() : BaseFragment<FragmentProductBinding, ProductPre
 
         }
 
+
         mViewDataBinding.btnAddtoCart.setOnClickListener {
             mViewModel.productPreviewResponse.value?.data?.let {
                 mViewModel.insertCartProduct(CartTable(0, it))
@@ -60,8 +65,6 @@ class ProductPreviewFragment() : BaseFragment<FragmentProductBinding, ProductPre
                 )
                 navController.navigate(R.id.cartFragment, null, options)
             }
-
-
 
             mViewModel.productPreview()
 
@@ -92,4 +95,7 @@ class ProductPreviewFragment() : BaseFragment<FragmentProductBinding, ProductPre
 
 
     }
+
+
+
 }

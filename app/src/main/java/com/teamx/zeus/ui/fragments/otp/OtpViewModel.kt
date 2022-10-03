@@ -7,6 +7,7 @@ import com.google.gson.JsonObject
 import com.teamx.zeus.baseclasses.BaseViewModel
 import com.teamx.zeus.data.models.SignUp.RegisterData
 import com.teamx.zeus.data.models.otpVerify.OtpVerifyData
+import com.teamx.zeus.data.models.otpVerifyForgot.OtpVerifyForgotData
 import com.teamx.zeus.data.models.resendOtp.ResendOtpData
 import com.teamx.zeus.data.remote.Resource
 import com.teamx.zeus.data.remote.reporitory.MainRepository
@@ -74,5 +75,34 @@ class OtpViewModel @Inject constructor(
             } else _resendOtpResponse.postValue(Resource.error("No internet connection", null))
         }
     }
+
+
+    private val _otpVerifyForgotResponse = MutableLiveData<Resource<OtpVerifyForgotData>>()
+    val otpVerifyForogtResponse: LiveData<Resource<OtpVerifyForgotData>>
+        get() = _otpVerifyForgotResponse
+
+    fun otpVerifyForgot(param : JsonObject)
+    {
+        viewModelScope.launch {
+            _otpVerifyForgotResponse.postValue(Resource.loading(null))
+            if (networkHelper.isNetworkConnected()) {
+                try {
+                    mainRepository.otpVerifyForgot(param) .let {
+                        if (it.isSuccessful) {
+                            _otpVerifyForgotResponse.postValue(Resource.success(it.body()!!))
+                        } else if (it.code() == 500 || it.code() == 404 || it.code() == 400 || it.code() == 422) {
+                            val jsonObj = JSONObject(it.errorBody()!!.charStream().readText())
+                            _otpVerifyForgotResponse.postValue(Resource.error(jsonObj.getString("message")))
+                        } else {
+                            _otpVerifyForgotResponse.postValue(Resource.error("Some thing went wrong", null))
+                        }
+                    }
+                } catch (e: Exception) {
+                    _otpVerifyForgotResponse.postValue(Resource.error("${e.message}", null))
+                }
+            } else _otpVerifyForgotResponse.postValue(Resource.error("No internet connection", null))
+        }
+    }
+
 
 }
