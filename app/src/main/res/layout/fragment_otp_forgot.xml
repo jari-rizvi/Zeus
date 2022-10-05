@@ -71,13 +71,12 @@
                         android:itemBackground="@color/white"
                         app:cursorColor="@color/black"
                         app:hideLineWhenFilled="false"
-                        app:itemCount="7"
+                        app:itemCount="6"
                         app:itemHeight="50dp"
                         app:itemRadius="8dp"
                         app:itemWidth="50dp"
                         app:lineColor="@color/colorBlack"
                         app:lineWidth="1dp" />
-
 
                     <androidx.cardview.widget.CardView
                         android:id="@+id/btnVerify"

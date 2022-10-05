@@ -23,7 +23,7 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class CartFragment() : BaseFragment<FragmentCartBinding, CartViewModel>(),
-OnCartListener{
+    OnCartListener {
 
     override val layoutId: Int
         get() = R.layout.fragment_cart
@@ -166,7 +166,6 @@ OnCartListener{
         }
         cartArrayList?.value = cartArrayList2
     }
-
 
 
 }

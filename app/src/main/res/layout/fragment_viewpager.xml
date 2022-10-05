@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="@dimen/_22sdp"
+            android:layout_height="@dimen/_22sdp"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:padding="5dp"
+            android:src="@drawable/back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/btnNotification"
+            android:layout_width="40dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:padding="5dp"
+            android:src="@drawable/notification"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="@dimen/_1sdp"
+            android:layout_marginTop="@dimen/_100sdp"
+            android:elevation="@dimen/_5sdp"
+            android:scaleType="fitCenter" />
+
+        <TextView
+            android:id="@+id/textHead"
+            style="@style/noah_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="dsds"
+            app:layout_constraintEnd_toStartOf="@+id/btnNotification"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnBack" />
+
+        <CheckedTextView
+            android:id="@+id/checkedTextView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:background="@drawable/checked_item"
+            android:checked="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textHead" />
+
+        <CheckedTextView
+            android:id="@+id/checkedTextView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/checked_item"
+            android:checked="true"
+            app:layout_constraintBottom_toBottomOf="@+id/checkedTextView2"
+            app:layout_constraintEnd_toStartOf="@+id/checkedTextView4"
+            app:layout_constraintHorizontal_bias="0.493"
+            app:layout_constraintStart_toEndOf="@+id/checkedTextView2"
+            app:layout_constraintTop_toTopOf="@+id/checkedTextView2"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <CheckedTextView
+            android:id="@+id/checkedTextView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/checked_item"
+            android:checked="true"
+            app:layout_constraintBottom_toBottomOf="@+id/checkedTextView3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/checkedTextView3"
+            app:layout_constraintVertical_bias="1.0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

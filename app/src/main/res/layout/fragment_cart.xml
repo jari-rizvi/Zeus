@@ -11,16 +11,15 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginStart="@dimen/_10sdp"
-        android:layout_marginEnd="@dimen/_10sdp"
-        >
+        android:layout_marginEnd="@dimen/_10sdp">
 
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/cartRecyclerview"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_200sdp"
-            android:layout_marginTop="@dimen/_5sdp"
             android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_5sdp"
             android:layout_marginEnd="@dimen/_10sdp"
             android:orientation="vertical"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
@@ -33,9 +32,9 @@
             android:layout_height="0dp"
             android:layout_marginTop="@dimen/_8sdp"
             android:layout_marginBottom="@dimen/_10sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cartRecyclerview">
 
@@ -49,8 +48,8 @@
                     style="@style/noah_medium_medium_dark"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/_5sdp"
-                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
                     android:text="Add more items"
                     app:layout_constraintStart_toStartOf="@+id/cartRecyclerview"
                     app:layout_constraintTop_toBottomOf="@+id/cartRecyclerview" />
@@ -273,7 +272,7 @@
                     style="@style/noah_medium_medium_dark"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginStart="@dimen/_10sdp"
                     android:layout_marginTop="@dimen/_5sdp"
                     android:text="@string/more_to_love"
                     app:layout_constraintStart_toStartOf="@+id/constraintLayout9"
@@ -289,7 +288,6 @@
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/moretolove"
                     tools:listitem="@layout/item_search" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout

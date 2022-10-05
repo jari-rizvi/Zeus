@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_navigation_graph"
-    app:startDestination="@id/tempFragment">
+    app:startDestination="@id/orderHistoryFragment">
 
     <fragment
         android:id="@+id/signInFragment"
@@ -98,7 +98,7 @@
         android:label="RedeemPointsFragment" />
     <fragment
         android:id="@+id/orderHistoryFragment"
-        android:name="com.teamx.zeus.ui.fragments.OrderDetail.OrderHistoryFragment"
+        android:name="com.teamx.zeus.ui.fragments.OrderList.OrderListFragment"
         android:label="OrderHistoryFragment" />
     <fragment
         android:id="@+id/addressFragment"
@@ -120,10 +120,7 @@
         android:id="@+id/productFragment"
         android:name="com.teamx.zeus.ui.fragments.product.ProductPreviewFragment"
         android:label="ProductFragment" />
-    <fragment
-        android:id="@+id/mainFragment"
-        android:name="com.teamx.zeus.ui.fragments.cart.MainFragment"
-        android:label="MainFragment" />
+
     <fragment
         android:id="@+id/cartFragment"
         android:name="com.teamx.zeus.ui.fragments.cart.CartFragment"
@@ -132,6 +129,10 @@
         android:id="@+id/otpForgotFragment"
         android:name="com.teamx.zeus.ui.fragments.otp.OtpForgotFragment"
         android:label="OtpForgotFragment" />
+    <fragment
+        android:id="@+id/viewpagerFragment"
+        android:name="com.teamx.zeus.ui.fragments.cart.ViewpagerFragment"
+        android:label="ViewpagerFragment" />
 
 
 </navigation>

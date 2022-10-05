@@ -26,6 +26,7 @@ class CategoriesAdapter(val arrayList: ArrayList<Categories>, val onTopCategorie
         holder.itemView.setOnClickListener {
             onTopCategoriesListener.onTopSellerClick(position)
         }
+
     }
 
     override fun getItemCount(): Int {

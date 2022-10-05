@@ -87,7 +87,6 @@ class OtpForgotFragment() : BaseFragment<FragmentOtpForgotBinding, OtpViewModel>
                 e.printStackTrace()
             }
 
-
             mViewModel.otpVerifyForgot(params)
 
             mViewModel.otpVerifyForogtResponse.observe(requireActivity(), Observer {

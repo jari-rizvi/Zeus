@@ -40,6 +40,9 @@ class MainRepository @Inject constructor(
 
     suspend fun productsBySlug() = apiService.productsBySlug()
 
+    suspend fun getOrderList(@Query("page") page: Int, @Query("limit") limit: Int) =
+        apiService.getOrders(page, limit)
+
 
 // Local Database
     fun getAllProducts2(): List<CartTable> = localDataSource2.getAllProducts2()
