@@ -2,5 +2,5 @@ package com.teamx.zeus.ui.fragments.Home
 
 interface OnTopProductListener {
 
-    fun onTopSellerClick(position : Int)
+    fun onTopproductClick(position : Int)
 }

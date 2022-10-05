@@ -125,5 +125,14 @@ class HomeFragment() : BaseFragment<FragmentHomeBinding, HomeViewModel>(), OnTop
         categoriesAdapter.notifyDataSetChanged()
     }
 
+    override fun onTopproductClick(position: Int) {
+        sharedViewModel.setProductBySlug(productArrayList[position].slug)
+        navController = Navigation.findNavController(
+            requireActivity(),
+            R.id.nav_host_fragment
+        )
+        navController.navigate(R.id.productFragment, null, options)
+    }
 
 }
+

@@ -2,7 +2,9 @@ package com.teamx.zeus.data.remote
 
 
 import com.google.gson.JsonObject
+import com.teamx.multivendor.dataclasses.addreview.AddReviewData
 import com.teamx.multivendor.dataclasses.allorders.AllOrdersData
+import com.teamx.multivendor.dataclasses.allreviews.AllReviews
 import com.teamx.zeus.constants.NetworkCallPoints
 import com.teamx.zeus.constants.NetworkCallPoints.Companion.TOKENER
 import com.teamx.zeus.data.models.Dashboard.DashboardResponse
@@ -64,5 +66,14 @@ interface ApiService {
             "Bearer $TOKENER"
     ): Response<AllOrdersData>
 
+
+    @GET(NetworkCallPoints.GET_ALL_REVIEWS)
+    suspend fun getRatingList(
+        /*       @Path("id") id: String,
+               @Query("page") page: Int,
+               @Query("limit") limit: Int,*/
+        @Header("Authorization") basicCredentials: String =
+            "Bearer $TOKENER" ?: ""
+    ): Response<AllReviews>
 
 }

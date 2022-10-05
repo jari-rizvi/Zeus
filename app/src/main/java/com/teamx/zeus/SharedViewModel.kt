@@ -1,5 +1,6 @@
 package com.teamx.zeus
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.teamx.zeus.baseclasses.BaseViewModel
 import com.teamx.zeus.data.models.ProductModel
@@ -13,6 +14,14 @@ class SharedViewModel : BaseViewModel() {
     val clickOnContinueBtn: MutableLiveData<Boolean>? = null
 
     val addToCartProduct = MutableLiveData<ArrayList<ProductModel>>()
+
+    private val _productBySlug = MutableLiveData<String>()
+    val productBySlug: LiveData<String>
+        get() = _productBySlug
+
+    fun setProductBySlug(_productBySlug: String) {
+        this._productBySlug.value = _productBySlug
+    }
 
     fun addProduct(model: ProductModel) {
         val list = addToCartProduct.value;

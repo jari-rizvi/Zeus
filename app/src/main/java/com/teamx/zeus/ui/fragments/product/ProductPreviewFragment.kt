@@ -1,6 +1,7 @@
 package com.teamx.zeus.ui.fragments.product
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
@@ -47,6 +48,18 @@ class ProductPreviewFragment() : BaseFragment<FragmentProductBinding, ProductPre
                 popExit = R.anim.nav_default_pop_exit_anim
             }
 
+        }
+
+        mViewDataBinding.btnReview.setOnClickListener {
+
+            Log.d("jsdks",sharedViewModel.productBySlug.value!!)
+
+            sharedViewModel.setProductBySlug(sharedViewModel.productBySlug.value!!)
+            navController = Navigation.findNavController(
+                requireActivity(),
+                R.id.nav_host_fragment
+            )
+            navController.navigate(R.id.reviewListFragment, null, options)
         }
 
 

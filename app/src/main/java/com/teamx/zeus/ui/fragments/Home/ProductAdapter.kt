@@ -27,7 +27,7 @@ class ProductAdapter(val arrayList: ArrayList<PopularProduct>, val onTopProductL
 
 
         holder.itemView.setOnClickListener {
-            onTopProductListener.onTopSellerClick(position)
+            onTopProductListener.onTopproductClick(position)
         }
 
     }
