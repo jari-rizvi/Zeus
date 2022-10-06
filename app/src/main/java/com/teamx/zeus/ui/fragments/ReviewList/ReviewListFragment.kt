@@ -58,13 +58,16 @@ class ReviewListFragment() : BaseFragment<FragmentReviewListBinding, ReviewListV
                 popEnter = R.anim.nav_default_pop_enter_anim
                 popExit = R.anim.nav_default_pop_exit_anim
             }
+        }
 
+        mViewDataBinding.btnBack.setOnClickListener {
+            popUpStack()
         }
 
         initializeAdapter();
 
-
         Log.d("jsdks",sharedViewModel.productBySlug.value!!)
+
         mViewModel.getReviewList(sharedViewModel.productBySlug.value!!, 0, 10)
 
         mViewModel.reviewListResponse.observe(requireActivity(), Observer {
@@ -73,18 +76,15 @@ class ReviewListFragment() : BaseFragment<FragmentReviewListBinding, ReviewListV
                     loadingDialog.show()
                 }
                 Resource.Status.SUCCESS -> {
+
                     Log.d("1235", "onViewCreated: success")
+
                     loadingDialog.dismiss()
                     it.data?.let { data ->
-//                        if (data.flag == 1) {
                         reviewListArrayList.clear()
-
                         reviewListArrayList.addAll(data.docs)
                         reviewListAdapter.notifyDataSetChanged()
 
-//                        } else {
-
-//                        }
                     }
                 }
                 Resource.Status.ERROR -> {
@@ -100,9 +100,6 @@ class ReviewListFragment() : BaseFragment<FragmentReviewListBinding, ReviewListV
 
     private fun initializeAdapter() {
         reviewListArrayList = ArrayList()
-//        orderListArrayList.add(OrderList("Id #123456789", "49.99 AED", "Monday 21 April"))
-//        orderListArrayList.add(OrderList("Id #123456789", "49.99 AED", "Monday 21 April"))
-//        orderListArrayList.add(OrderList("Id #123456789", "49.99 AED", "Monday 21 April"))
 
         val linearLayoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
         mViewDataBinding.reviewRecyclerView.setLayoutManager(linearLayoutManager)

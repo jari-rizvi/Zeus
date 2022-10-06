@@ -36,7 +36,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/tvProfile"
             android:layout_marginStart="@dimen/_20sdp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="@dimen/_8sdp"
             android:layout_marginEnd="@dimen/_20sdp"
             android:elevation="1dp"
             app:cardCornerRadius="15dp"

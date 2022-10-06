@@ -7,14 +7,17 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.ProgressBar
+import android.widget.TextView
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
+import androidx.navigation.ui.setupWithNavController
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.tasks.Task
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.teamx.zeus.BR
 import com.teamx.zeus.MainApplication
 import com.teamx.zeus.R
@@ -47,8 +50,14 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
     lateinit var mGoogleSignInOptions: GoogleSignInOptions
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
+
         initialising()
+
+        bottomNav = findViewById<BottomNavigationView>(R.id.bottom_navigatin_view)
+
+
         navController = Navigation.findNavController(this, R.id.nav_host_fragment)
 
         mGoogleSignInOptions = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -56,57 +65,36 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
             .build()
         mGoogleSignInClient = GoogleSignIn.getClient(this, mGoogleSignInOptions)
 
+        setupBottomNavMenu(navController!!)
 
-//        mFbHelper = FacebookHelper(
-//            this,
-//            "id,name,email,gender,birthday,picture",
-//            this
-//        )
-
-
-    }
-
-//    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-//        super.onActivityResult(requestCode, resultCode, data)
-//
-//        if (requestCode == RC_SIGN_IN) {
-//            val task: Task<GoogleSignInAccount> = GoogleSignIn.getSignedInAccountFromIntent(data)
-//            try {
-//                val account = task.getResult(ApiException::class.java)
-//                firebaseAuthWithGoogle(account!!)
-//            } catch (e: ApiException) {
-//                Log.d("error", e.toString())
-//            }
-//        } else {
-//            mFbHelper!!.onActivityResult(requestCode, resultCode, data)
-//        }
-//
-//    }
+        navController!!.addOnDestinationChangedListener { _, destination, _ ->
+            when (destination.id) {
+                R.id.homeFragment -> {
+                    bottomNav?.visibility = View.VISIBLE
 
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
+                }
+                R.id.cartFragment -> {
+                    bottomNav?.visibility = View.VISIBLE
 
-        // Result returned from launching the Intent from GoogleSignInClient.getSignInIntent(...);
-        if (requestCode == 1000) {
-            // The Task returned from this call is always completed, no need to attach
-            // a listener.
-            val task: Task<GoogleSignInAccount> = GoogleSignIn.getSignedInAccountFromIntent(data)
-            handleSignInResult(task)
+                }
+
+                R.id.shopHomePageFragment -> {
+                    bottomNav?.visibility = View.VISIBLE
+                }
+                R.id.settingsFragment -> {
+                    bottomNav?.visibility = View.VISIBLE
+                }
+
+
+                else -> {
+                    bottomNav?.visibility = View.GONE
+
+
+                }
+            }
         }
-    }
 
-    private fun handleSignInResult(completedTask: Task<GoogleSignInAccount>)    {
-        try {
-            val account = completedTask.getResult(ApiException::class.java)
-
-            // Signed in successfully, show authenticated UI.
-        } catch (e: ApiException) {
-            // The ApiException status code indicates the detailed failure reason.
-            // Please refer to the GoogleSignInStatusCodes class reference for more information.
-            Log.w(ContentValues.TAG, "signInResult:failed code=" + e.statusCode)
-
-        }
     }
 
     private fun initialising() {
@@ -135,3 +123,30 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
     override fun attachBaseContext(newBase: Context?) =
         super.attachBaseContext(MainApplication.localeManager!!.setLocale(newBase!!))
 }
+
+var bottomNav: BottomNavigationView? = null
+
+private fun setupBottomNavMenu(navController: NavController) {
+
+    bottomNav?.setupWithNavController(navController)
+    bottomNav?.setOnItemSelectedListener {
+        when (it.itemId) {
+
+            R.id.profile -> {
+                navController.navigate(R.id.editProfileFragment, null)
+            }
+            R.id.cartFragment -> {
+                navController.navigate(R.id.cartFragment, null)
+            }
+            R.id.homeFragment -> {
+                navController.navigate(R.id.homeFragment, null)
+            }
+            R.id.menuFragment -> {
+                navController.navigate(R.id.profileFragment, null)
+            }
+        }
+        return@setOnItemSelectedListener true
+    }
+
+    }
+

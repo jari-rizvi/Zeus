@@ -40,7 +40,6 @@ class HomeFragment() : BaseFragment<FragmentHomeBinding, HomeViewModel>(), OnTop
 
     private lateinit var options: NavOptions
 
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -89,7 +88,9 @@ class HomeFragment() : BaseFragment<FragmentHomeBinding, HomeViewModel>(), OnTop
                 }
             }
         })
+
         categoriesRecyclerview()
+
     }
 
     private fun categoriesRecyclerview() {
