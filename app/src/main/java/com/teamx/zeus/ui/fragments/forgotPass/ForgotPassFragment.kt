@@ -3,6 +3,7 @@ package com.teamx.zeus.ui.fragments.forgotPass
 import android.os.Bundle
 import android.text.TextUtils
 import android.util.Log
+import android.util.Patterns
 import android.view.View
 import androidx.lifecycle.Observer
 import androidx.navigation.NavOptions
@@ -15,6 +16,7 @@ import com.teamx.zeus.baseclasses.BaseFragment
 import com.teamx.zeus.data.remote.Resource
 import com.teamx.zeus.databinding.FragmentForgotPassBinding
 import com.teamx.zeus.utils.DialogHelperClass
+import com.teamx.zeus.utils.snackbar
 import dagger.hilt.android.AndroidEntryPoint
 import org.json.JSONException
 
@@ -44,20 +46,9 @@ class ForgotPassFragment() : BaseFragment<FragmentForgotPassBinding, ForgotPassV
             }
         }
 
+
         mViewDataBinding.btnSend.setOnClickListener {
-            when {
-                TextUtils.isEmpty(mViewDataBinding.userEmail.text.toString()) -> {
-                    mViewDataBinding.userEmail.error = "Enter Email"
-                    mViewDataBinding.userEmail.requestFocus()
-                }
-
-                else -> {
-                    subscribeToNetworkLiveData()
-
-                }
-
-            }
-
+            isValidate()
         }
 
     }
@@ -109,5 +100,20 @@ class ForgotPassFragment() : BaseFragment<FragmentForgotPassBinding, ForgotPassV
             })
         }
     }
+
+    fun isValidate(): Boolean {
+        if (mViewDataBinding.userEmail.text.toString().trim().isEmpty()) {
+            mViewDataBinding.root.snackbar(getString(R.string.enter_email))
+            return false
+        }
+        if (!Patterns.EMAIL_ADDRESS.matcher(mViewDataBinding.userEmail.text.toString().trim()).matches()){
+            mViewDataBinding.root.snackbar(getString(R.string.invalid_email))
+            return  false
+        }
+
+        subscribeToNetworkLiveData()
+        return true
+    }
+
 
 }

@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.text.TextUtils
 import android.util.Log
 import android.view.View
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.lifecycle.Observer
 import androidx.navigation.NavOptions
 import androidx.navigation.Navigation
@@ -16,11 +17,13 @@ import com.teamx.zeus.data.remote.Resource
 import com.teamx.zeus.databinding.FragmentCreatePasswordBinding
 import com.teamx.zeus.databinding.FragmentForgotPassBinding
 import com.teamx.zeus.utils.DialogHelperClass
+import com.teamx.zeus.utils.snackbar
 import dagger.hilt.android.AndroidEntryPoint
 import org.json.JSONException
 
 @AndroidEntryPoint
-class CreateNewPassFragment() : BaseFragment<FragmentCreatePasswordBinding, CreateNewPassViewModel>() {
+class CreateNewPassFragment() :
+    BaseFragment<FragmentCreatePasswordBinding, CreateNewPassViewModel>() {
 
     override val layoutId: Int
         get() = R.layout.fragment_create_password
@@ -47,74 +50,80 @@ class CreateNewPassFragment() : BaseFragment<FragmentCreatePasswordBinding, Crea
             }
         }
 
-
-        mViewDataBinding.btnNext.setOnClickListener {
-            when {
-                TextUtils.isEmpty(mViewDataBinding.newPass.text.toString()) -> {
-                    mViewDataBinding.newPass.error = "Enter New Password"
-                    mViewDataBinding.newPass.requestFocus()
-                }
-                TextUtils.isEmpty(mViewDataBinding.confirmPass.text.toString()) -> {
-                    mViewDataBinding.confirmPass.error = "Enter Confirm Password"
-                    mViewDataBinding.confirmPass.requestFocus()
-
-                }
-
-                else -> {
-                    resetPassCall()
-
-                }
-
-            }
+        mViewDataBinding.btnNext.setOnClickListener{
+        validate()
 
         }
-
-
     }
 
+        private fun resetPassCall() {
+            super.subscribeToNetworkLiveData()
 
-    private fun resetPassCall() {
-        super.subscribeToNetworkLiveData()
+            val bundle = arguments
+            if (bundle != null) {
+                newPass = mViewDataBinding.newPass.text.toString()
+                token = bundle.getString("token").toString()
+                email = bundle.getString("email").toString()
+            }
 
-        val bundle = arguments
-        if (bundle != null) {
-            newPass = mViewDataBinding.newPass.text.toString()
-            token = bundle.getString("token").toString()
-            email = bundle.getString("email").toString()
-        }
+            val params = JsonObject()
+            try {
+                params.addProperty("password", newPass)
+                params.addProperty("token", token)
+                params.addProperty("email", email)
+            } catch (e: JSONException) {
+                e.printStackTrace()
+            }
 
-        val params = JsonObject()
-        try {
-            params.addProperty("password", newPass)
-            params.addProperty("token", token)
-            params.addProperty("email", email)
-        } catch (e: JSONException) {
-            e.printStackTrace()
-        }
+            mViewModel.resetPass(params)
 
-
-        mViewModel.resetPass(params)
-
-        mViewModel.resetPassResponse.observe(requireActivity(), Observer {
-            when (it.status) {
-                Resource.Status.LOADING -> {
-                    loadingDialog.show()
-                }
-                Resource.Status.SUCCESS -> {
-                    loadingDialog.dismiss()
-                    it.data?.let { data ->
-                        navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment)
-                        navController.navigate(R.id.homeFragment, null,options)
+            mViewModel.resetPassResponse.observe(requireActivity(), Observer {
+                when (it.status) {
+                    Resource.Status.LOADING -> {
+                        loadingDialog.show()
+                    }
+                    Resource.Status.SUCCESS -> {
+                        loadingDialog.dismiss()
+                        it.data?.let { data ->
+                            navController = Navigation.findNavController(
+                                requireActivity(),
+                                R.id.nav_host_fragment
+                            )
+                            navController.navigate(R.id.homeFragment, null, options)
+                        }
+                    }
+                    Resource.Status.ERROR -> {
+                        loadingDialog.dismiss()
+                        DialogHelperClass.errorDialog(requireContext(), it.message!!)
                     }
                 }
-                Resource.Status.ERROR -> {
-                    loadingDialog.dismiss()
-                    DialogHelperClass.errorDialog(requireContext(), it.message!!)
-                }
-            }
-        })
+            })
+        }
+
+    fun validate(): Boolean {
+        if (mViewDataBinding.newPass.text.toString().trim().isEmpty()) {
+            mViewDataBinding.root.snackbar(getString(R.string.enter_Password))
+            return false
+        }
+        if (mViewDataBinding.newPass.text.toString().trim().length < 8) {
+            mViewDataBinding.root.snackbar(getString(R.string.password_8_character))
+            return false
+        }
+        if (mViewDataBinding.confirmPass.text.toString().trim().isEmpty()) {
+            mViewDataBinding.root.snackbar(getString(R.string.enter_Password))
+            return false
+        }
+        if (mViewDataBinding.confirmPass.text.toString().trim().length < 7) {
+            mViewDataBinding.root.snackbar(getString(R.string.password_8_character))
+            return false
+        }
+        if (!mViewDataBinding.newPass.text.toString().trim().equals(mViewDataBinding.confirmPass.text.toString().trim())
+        ) {
+            mViewDataBinding.root.snackbar(getString(R.string.password_does_not_match))
+            return false
+        }
+        resetPassCall()
+        return true
     }
-
-
 
 }

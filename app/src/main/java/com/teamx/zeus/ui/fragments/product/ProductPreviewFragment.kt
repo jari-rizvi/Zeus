@@ -49,7 +49,9 @@ class ProductPreviewFragment() : BaseFragment<FragmentProductBinding, ProductPre
             }
 
         }
-
+mViewDataBinding.btnBack.setOnClickListener {
+    popUpStack()
+}
         mViewDataBinding.btnReview.setOnClickListener {
 
             Log.d("jsdks",sharedViewModel.productBySlug.value!!)

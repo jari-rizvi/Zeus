@@ -10,6 +10,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavOptions
 import androidx.navigation.Navigation
 import androidx.navigation.navOptions
+import com.facebook.appevents.codeless.internal.ViewHierarchy.setOnClickListener
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
@@ -21,6 +22,7 @@ import com.teamx.zeus.baseclasses.BaseFragment
 import com.teamx.zeus.data.remote.Resource
 import com.teamx.zeus.databinding.*
 import com.teamx.zeus.localization.LocaleManager
+import com.teamx.zeus.ui.fragments.Coupons.CouponFragment
 import com.teamx.zeus.ui.fragments.otp.OtpViewModel
 import com.teamx.zeus.utils.DialogHelperClass
 import dagger.hilt.android.AndroidEntryPoint
@@ -41,13 +43,6 @@ class ProfileFragment() : BaseFragment<FragmentProfileBinding, OtpViewModel>() {
 
 
     private lateinit var options: NavOptions
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-
-
-
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -60,6 +55,26 @@ class ProfileFragment() : BaseFragment<FragmentProfileBinding, OtpViewModel>() {
                 popExit = R.anim.nav_default_pop_exit_anim
             }
 
+        }
+
+        mViewDataBinding.btnCoupons.setOnClickListener {
+            navController.navigate(R.id.couponFragment)
+        }
+
+        mViewDataBinding.btnAddress.setOnClickListener {
+            navController.navigate(R.id.addressFragment)
+        }
+
+        mViewDataBinding.btnOrderHistory.setOnClickListener {
+            navController.navigate(R.id.orderHistoryFragment)
+        }
+
+        mViewDataBinding.btnPaymentMethod.setOnClickListener {
+            navController.navigate(R.id.paymentFragment)
+        }
+
+        mViewDataBinding.btnSettings.setOnClickListener {
+            navController.navigate(R.id.settingsFragment)
         }
 
 
