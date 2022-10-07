@@ -5,6 +5,7 @@ import android.text.TextUtils
 import android.util.Log
 import android.util.Patterns
 import android.view.View
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavOptions
 import androidx.navigation.Navigation
@@ -16,6 +17,7 @@ import com.teamx.zeus.baseclasses.BaseFragment
 import com.teamx.zeus.data.remote.Resource
 import com.teamx.zeus.databinding.FragmentLogInBinding
 import com.teamx.zeus.utils.DialogHelperClass
+import com.teamx.zeus.utils.snackbar
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -62,22 +64,8 @@ class LogInFragment() : BaseFragment<FragmentLogInBinding, LoginViewModel>() {
         }
 
         mViewDataBinding.btnLogin.setOnClickListener {
-            when {
-                TextUtils.isEmpty(mViewDataBinding.userEmail.text.toString()) -> {
-                    mViewDataBinding.userEmail.error = "Enter Email"
-                    mViewDataBinding.userEmail.requestFocus()
-                }
-
-                TextUtils.isEmpty(mViewDataBinding.userPass.text.toString()) -> {
-                    mViewDataBinding.userPass.error = "Enter Passwpord"
-                    mViewDataBinding.userPass.requestFocus()
-
-                }
-                else -> {
-                    subscribeToNetworkLiveData()
-                }
+            isValidate()
             }
-        }
 
     }
 
@@ -150,6 +138,28 @@ class LogInFragment() : BaseFragment<FragmentLogInBinding, LoginViewModel>() {
             }
         }
     }
+
+    fun isValidate(): Boolean {
+        if (mViewDataBinding.userEmail.text.toString().trim().isEmpty()) {
+            mViewDataBinding.root.snackbar(getString(R.string.enter_email))
+            return false
+        }
+        if (!Patterns.EMAIL_ADDRESS.matcher(mViewDataBinding.userEmail.text.toString().trim()).matches()){
+            mViewDataBinding.root.snackbar(getString(R.string.invalid_email))
+            return  false
+        }
+        if (mViewDataBinding.userPass.text.toString().trim().isEmpty()) {
+            mViewDataBinding.root.snackbar(getString(R.string.enter_your_password))
+            return false
+        }
+        if (mViewDataBinding.userPass.text.toString().trim().length < 8) {
+            mViewDataBinding.root.snackbar(getString(R.string.password_8_character))
+            return false
+        }
+        subscribeToNetworkLiveData()
+        return true
+    }
+
 
 
 }

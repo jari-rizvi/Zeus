@@ -53,11 +53,6 @@ class SignUpFragment() : BaseFragment<FragmentSignUpBinding, SignupViewModel>() 
     private var password: String? = null
     private var name: String? = null
     private var userNumber: String? = null
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -188,7 +183,5 @@ class SignUpFragment() : BaseFragment<FragmentSignUpBinding, SignupViewModel>() 
         subscribeToNetworkLiveData()
         return true
     }
-
-
 
 }
