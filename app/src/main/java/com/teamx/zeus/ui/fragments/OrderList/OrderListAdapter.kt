@@ -26,12 +26,6 @@ class OrderListAdapter(
         holder.bind.orderPrice.text = "Aed "+orderList.products.get(0).product_id.price.toString()
         Picasso.get().load(orderList.products.get(0).product_id.image).into(holder.bind.img)
 
-//        holder.bind.orderPrice.text = orderList.totalAmount.toString() + " AED"
-
-//        holder.itemView.setOnClickListener {
-//            onOrderListListener.OnOrderClickListener(orderList._id)
-//        }
-
     }
 
     override fun getItemCount(): Int {

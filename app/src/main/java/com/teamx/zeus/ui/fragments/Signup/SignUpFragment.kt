@@ -35,7 +35,6 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import org.json.JSONException
 
-
 @AndroidEntryPoint
 class SignUpFragment() : BaseFragment<FragmentSignUpBinding, SignupViewModel>() {
 

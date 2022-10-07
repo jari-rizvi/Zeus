@@ -140,6 +140,7 @@
         <entry key="..\:/Jari's Projects/Zeus/app/src/main/res/layout/fragment_contact_us.xml" value="0.36666666666666664" />
         <entry key="..\:/Jari's Projects/Zeus/app/src/main/res/layout/fragment_coupons.xml" value="0.36666666666666664" />
         <entry key="..\:/Jari's Projects/Zeus/app/src/main/res/layout/fragment_create_password.xml" value="0.36666666666666664" />
+        <entry key="..\:/Jari's Projects/Zeus/app/src/main/res/layout/fragment_currency.xml" value="0.36666666666666664" />
         <entry key="..\:/Jari's Projects/Zeus/app/src/main/res/layout/fragment_edit_profile.xml" value="0.22" />
         <entry key="..\:/Jari's Projects/Zeus/app/src/main/res/layout/fragment_forgot_pass.xml" value="0.33" />
         <entry key="..\:/Jari's Projects/Zeus/app/src/main/res/layout/fragment_home.xml" value="0.36666666666666664" />
@@ -173,6 +174,7 @@
         <entry key="..\:/Jari's Projects/Zeus/app/src/main/res/layout/item_categories.xml" value="0.36666666666666664" />
         <entry key="..\:/Jari's Projects/Zeus/app/src/main/res/layout/item_checkout.xml" value="0.36666666666666664" />
         <entry key="..\:/Jari's Projects/Zeus/app/src/main/res/layout/item_coupon.xml" value="0.36666666666666664" />
+        <entry key="..\:/Jari's Projects/Zeus/app/src/main/res/layout/item_currency.xml" value="0.365625" />
         <entry key="..\:/Jari's Projects/Zeus/app/src/main/res/layout/item_menu.xml" value="0.36666666666666664" />
         <entry key="..\:/Jari's Projects/Zeus/app/src/main/res/layout/item_notification.xml" value="0.33" />
         <entry key="..\:/Jari's Projects/Zeus/app/src/main/res/layout/item_options.xml" value="0.36666666666666664" />

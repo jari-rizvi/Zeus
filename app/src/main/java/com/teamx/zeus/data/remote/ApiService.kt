@@ -7,6 +7,7 @@ import com.teamx.multivendor.dataclasses.allorders.AllOrdersData
 import com.teamx.multivendor.dataclasses.allreviews.AllReviews
 import com.teamx.zeus.constants.NetworkCallPoints
 import com.teamx.zeus.constants.NetworkCallPoints.Companion.TOKENER
+import com.teamx.zeus.data.dataclasses.currency.CurrencyData
 import com.teamx.zeus.data.models.Dashboard.DashboardResponse
 import com.teamx.zeus.data.models.ResetPass.ResetPassData
 import com.teamx.zeus.data.models.SignUp.RegisterData
@@ -65,6 +66,9 @@ interface ApiService {
         @Header("Authorization") basicCredentials: String =
             "Bearer $TOKENER"
     ): Response<AllOrdersData>
+
+    @GET(NetworkCallPoints.Currency)
+    suspend fun getCurrency(): Response<CurrencyData>
 
 
     @GET(NetworkCallPoints.GET_ALL_REVIEWS)

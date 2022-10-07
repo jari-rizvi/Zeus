@@ -45,8 +45,13 @@ class MainRepository @Inject constructor(
             @Query("page") page: Int,
             @Query("limit") limit: Int*/
     ) = apiService.getRatingList(/*id, page, limit*/)
+
     suspend fun getOrderList(@Query("page") page: Int, @Query("limit") limit: Int) =
         apiService.getOrders(page, limit)
+
+
+    suspend fun getCurrency() =
+        apiService.getCurrency()
 
 
 // Local Database
