@@ -5,10 +5,12 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.teamx.zeus.data.dataclasses.currency.CurrencyModel
 import com.teamx.zeus.databinding.ItemCurrencyBinding
+import com.teamx.zeus.ui.fragments.Home.OnTopCategoriesListener
 import kotlin.collections.ArrayList
 
 class CurrencyListAdapter(
     val currencyArrayList: ArrayList<CurrencyModel>,
+    val OnCurrencyListener: OnCurrencyListener
 ) : RecyclerView.Adapter<CurrencyViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CurrencyViewHolder {
@@ -21,7 +23,12 @@ class CurrencyListAdapter(
         val currencyList: CurrencyModel = currencyArrayList[position]
         holder.bind.name.text = currencyList.name
         holder.bind.rate.text = currencyList.rate.toString()
+        holder.bind.checkedTextView.isChecked = currencyList.isChecked
 
+
+        holder.itemView.setOnClickListener {
+            OnCurrencyListener.onCurrencyClick(position)
+        }
     }
 
     override fun getItemCount(): Int {
