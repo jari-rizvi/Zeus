@@ -68,7 +68,7 @@
                             android:layout_alignParentBottom="true"
                             android:layout_marginTop="@dimen/_5sdp"
                             android:background="@android:color/transparent"
-                            android:hint="Enter your email / phone"
+                            android:hint="Enter your email / phone (+92) "
                             android:imeOptions="actionNext"
                             android:inputType="textEmailAddress"
                             android:maxLines="1"

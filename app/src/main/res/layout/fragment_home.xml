@@ -61,6 +61,7 @@
                 android:weightSum="2">
 
                 <RelativeLayout
+                    android:id="@+id/search"
                     android:layout_width="0dp"
                     android:layout_height="45dp"
                     android:layout_marginStart="@dimen/_10sdp"
@@ -104,8 +105,8 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/categoriesRecycler"
                 android:layout_width="match_parent"
-                android:layout_marginStart="@dimen/_15sdp"
-                android:layout_marginEnd="@dimen/_15sdp"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
                 android:layout_height="wrap_content"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 android:orientation="horizontal" />

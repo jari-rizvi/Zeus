@@ -57,6 +57,11 @@ class HomeFragment() : BaseFragment<FragmentHomeBinding, HomeViewModel>(), OnTop
             navController.navigate(R.id.paymentFragment, null,options)
         }
 
+        mViewDataBinding.editSearch.setOnClickListener {
+            navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment)
+            navController.navigate(R.id.searchFragment, null,options)
+        }
+
         productRecyclerview()
 
         mViewModel.home()

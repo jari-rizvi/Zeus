@@ -1,35 +1,16 @@
 package com.teamx.zeus.ui.fragments.profile
 
 import android.os.Bundle
-import android.text.TextUtils
-import android.util.Log
 import android.view.View
-import androidx.databinding.ViewDataBinding
-import androidx.lifecycle.Observer
-import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavOptions
 import androidx.navigation.Navigation
 import androidx.navigation.navOptions
-import com.facebook.appevents.codeless.internal.ViewHierarchy.setOnClickListener
-import com.google.android.gms.auth.api.signin.GoogleSignIn
-import com.google.android.gms.auth.api.signin.GoogleSignInClient
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions
-import com.google.gson.JsonObject
 import com.teamx.zeus.BR
-import com.teamx.zeus.MainApplication
 import com.teamx.zeus.R
 import com.teamx.zeus.baseclasses.BaseFragment
-import com.teamx.zeus.data.remote.Resource
 import com.teamx.zeus.databinding.*
-import com.teamx.zeus.localization.LocaleManager
-import com.teamx.zeus.ui.fragments.Coupons.CouponFragment
 import com.teamx.zeus.ui.fragments.otp.OtpViewModel
-import com.teamx.zeus.utils.DialogHelperClass
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import org.json.JSONException
-
 
 @AndroidEntryPoint
 class ProfileFragment() : BaseFragment<FragmentProfileBinding, OtpViewModel>() {
@@ -40,7 +21,6 @@ class ProfileFragment() : BaseFragment<FragmentProfileBinding, OtpViewModel>() {
         get() = OtpViewModel::class.java
     override val bindingVariable: Int
         get() = BR.viewModel
-
 
     private lateinit var options: NavOptions
 
@@ -59,7 +39,6 @@ class ProfileFragment() : BaseFragment<FragmentProfileBinding, OtpViewModel>() {
 
         mViewDataBinding.btnBack.setOnClickListener {
             popUpStack()
-
         }
 
         mViewDataBinding.btnCoupons.setOnClickListener {
@@ -88,11 +67,6 @@ class ProfileFragment() : BaseFragment<FragmentProfileBinding, OtpViewModel>() {
         }
 
 
-
-
-
-
     }
-
 
 }

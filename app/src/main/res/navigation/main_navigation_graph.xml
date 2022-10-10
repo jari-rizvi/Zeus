@@ -137,6 +137,10 @@
         android:id="@+id/currencyFragment"
         android:name="com.teamx.zeus.ui.fragments.currency.CurrencyFragment"
         android:label="CurrencyFragment" />
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.teamx.zeus.ui.fragments.search.SearchFragment"
+        android:label="SearchFragment" />
 
 
 </navigation>

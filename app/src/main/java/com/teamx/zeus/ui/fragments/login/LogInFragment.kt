@@ -144,10 +144,7 @@ class LogInFragment() : BaseFragment<FragmentLogInBinding, LoginViewModel>() {
             mViewDataBinding.root.snackbar(getString(R.string.enter_email))
             return false
         }
-        if (!Patterns.EMAIL_ADDRESS.matcher(mViewDataBinding.userEmail.text.toString().trim()).matches()){
-            mViewDataBinding.root.snackbar(getString(R.string.invalid_email))
-            return  false
-        }
+
         if (mViewDataBinding.userPass.text.toString().trim().isEmpty()) {
             mViewDataBinding.root.snackbar(getString(R.string.enter_your_password))
             return false

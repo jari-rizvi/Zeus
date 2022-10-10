@@ -82,9 +82,18 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
                 R.id.shopHomePageFragment -> {
                     bottomNav?.visibility = View.VISIBLE
                 }
+
                 R.id.settingsFragment -> {
                     bottomNav?.visibility = View.VISIBLE
                 }
+
+                R.id.editProfileFragment -> {
+                    bottomNav?.visibility = View.VISIBLE
+                }
+                R.id.profileFragment -> {
+                    bottomNav?.visibility = View.VISIBLE
+                }
+
 
 
                 else -> {

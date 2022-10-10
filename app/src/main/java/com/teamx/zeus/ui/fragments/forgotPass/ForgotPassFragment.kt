@@ -46,7 +46,6 @@ class ForgotPassFragment() : BaseFragment<FragmentForgotPassBinding, ForgotPassV
             }
         }
 
-
         mViewDataBinding.btnSend.setOnClickListener {
             isValidate()
         }

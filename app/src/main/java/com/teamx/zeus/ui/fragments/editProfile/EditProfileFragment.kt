@@ -65,6 +65,10 @@ class EditProfileFragment() : BaseFragment<FragmentEditProfileBinding, AuthViewM
 
 
         }
+        mViewDataBinding.btnBack.setOnClickListener {
+            popUpStack()
+
+        }
 
 
 

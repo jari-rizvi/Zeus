@@ -167,7 +167,7 @@ class SignUpFragment() : BaseFragment<FragmentSignUpBinding, SignupViewModel>() 
             mViewDataBinding.root.snackbar(getString(R.string.enter_your_password))
             return false
         }
-        if (mViewDataBinding.userPhone.text.toString().trim().startsWith("+")) {
+        if (mViewDataBinding.userPhone.text.toString().trim().startsWith("0")) {
             mViewDataBinding.root.snackbar(getString(R.string.enter_Number_with_Country_Code))
             return false
         }
