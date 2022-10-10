@@ -57,24 +57,34 @@ class ProfileFragment() : BaseFragment<FragmentProfileBinding, OtpViewModel>() {
 
         }
 
+        mViewDataBinding.btnBack.setOnClickListener {
+            popUpStack()
+
+        }
+
         mViewDataBinding.btnCoupons.setOnClickListener {
-            navController.navigate(R.id.couponFragment)
+            navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment)
+            navController.navigate(R.id.couponFragment, null,options)
         }
 
         mViewDataBinding.btnAddress.setOnClickListener {
-            navController.navigate(R.id.addressFragment)
+            navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment)
+            navController.navigate(R.id.addressFragment, null,options)
         }
 
         mViewDataBinding.btnOrderHistory.setOnClickListener {
-            navController.navigate(R.id.orderHistoryFragment)
+            navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment)
+            navController.navigate(R.id.orderHistoryFragment, null,options)
         }
 
         mViewDataBinding.btnPaymentMethod.setOnClickListener {
-            navController.navigate(R.id.paymentFragment)
+            navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment)
+            navController.navigate(R.id.paymentFragment, null,options)
         }
 
         mViewDataBinding.btnSettings.setOnClickListener {
-            navController.navigate(R.id.settingsFragment)
+            navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment)
+            navController.navigate(R.id.settingsFragment, null,options)
         }
 
 

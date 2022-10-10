@@ -62,6 +62,10 @@ class CouponFragment() : BaseFragment<FragmentCouponsBinding, AuthViewModel>() {
 
 
         }
+        mViewDataBinding.btnBack.setOnClickListener {
+            popUpStack()
+
+        }
 
 
 

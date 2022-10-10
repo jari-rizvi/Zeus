@@ -43,6 +43,13 @@ class SettingsFragment : BaseFragment<FragmentSettingsBinding, TempViewModel>() 
             }
         }
 
+        mViewDataBinding.btnBack.setOnClickListener {
+            popUpStack()
+
+        }
+
+
+
 
 
 
