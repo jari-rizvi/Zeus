@@ -40,15 +40,12 @@ class MainRepository @Inject constructor(
 
     suspend fun productsBySlug() = apiService.productsBySlug()
 
-    suspend fun getRatingList(
-        /*    @Path("id") id: String,
-            @Query("page") page: Int,
-            @Query("limit") limit: Int*/
-    ) = apiService.getRatingList(/*id, page, limit*/)
+    suspend fun getRatingList() = apiService.getRatingList(/*id, page, limit*/)
 
     suspend fun getOrderList(@Query("page") page: Int, @Query("limit") limit: Int) =
         apiService.getOrders(page, limit)
 
+    suspend fun placeReview(param: JsonObject) = apiService.placeReview(params = param)
 
     suspend fun getCurrency() =
         apiService.getCurrency()

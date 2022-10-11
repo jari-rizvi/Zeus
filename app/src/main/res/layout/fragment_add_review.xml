@@ -75,15 +75,15 @@
 
 
                     <EditText
+                        android:id="@+id/editProductReview"
+                        style="@style/noah_light_medium"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:hint="@string/tell_us_what_you_think"
-                        style="@style/noah_light_medium"
                         android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
                         android:layout_marginEnd="@dimen/_10sdp"
                         android:background="@android:color/transparent"
-                        />
+                        android:hint="@string/tell_us_what_you_think" />
 
                 </RelativeLayout>
 
@@ -114,7 +114,7 @@
 
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/btnGuest"
+                android:id="@+id/btnAddReview"
                 android:layout_width="@dimen/_200sdp"
                 android:layout_height="@dimen/_40sdp"
                 android:layout_marginTop="@dimen/_40sdp"

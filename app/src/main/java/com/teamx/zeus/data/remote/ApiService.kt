@@ -84,4 +84,11 @@ interface ApiService {
             "Bearer $TOKENER" ?: ""
     ): Response<AllReviews>
 
+    @POST(NetworkCallPoints.GET_ALL_REVIEWS)
+    suspend fun placeReview(
+        @Header("Authorization") basicCredentials: String = "Bearer $TOKENER" ?: "",
+        @Body params: JsonObject?
+//        @Header("Authorization") basicCredentials: String = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzYW1hQHRlYW14Lmdsb2JhbCIsInJvbGVzIjpbImN1c3RvbWVyIl0sImlhdCI6MTY2MzE3MzQ3NywiZXhwIjoxNjYzNzc4Mjc3fQ.X_YTIys9MlZbdCqfUz2qu9gkW5Zfsyq7Q3SvvjvuC4Y"
+    ): Response<AddReviewData>
+
 }
