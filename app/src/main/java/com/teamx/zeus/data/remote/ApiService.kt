@@ -7,6 +7,7 @@ import com.teamx.multivendor.dataclasses.allorders.AllOrdersData
 import com.teamx.multivendor.dataclasses.allreviews.AllReviews
 import com.teamx.zeus.constants.NetworkCallPoints
 import com.teamx.zeus.constants.NetworkCallPoints.Companion.TOKENER
+import com.teamx.zeus.data.dataclasses.coupouns.CoupounData
 import com.teamx.zeus.data.dataclasses.currency.CurrencyData
 import com.teamx.zeus.data.models.Dashboard.DashboardResponse
 import com.teamx.zeus.data.models.ResetPass.ResetPassData
@@ -69,6 +70,9 @@ interface ApiService {
 
     @GET(NetworkCallPoints.Currency)
     suspend fun getCurrency(): Response<CurrencyData>
+
+    @GET(NetworkCallPoints.COUPOUNS)
+    suspend fun getCoupoun(): Response<CoupounData>
 
 
     @GET(NetworkCallPoints.GET_ALL_REVIEWS)

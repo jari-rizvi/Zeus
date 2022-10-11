@@ -3,6 +3,7 @@ package com.teamx.zeus.ui.fragments.OrderList
 import android.os.Bundle
 import android.view.View
 import androidx.navigation.NavOptions
+import androidx.navigation.Navigation
 import androidx.navigation.navOptions
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -16,7 +17,7 @@ import com.teamx.zeus.utils.DialogHelperClass
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class OrderListFragment() : BaseFragment<FragmentOrderListBinding, OrderListViewModel>() {
+class OrderListFragment() : BaseFragment<FragmentOrderListBinding, OrderListViewModel>(), OnOrderListListener {
 
     override val layoutId: Int
         get() = R.layout.fragment_order_list
@@ -70,7 +71,7 @@ class OrderListFragment() : BaseFragment<FragmentOrderListBinding, OrderListView
             popUpStack()
         }
 
-        initializeAdapter();
+        initializeAdapter()
 
     }
 
@@ -81,8 +82,22 @@ class OrderListFragment() : BaseFragment<FragmentOrderListBinding, OrderListView
         val linearLayoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
         mViewDataBinding.orderlistRecyclerView.layoutManager = linearLayoutManager
 
-        orderListAdapter = OrderListAdapter(orderListArrayList)
+        orderListAdapter = OrderListAdapter(orderListArrayList,this)
         mViewDataBinding.orderlistRecyclerView.adapter = orderListAdapter
 
     }
+
+    override fun OnOrderClickListener(position: String) {
+    }
+
+    override fun onAddReviewClickListener(position: String) {
+        val bundle = Bundle()
+        bundle.putString(
+            "itemId", position
+                .toString()
+        ).toString()
+        navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment)
+        navController.navigate(R.id.addReviewFragment, bundle, options)
+    }
+
 }

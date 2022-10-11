@@ -17,6 +17,7 @@ class NetworkCallPoints {
         const val PRODUCTS_BY_ID ="products?shop=6318a59c6937e0d2e791d94a";
         const val PRODUCTS_BY_SLUG ="products/cyo-crush-on-blush-powder-blush";
         const val Currency ="/settings/currency?currency=PKR";
+        const val COUPOUNS ="coupons";
 
 
         //Orders

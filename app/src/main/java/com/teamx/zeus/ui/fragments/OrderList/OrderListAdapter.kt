@@ -9,6 +9,7 @@ import com.teamx.zeus.databinding.ItemOrderListBinding
 
 class OrderListAdapter(
     val orderArrayList: ArrayList<DocX>,
+    val onOrderListListener: OnOrderListListener
 ) : RecyclerView.Adapter<OrderViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): OrderViewHolder {
@@ -25,6 +26,10 @@ class OrderListAdapter(
         holder.bind.orderType.text = orderList.products.get(0).product_id.type.dropLast(18)
         holder.bind.orderPrice.text = "Aed "+orderList.products.get(0).product_id.price.toString()
         Picasso.get().load(orderList.products.get(0).product_id.image).into(holder.bind.img)
+
+        holder.bind.btnReview.setOnClickListener {
+            onOrderListListener.onAddReviewClickListener(orderList._id)
+        }
 
     }
 
