@@ -14,8 +14,8 @@
 
         <ImageView
             android:id="@+id/btnBack"
-            android:layout_width="10dp"
-            android:layout_height="31dp"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_20sdp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:adjustViewBounds="true"
@@ -31,7 +31,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/btnBack"
             android:layout_marginStart="172dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="@dimen/_35sdp"
             android:gravity="center"
             android:text="@string/profile"
             android:textColor="@color/white"
@@ -42,7 +42,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginTop="@dimen/_25sdp"
+            android:layout_marginTop="@dimen/_20sdp"
             android:background="@drawable/shape_top_round_fill_white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -63,10 +63,10 @@
                 android:text="@string/sign_up"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.504"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.972" />
-
+                app:layout_constraintVertical_bias="0.952" />
 
             <TextView
                 android:id="@+id/textView35"
@@ -234,7 +234,9 @@
                 style="@style/noah_secondary_bold_medium"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="19dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:layout_marginBottom="@dimen/_8sdp"
                 android:background="@android:color/transparent"
                 android:gravity="center_vertical"
                 android:paddingStart="@dimen/_7sdp"
@@ -242,7 +244,7 @@
                 android:text="@string/full_name"
                 app:layout_constraintBottom_toTopOf="@+id/relativeLayout3"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/profilePicture" />
+                app:layout_constraintTop_toBottomOf="@+id/topLayout" />
 
             <RelativeLayout
                 android:id="@+id/relativeLayout3"
@@ -282,32 +284,47 @@
                     android:src="@drawable/ic_profile" />
             </RelativeLayout>
 
-
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/profilePicture"
-                android:layout_width="@dimen/_91sdp"
-                android:layout_height="@dimen/_91sdp"
-                android:layout_centerInParent="true"
-                android:layout_marginTop="@dimen/_3sdp"
-                android:background="@drawable/border_background"
-                android:elevation="@dimen/_5sdp"
-                android:padding="@dimen/_2sdp"
-                android:src="@mipmap/ic_launcher"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/topLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:layout_weight="1"
+                app:layout_constraintBottom_toTopOf="@+id/textView46"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias=".75">
 
-            <ImageView
-                android:id="@+id/btnAddPicture"
-                android:layout_width="118dp"
-                android:layout_height="100dp"
-                android:src="@drawable/icon_camera"
-                app:layout_constraintBottom_toTopOf="@+id/textView46"
-                app:layout_constraintEnd_toEndOf="@id/profilePicture"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/profilePicture"
-                app:layout_constraintTop_toTopOf="@id/profilePicture"
-                app:layout_constraintVertical_bias="0.0" />
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/profilePicture"
+                    android:layout_width="@dimen/_91sdp"
+                    android:layout_height="@dimen/_91sdp"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/border_background"
+                    android:elevation="@dimen/_5sdp"
+                    android:padding="@dimen/_2sdp"
+                    android:src="@mipmap/ic_launcher"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <ImageView
+                    android:id="@+id/btnAddPicture"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/icon_camera"
+                    app:layout_constraintBottom_toBottomOf="@id/profilePicture"
+                    app:layout_constraintEnd_toEndOf="@id/profilePicture"
+                    app:layout_constraintStart_toStartOf="@+id/profilePicture"
+                    app:layout_constraintTop_toTopOf="@id/profilePicture" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
