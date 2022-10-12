@@ -1,7 +1,11 @@
-package com.teamx.multivendor.dataclasses.customeraddress
+package com.teamx.zues.dataclasses.customeraddress
 
-import com.teamx.multivendor.dataclasses.Profile
+import com.teamx.zues.dataclasses.Profile
 
+import androidx.annotation.Keep
+
+ 
+@Keep
 data class Customer(
     val __v: Int,
     val _id: String,

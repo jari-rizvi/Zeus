@@ -16,7 +16,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.gson.JsonObject
-import com.teamx.multivendor.dataclasses.allreviews.Doc
+import com.teamx.zues.dataclasses.allreviews.Doc
 import com.teamx.zeus.BR
 import com.teamx.zeus.MainApplication
 import com.teamx.zeus.R

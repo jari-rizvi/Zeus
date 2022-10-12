@@ -1,5 +1,9 @@
-package com.teamx.multivendor.dataclasses.addreview
+package com.teamx.zues.dataclasses.addreview
 
+import androidx.annotation.Keep
+
+
+@Keep
 data class AddReviewData(
     val comment: String,
     val photos: List<String>,

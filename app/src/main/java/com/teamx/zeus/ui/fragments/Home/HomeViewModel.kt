@@ -4,8 +4,8 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
+import com.teamx.zues.dataclasses.dashboard.DashboardData
 import com.teamx.zeus.baseclasses.BaseViewModel
-import com.teamx.zeus.data.models.Dashboard.DashboardResponse
 import com.teamx.zeus.data.remote.Resource
 import com.teamx.zeus.data.remote.reporitory.MainRepository
 import com.teamx.zeus.utils.NetworkHelper
@@ -19,8 +19,8 @@ class HomeViewModel @Inject constructor(
     private val networkHelper: NetworkHelper
 ) : BaseViewModel() {
 
-    private val _homeResponse = MutableLiveData<Resource<DashboardResponse>>()
-    val homeResponse: LiveData<Resource<DashboardResponse>>
+    private val _homeResponse = MutableLiveData<Resource<DashboardData>>()
+    val homeResponse: LiveData<Resource<DashboardData>>
         get() = _homeResponse
 
     fun home() {

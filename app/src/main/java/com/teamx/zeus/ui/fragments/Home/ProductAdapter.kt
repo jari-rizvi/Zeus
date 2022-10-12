@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
-import com.teamx.zeus.data.models.Dashboard.PopularProduct
+import com.teamx.zues.dataclasses.dashboard.PopularProduct
 import com.teamx.zeus.databinding.ItemTopProductBinding
 
 class ProductAdapter(val arrayList: ArrayList<PopularProduct>, val onTopProductListener: OnTopProductListener ) : RecyclerView.Adapter<ProductAdapter.TopProductViewHolder>() {

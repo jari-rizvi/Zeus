@@ -1,5 +1,9 @@
-package com.teamx.multivendor.dataclasses.notification
+package com.teamx.zues.dataclasses.notification
 
+import androidx.annotation.Keep
+
+
+@Keep
 data class NotificationData(
     val docs: List<Doc>,
     val hasNextPage: Boolean,

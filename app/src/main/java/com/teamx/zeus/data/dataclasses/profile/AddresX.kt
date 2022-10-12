@@ -1,7 +1,11 @@
-package com.teamx.multivendor.dataclasses.profile
+package com.teamx.zues.dataclasses.profile
 
-import com.teamx.multivendor.dataclasses.Address
+import com.teamx.zues.dataclasses.Address
 
+import androidx.annotation.Keep
+
+
+@Keep
 data class AddresX(
     val __v: Int,
     val _id: String,

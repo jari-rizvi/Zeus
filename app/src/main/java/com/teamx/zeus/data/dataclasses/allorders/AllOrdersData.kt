@@ -1,5 +1,9 @@
-package com.teamx.multivendor.dataclasses.allorders
+package com.teamx.zues.dataclasses.allorders
 
+import androidx.annotation.Keep
+
+ 
+@Keep
 data class AllOrdersData(
     val docs: List<DocX>,
     val hasNextPage: Boolean,

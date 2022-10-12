@@ -1,5 +1,9 @@
-package com.teamx.multivendor.dataclasses.dashboard
+package com.teamx.zues.dataclasses.dashboard
 
+import androidx.annotation.Keep
+
+ 
+@Keep
 data class Location(
     val _id: String,
     val city: String,

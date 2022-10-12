@@ -8,7 +8,7 @@ import androidx.navigation.navOptions
 import com.google.gson.Gson
 import com.google.gson.JsonObject
 import com.google.gson.JsonParser
-import com.teamx.multivendor.dataclasses.addreview.AddReviewData
+import com.teamx.zues.dataclasses.addreview.AddReviewData
 import com.teamx.zeus.BR
 import com.teamx.zeus.R
 import com.teamx.zeus.baseclasses.BaseFragment

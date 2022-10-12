@@ -1,5 +1,9 @@
-package com.teamx.multivendor.dataclasses.products
+package com.teamx.zues.dataclasses.products
 
+import androidx.annotation.Keep
+
+ 
+@Keep
 data class Variation(
     val __v: Int,
     val _id: String,

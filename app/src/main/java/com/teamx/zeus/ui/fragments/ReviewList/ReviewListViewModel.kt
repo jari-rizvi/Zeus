@@ -3,7 +3,7 @@ package com.teamx.zeus.ui.fragments.ReviewList
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
-import com.teamx.multivendor.dataclasses.allreviews.AllReviews
+import com.teamx.zues.dataclasses.allreviews.AllReviews
 import com.teamx.zeus.baseclasses.BaseViewModel
 import com.teamx.zeus.data.remote.Resource
 import com.teamx.zeus.data.remote.reporitory.MainRepository

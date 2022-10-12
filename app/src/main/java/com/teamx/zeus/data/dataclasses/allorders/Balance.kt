@@ -1,5 +1,9 @@
-package com.teamx.multivendor.dataclasses.allorders
+package com.teamx.zues.dataclasses.allorders
 
+import androidx.annotation.Keep
+
+
+@Keep
 data class Balance(
     val _id: String,
     val admin_commission_rate: Int,

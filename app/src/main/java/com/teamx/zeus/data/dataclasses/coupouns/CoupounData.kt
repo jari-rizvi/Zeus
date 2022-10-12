@@ -1,5 +1,9 @@
 package com.teamx.zeus.data.dataclasses.coupouns
 
+import androidx.annotation.Keep
+
+
+@Keep
 data class CoupounData(
     val docs: List<Doc>,
     val hasNextPage: Boolean,

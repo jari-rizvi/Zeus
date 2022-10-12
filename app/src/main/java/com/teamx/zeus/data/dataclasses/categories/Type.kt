@@ -1,5 +1,9 @@
-package com.teamx.multivendor.dataclasses.categories
+package com.teamx.zues.dataclasses.categories
 
+import androidx.annotation.Keep
+
+
+@Keep
 data class Type(
     val __v: Int,
     val _id: String,

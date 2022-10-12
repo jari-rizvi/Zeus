@@ -1,5 +1,9 @@
 package com.teamx.zeus.data.models.productBySlug
 
+import androidx.annotation.Keep
+
+
+@Keep
 data class PaymentInfo(
     val _id: String,
     val account: String,

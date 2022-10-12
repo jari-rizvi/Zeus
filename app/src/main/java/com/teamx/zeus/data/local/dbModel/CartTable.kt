@@ -6,6 +6,8 @@ import androidx.room.PrimaryKey
 import com.teamx.zeus.data.models.productBySlug.ProductBySlugData
 
 @Entity(tableName = "cart_table")
+
+
 data class CartTable(
     @PrimaryKey(autoGenerate = true)
     val id: Int = 0,

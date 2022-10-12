@@ -1,7 +1,11 @@
-package com.teamx.multivendor.dataclasses.customeraddress
+package com.teamx.zues.dataclasses.customeraddress
 
-import com.teamx.multivendor.dataclasses.Address
+import com.teamx.zues.dataclasses.Address
 
+import androidx.annotation.Keep
+
+
+@Keep
 data class Doc(
     val __v: Int,
     val _id: String,

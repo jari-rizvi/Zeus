@@ -3,7 +3,7 @@ package com.teamx.zeus.ui.fragments.currency
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
-import com.teamx.multivendor.dataclasses.allorders.AllOrdersData
+import com.teamx.zues.dataclasses.allorders.AllOrdersData
 import com.teamx.zeus.baseclasses.BaseViewModel
 import com.teamx.zeus.data.dataclasses.currency.CurrencyData
 import com.teamx.zeus.data.remote.Resource

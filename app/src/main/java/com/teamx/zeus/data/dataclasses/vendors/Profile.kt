@@ -1,5 +1,9 @@
-package com.teamx.multivendor.dataclasses.vendors
+package com.teamx.zues.dataclasses.vendors
 
+import androidx.annotation.Keep
+
+ 
+@Keep
 data class Profile(
     val _id: String,
     val avatar: String,

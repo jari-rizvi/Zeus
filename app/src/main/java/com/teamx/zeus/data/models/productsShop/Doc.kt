@@ -1,5 +1,9 @@
 package com.teamx.zeus.data.models.productsShop
 
+import androidx.annotation.Keep
+
+
+@Keep
 data class Doc(
     val __v: Int,
     val _id: String,

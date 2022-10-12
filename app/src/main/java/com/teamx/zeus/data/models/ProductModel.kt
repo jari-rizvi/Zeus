@@ -1,5 +1,9 @@
 package com.teamx.zeus.data.models
 
+import androidx.annotation.Keep
+
+ 
+@Keep
 data class ProductModel(
     val id: Int,
     val title: String,

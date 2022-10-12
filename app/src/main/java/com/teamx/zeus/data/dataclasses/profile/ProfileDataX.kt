@@ -1,7 +1,11 @@
-package com.teamx.multivendor.dataclasses.profile
+package com.teamx.zues.dataclasses.profile
 
-import com.teamx.multivendor.dataclasses.Profile
+import com.teamx.zues.dataclasses.Profile
 
+import androidx.annotation.Keep
+
+
+@Keep
 data class ProfileDataX(
     val __v: Int,
     val _id: String,

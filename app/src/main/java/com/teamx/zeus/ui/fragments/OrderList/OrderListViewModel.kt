@@ -3,7 +3,7 @@ package com.teamx.zeus.ui.fragments.OrderList
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
-import com.teamx.multivendor.dataclasses.allorders.AllOrdersData
+import com.teamx.zues.dataclasses.allorders.AllOrdersData
 import com.teamx.zeus.baseclasses.BaseViewModel
 import com.teamx.zeus.data.remote.Resource
 import com.teamx.zeus.data.remote.reporitory.MainRepository

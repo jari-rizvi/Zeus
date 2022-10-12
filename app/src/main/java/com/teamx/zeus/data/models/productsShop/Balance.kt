@@ -1,5 +1,9 @@
 package com.teamx.zeus.data.models.productsShop
 
+import androidx.annotation.Keep
+
+
+@Keep
 data class Balance(
     val _id: String,
     val admin_commission_rate: Int,

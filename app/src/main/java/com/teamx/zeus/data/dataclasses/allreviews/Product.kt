@@ -1,7 +1,11 @@
-package com.teamx.multivendor.dataclasses.allreviews
+package com.teamx.zues.dataclasses.allreviews
 
-import com.teamx.multivendor.dataclasses.VariationOption
+import com.teamx.zues.dataclasses.VariationOption
 
+import androidx.annotation.Keep
+
+
+@Keep
 data class Product(
     val __v: Int,
     val _id: String,

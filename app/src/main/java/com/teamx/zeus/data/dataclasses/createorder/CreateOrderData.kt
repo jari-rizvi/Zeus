@@ -1,5 +1,9 @@
-package com.teamx.multivendor.dataclasses.createorder
+package com.teamx.zues.dataclasses.createorder
 
+import androidx.annotation.Keep
+
+
+@Keep
 data class CreateOrderData(
     val amount: Int,
     val billing_address: BillingAddress?,

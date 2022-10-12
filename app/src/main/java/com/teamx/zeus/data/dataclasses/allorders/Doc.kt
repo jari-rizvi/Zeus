@@ -1,7 +1,11 @@
-package com.teamx.multivendor.dataclasses.allorders
+package com.teamx.zues.dataclasses.allorders
 
-import com.teamx.multivendor.dataclasses.Shop
+import com.teamx.zues.dataclasses.Shop
 
+import androidx.annotation.Keep
+
+
+@Keep
 data class Doc(
     val __v: Int,
     val _id: String,

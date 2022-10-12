@@ -1,8 +1,12 @@
-package com.teamx.multivendor.dataclasses.shopbyslud
+package com.teamx.zues.dataclasses.shopbyslud
 
-import com.teamx.multivendor.dataclasses.Address
-import com.teamx.multivendor.dataclasses.Balance
+import com.teamx.zues.dataclasses.Address
+import com.teamx.zues.dataclasses.Balance
 
+import androidx.annotation.Keep
+
+
+@Keep
 data class ShopBySlug(
     val __v: Int,
     val _id: String,

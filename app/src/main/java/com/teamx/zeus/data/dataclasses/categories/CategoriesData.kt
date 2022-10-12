@@ -1,5 +1,9 @@
-package com.teamx.multivendor.dataclasses.categories
+package com.teamx.zues.dataclasses.categories
 
+import androidx.annotation.Keep
+
+
+@Keep
 data class CategoriesData(
     val docs: List<Doc>,
     val hasNextPage: Boolean,

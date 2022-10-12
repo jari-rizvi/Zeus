@@ -1,8 +1,12 @@
-package com.teamx.multivendor.dataclasses.popularproduct
+package com.teamx.zues.dataclasses.popularproduct
 
-import com.teamx.multivendor.dataclasses.Shop
-import com.teamx.multivendor.dataclasses.VariationOption
+import com.teamx.zues.dataclasses.Shop
+import com.teamx.zues.dataclasses.VariationOption
 
+import androidx.annotation.Keep
+
+
+@Keep
 data class Doc(
     val __v: Int,
     val _id: String,

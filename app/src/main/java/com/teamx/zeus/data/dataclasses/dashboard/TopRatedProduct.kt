@@ -1,7 +1,11 @@
-package com.teamx.multivendor.dataclasses.dashboard
+package com.teamx.zues.dataclasses.dashboard
 
-import com.teamx.multivendor.dataclasses.VariationOption
+import com.teamx.zues.dataclasses.VariationOption
 
+import androidx.annotation.Keep
+
+
+@Keep
 data class TopRatedProduct(
     val __v: Int,
     val _id: String,

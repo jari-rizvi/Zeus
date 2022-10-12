@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.google.gson.JsonObject
-import com.teamx.multivendor.dataclasses.addreview.AddReviewData
+import com.teamx.zues.dataclasses.addreview.AddReviewData
 import com.teamx.zeus.baseclasses.BaseViewModel
 import com.teamx.zeus.data.remote.Resource
 import com.teamx.zeus.data.remote.reporitory.MainRepository

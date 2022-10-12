@@ -1,7 +1,11 @@
-package com.teamx.multivendor.dataclasses.placeorder
+package com.teamx.zues.dataclasses.placeorder
 
-import com.teamx.multivendor.dataclasses.createorder.Product
+import com.teamx.zues.dataclasses.createorder.Product
 
+import androidx.annotation.Keep
+
+
+@Keep
 data class PlaceOrderDataItem(
     val __v: Int,
     val _id: String,

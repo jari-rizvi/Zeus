@@ -1,5 +1,9 @@
-package com.teamx.multivendor.dataclasses.createorder
+package com.teamx.zues.dataclasses.createorder
 
+import androidx.annotation.Keep
+
+ 
+@Keep
 data class Product(
     val order_quantity: Int,
     val product_id: String,

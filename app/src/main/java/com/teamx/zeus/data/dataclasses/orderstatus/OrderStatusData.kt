@@ -1,5 +1,9 @@
-package com.teamx.multivendor.dataclasses.orderstatus
+package com.teamx.zues.dataclasses.orderstatus
 
+import androidx.annotation.Keep
+
+ 
+@Keep
 data class OrderStatusData(
     val __v: Int,
     val _id: String,

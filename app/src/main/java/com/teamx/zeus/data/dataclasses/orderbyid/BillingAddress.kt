@@ -1,5 +1,9 @@
-package com.teamx.multivendor.dataclasses.orderbyid
+package com.teamx.zues.dataclasses.orderbyid
 
+import androidx.annotation.Keep
+
+ 
+@Keep
 data class BillingAddress(
     val _id: String,
     val city: String,

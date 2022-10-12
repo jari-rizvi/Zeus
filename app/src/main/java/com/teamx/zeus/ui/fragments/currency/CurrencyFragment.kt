@@ -6,7 +6,7 @@ import androidx.navigation.NavOptions
 import androidx.navigation.navOptions
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.teamx.multivendor.dataclasses.allorders.DocX
+import com.teamx.zues.dataclasses.allorders.DocX
 import com.teamx.zeus.BR
 import com.teamx.zeus.R
 import com.teamx.zeus.baseclasses.BaseFragment

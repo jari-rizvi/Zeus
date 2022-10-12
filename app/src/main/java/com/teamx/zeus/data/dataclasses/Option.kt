@@ -1,5 +1,9 @@
-package com.teamx.multivendor.dataclasses
+package com.teamx.zues.dataclasses
 
+import androidx.annotation.Keep
+
+
+@Keep
 data class Option(
     val _id: String,
     val createdAt: String,

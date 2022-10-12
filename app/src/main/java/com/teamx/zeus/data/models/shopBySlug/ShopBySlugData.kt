@@ -1,5 +1,9 @@
 package com.teamx.zeus.data.models.shopBySlug
 
+import androidx.annotation.Keep
+
+ 
+@Keep
 data class ShopBySlugData(
     val __v: Int,
     val _id: String,

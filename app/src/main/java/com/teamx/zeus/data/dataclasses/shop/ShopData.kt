@@ -1,5 +1,9 @@
-package com.teamx.multivendor.dataclasses.shop
+package com.teamx.zues.dataclasses.shop
 
+import androidx.annotation.Keep
+
+ 
+@Keep
 data class ShopData(
     val docs: List<Doc>,
     val hasNextPage: Boolean,

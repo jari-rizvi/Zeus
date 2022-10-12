@@ -1,5 +1,9 @@
-package com.teamx.multivendor.dataclasses.settings
+package com.teamx.zues.dataclasses.settings
 
+import androidx.annotation.Keep
+
+ 
+@Keep
 data class SettingData(
     val __v: Int,
     val _id: String,

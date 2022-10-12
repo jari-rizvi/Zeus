@@ -1,7 +1,11 @@
-package com.teamx.multivendor.dataclasses.orderbyid
+package com.teamx.zues.dataclasses.orderbyid
 
-import com.teamx.multivendor.dataclasses.VariationOption
+import com.teamx.zues.dataclasses.VariationOption
 
+import androidx.annotation.Keep
+
+
+@Keep
 data class ProductId(
     val __v: Int,
     val _id: String,

@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
-import com.teamx.multivendor.dataclasses.allorders.DocX
+import com.teamx.zues.dataclasses.allorders.DocX
 import com.teamx.zeus.databinding.ItemOrderListBinding
 
 class OrderListAdapter(

@@ -1,5 +1,9 @@
 package com.teamx.zeus.data.models.otpVerifyForgot
 
+import androidx.annotation.Keep
+
+
+@Keep
 data class OtpVerifyForgotData(
     val message: String,
     val success: Boolean,

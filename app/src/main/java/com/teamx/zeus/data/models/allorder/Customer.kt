@@ -1,5 +1,9 @@
 package com.teamx.zeus.data.models.allorder
 
+import androidx.annotation.Keep
+
+ 
+@Keep
 data class Customer(
     val __v: Int,
     val _id: String,

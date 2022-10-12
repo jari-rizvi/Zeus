@@ -1,5 +1,9 @@
-package com.teamx.multivendor.dataclasses.placeorder
+package com.teamx.zues.dataclasses.placeorder
 
+import androidx.annotation.Keep
+
+
+@Keep
 data class ShippingAddress(
     val _id: String,
     val city: String,

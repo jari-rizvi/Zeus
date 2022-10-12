@@ -1,5 +1,9 @@
 package com.teamx.zeus.data.models.shopBySlug
 
+import androidx.annotation.Keep
+
+
+@Keep
 data class Address(
     val city: String,
     val country: String,

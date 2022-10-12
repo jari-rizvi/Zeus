@@ -1,12 +1,12 @@
-//package com.teamx.multivendor.ui.activity
+//package com.teamx.zues.ui.activity
 //
 //import android.content.Intent
 //import androidx.appcompat.app.AppCompatActivity
 //import android.os.Bundle
 //import android.os.Handler
 //import android.os.Looper
-//import com.teamx.multivendor.R
-//import com.teamx.multivendor.ui.activity.mainActivity.MainActivity
+//import com.teamx.zues.R
+//import com.teamx.zues.ui.activity.mainActivity.MainActivity
 //
 //class SplashActivity : AppCompatActivity() {
 //    override fun onCreate(savedInstanceState: Bundle?) {

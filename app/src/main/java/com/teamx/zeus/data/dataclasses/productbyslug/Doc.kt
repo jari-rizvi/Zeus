@@ -1,5 +1,9 @@
-package com.teamx.multivendor.dataclasses.productbyslug
+package com.teamx.zues.dataclasses.productbyslug
 
+import androidx.annotation.Keep
+
+
+@Keep
 data class Doc(
     val category: Category,
     val products: List<Product>

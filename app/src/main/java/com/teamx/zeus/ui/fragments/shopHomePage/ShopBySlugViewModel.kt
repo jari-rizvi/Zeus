@@ -5,7 +5,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.teamx.zeus.baseclasses.BaseViewModel
-import com.teamx.zeus.data.models.Dashboard.DashboardResponse
 import com.teamx.zeus.data.models.productsShop.ShopProductsData
 import com.teamx.zeus.data.models.shopBySlug.ShopBySlugData
 import com.teamx.zeus.data.remote.Resource

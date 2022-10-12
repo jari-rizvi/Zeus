@@ -1,5 +1,9 @@
-package com.teamx.multivendor.dataclasses.popularproduct
+package com.teamx.zues.dataclasses.popularproduct
 
+import androidx.annotation.Keep
+
+
+@Keep
 data class PopularProductData(
     val docs: List<Doc>,
     val hasNextPage: Boolean,

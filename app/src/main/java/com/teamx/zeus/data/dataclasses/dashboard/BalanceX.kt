@@ -1,7 +1,11 @@
-package com.teamx.multivendor.dataclasses.dashboard
+package com.teamx.zues.dataclasses.dashboard
 
-import com.teamx.multivendor.dataclasses.PaymentInfo
+import com.teamx.zues.dataclasses.PaymentInfo
 
+import androidx.annotation.Keep
+
+ 
+@Keep
 data class BalanceX(
     val _id: String,
     val admin_commission_rate: Int,

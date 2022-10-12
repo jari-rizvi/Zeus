@@ -10,16 +10,15 @@ import androidx.navigation.navOptions
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.teamx.zues.dataclasses.dashboard.PopularProduct
 import com.teamx.zeus.BR
 import com.teamx.zeus.R
 import com.teamx.zeus.baseclasses.BaseFragment
-import com.teamx.zeus.data.models.Dashboard.PopularProduct
 import com.teamx.zeus.data.remote.Resource
 import com.teamx.zeus.databinding.*
 import com.teamx.zeus.dummyData.Categories
 import com.teamx.zeus.utils.DialogHelperClass
 import dagger.hilt.android.AndroidEntryPoint
-
 
 @AndroidEntryPoint
 class HomeFragment() : BaseFragment<FragmentHomeBinding, HomeViewModel>(), OnTopCategoriesListener,

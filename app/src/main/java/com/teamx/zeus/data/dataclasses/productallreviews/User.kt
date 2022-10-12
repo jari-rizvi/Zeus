@@ -1,7 +1,11 @@
-package com.teamx.multivendor.dataclasses.productallreviews
+package com.teamx.zues.dataclasses.productallreviews
 
-import com.teamx.multivendor.dataclasses.Profile
+import com.teamx.zues.dataclasses.Profile
 
+import androidx.annotation.Keep
+
+ 
+@Keep
 data class User(
     val __v: Int,
     val _id: String,

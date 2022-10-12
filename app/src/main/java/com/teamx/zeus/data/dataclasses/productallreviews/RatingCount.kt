@@ -1,5 +1,9 @@
-package com.teamx.multivendor.dataclasses.productallreviews
+package com.teamx.zues.dataclasses.productallreviews
 
+import androidx.annotation.Keep
+
+
+@Keep
 data class RatingCount(
     val _id: String,
     val abusive_reports_count: Int,

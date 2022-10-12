@@ -1,5 +1,9 @@
 package com.teamx.zeus.data.models.allorder
 
+import androidx.annotation.Keep
+
+
+@Keep
 data class ShippingAddress(
     val _id: String,
     val city: String,

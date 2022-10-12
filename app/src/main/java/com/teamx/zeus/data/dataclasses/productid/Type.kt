@@ -1,7 +1,11 @@
-package com.teamx.multivendor.dataclasses.productid
+package com.teamx.zues.dataclasses.productid
 
-import com.teamx.multivendor.dataclasses.SettingsX
+import com.teamx.zues.dataclasses.SettingsX
 
+import androidx.annotation.Keep
+
+
+@Keep
 data class Type(
     val __v: Int,
     val _id: String,

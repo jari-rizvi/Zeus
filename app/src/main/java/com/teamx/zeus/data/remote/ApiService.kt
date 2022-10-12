@@ -2,14 +2,14 @@ package com.teamx.zeus.data.remote
 
 
 import com.google.gson.JsonObject
-import com.teamx.multivendor.dataclasses.addreview.AddReviewData
-import com.teamx.multivendor.dataclasses.allorders.AllOrdersData
-import com.teamx.multivendor.dataclasses.allreviews.AllReviews
+import com.teamx.zues.dataclasses.addreview.AddReviewData
+import com.teamx.zues.dataclasses.allorders.AllOrdersData
+import com.teamx.zues.dataclasses.allreviews.AllReviews
+import com.teamx.zues.dataclasses.dashboard.DashboardData
 import com.teamx.zeus.constants.NetworkCallPoints
 import com.teamx.zeus.constants.NetworkCallPoints.Companion.TOKENER
 import com.teamx.zeus.data.dataclasses.coupouns.CoupounData
 import com.teamx.zeus.data.dataclasses.currency.CurrencyData
-import com.teamx.zeus.data.models.Dashboard.DashboardResponse
 import com.teamx.zeus.data.models.ResetPass.ResetPassData
 import com.teamx.zeus.data.models.SignUp.RegisterData
 import com.teamx.zeus.data.models.forgotPass.ForgotData
@@ -49,7 +49,7 @@ interface ApiService {
     suspend fun resetPass(@Body params: JsonObject?): Response<ResetPassData>
 
     @GET(NetworkCallPoints.HOME)
-    suspend fun home(): Response<DashboardResponse>
+    suspend fun home(): Response<DashboardData>
 
     @GET(NetworkCallPoints.SHOP_BY_SLUG)
     suspend fun shopBySlug(): Response<ShopBySlugData>

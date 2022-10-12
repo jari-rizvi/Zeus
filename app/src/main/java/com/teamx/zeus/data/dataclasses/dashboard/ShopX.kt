@@ -1,7 +1,11 @@
-package com.teamx.multivendor.dataclasses.dashboard
+package com.teamx.zues.dataclasses.dashboard
 
-import com.teamx.multivendor.dataclasses.Address
+import com.teamx.zues.dataclasses.Address
 
+import androidx.annotation.Keep
+
+
+@Keep
 data class ShopX(
     val __v: Int,
     val _id: String,

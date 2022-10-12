@@ -1,5 +1,9 @@
-package com.teamx.multivendor.dataclasses.allreviews
+package com.teamx.zues.dataclasses.allreviews
 
+import androidx.annotation.Keep
+
+
+@Keep
 data class AllReviews(
     val docs: List<Doc>,
     val hasNextPage: Boolean,

@@ -1,5 +1,9 @@
-package com.teamx.multivendor.dataclasses.customeraddress
+package com.teamx.zues.dataclasses.customeraddress
 
+import androidx.annotation.Keep
+
+ 
+@Keep
 data class CustomerAddressData(
     val docs: List<Doc>,
     val hasNextPage: Boolean,

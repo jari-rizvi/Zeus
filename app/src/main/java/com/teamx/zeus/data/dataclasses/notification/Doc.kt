@@ -1,5 +1,9 @@
-package com.teamx.multivendor.dataclasses.notification
+package com.teamx.zues.dataclasses.notification
 
+import androidx.annotation.Keep
+
+
+@Keep
 data class Doc(
     val __v: Int,
     val _id: String,
