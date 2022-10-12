@@ -34,12 +34,14 @@ class ProfileFragment() : BaseFragment<FragmentProfileBinding, OtpViewModel>() {
                 popEnter = R.anim.nav_default_pop_enter_anim
                 popExit = R.anim.nav_default_pop_exit_anim
             }
-
         }
+
 
         mViewDataBinding.btnBack.setOnClickListener {
             popUpStack()
         }
+
+        mViewDataBinding.tvProfile
 
         mViewDataBinding.btnCoupons.setOnClickListener {
             navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment)

@@ -7,13 +7,11 @@
 
     </data>
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
             <RelativeLayout
@@ -114,17 +112,18 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/ProductRecycler"
-                android:layout_marginStart="@dimen/_15sdp"
-                android:layout_marginEnd="@dimen/_15sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
                 android:layout_width="match_parent"
                 android:orientation="vertical"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_7sdp"
+                android:layout_marginBottom="@dimen/_45sdp"
                 app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                 app:spanCount="2"
                 tools:listitem="@layout/item_top_product" />
 
         </LinearLayout>
 
-    </ScrollView>
+
 </layout>

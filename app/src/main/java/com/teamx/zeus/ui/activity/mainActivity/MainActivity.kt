@@ -78,10 +78,6 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
                     bottomNav?.visibility = View.VISIBLE
 
                 }
-                R.id.editProfileFragment -> {
-                    bottomNav?.visibility = View.VISIBLE
-
-                }
 
                 R.id.shopHomePageFragment -> {
                     bottomNav?.visibility = View.VISIBLE
@@ -91,15 +87,8 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
                     bottomNav?.visibility = View.VISIBLE
                 }
 
-                R.id.profileFragment -> {
-                    bottomNav?.visibility = View.VISIBLE
-                }
-
-
-
                 else -> {
                     bottomNav?.visibility = View.GONE
-
 
                 }
             }

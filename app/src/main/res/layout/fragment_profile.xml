@@ -101,7 +101,6 @@
                 android:layout_marginStart="@dimen/_15sdp"
                 android:layout_marginTop="@dimen/_15sdp"
                 android:layout_marginEnd="@dimen/_15sdp"
-                android:layout_marginBottom="25dp"
                 android:orientation="vertical">
 
                 <TextView
@@ -225,10 +224,10 @@
                     android:layout_marginStart="@dimen/_5sdp"
                     android:layout_marginTop="@dimen/_8sdp"
                     android:layout_marginEnd="@dimen/_5sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
                     android:background="@drawable/item_background"
                     android:drawableLeft="@drawable/ic_logout"
                     android:drawablePadding="@dimen/_10sdp"
-                    android:layout_marginBottom="@dimen/_5sdp"
                     android:elevation="1dp"
                     android:gravity="center_vertical"
                     android:padding="@dimen/_5sdp"
