@@ -43,6 +43,7 @@ class ViewpagerFragment() : BaseFragment<FragmentViewpagerBinding, CartViewModel
             }
         }
 
+
         initializeFeatureProducts()
 
     }

@@ -8,59 +8,16 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:weightSum="5"
-        android:background="@color/colorPrimary">
+        android:background="@color/colorPrimary"
+        android:orientation="vertical">
 
-        <RelativeLayout
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/paymentMethodRecyclerview"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingTop="@dimen/_15sdp">
-
-            <ImageView
-                android:id="@+id/btnBack"
-                android:layout_width="@dimen/_22sdp"
-                android:layout_height="@dimen/_22sdp"
-                android:layout_marginStart="@dimen/_15sdp"
-                android:padding="5dp"
-                android:src="@drawable/back" />
-
-            <TextView
-                style="@style/noah_title"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/btnBack"
-                android:gravity="center"
-                android:text="@string/payment_method" />
-
-        </RelativeLayout>
-
-        <LinearLayout
-            android:layout_marginEnd="@dimen/_15sdp"
+            android:layout_height="match_parent"
             android:layout_marginStart="@dimen/_15sdp"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="4"
-            android:gravity="center_horizontal"
-            android:orientation="vertical">
+            android:layout_marginEnd="@dimen/_15sdp" />
 
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center_horizontal"
-                android:orientation="vertical">
-
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/paymentMethodRecyclerview"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
-
-            </RelativeLayout>
-
-        </LinearLayout>
 
     </LinearLayout>
 

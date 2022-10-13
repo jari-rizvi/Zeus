@@ -49,12 +49,13 @@ class ProductPreviewFragment() : BaseFragment<FragmentProductBinding, ProductPre
             }
 
         }
-mViewDataBinding.btnBack.setOnClickListener {
-    popUpStack()
-}
+
+        mViewDataBinding.btnBack.setOnClickListener {
+            popUpStack()
+        }
         mViewDataBinding.btnReview.setOnClickListener {
 
-            Log.d("jsdks",sharedViewModel.productBySlug.value!!)
+            Log.d("jsdks", sharedViewModel.productBySlug.value!!)
 
             sharedViewModel.setProductBySlug(sharedViewModel.productBySlug.value!!)
             navController = Navigation.findNavController(
@@ -73,44 +74,38 @@ mViewDataBinding.btnBack.setOnClickListener {
                     .show()
             }
 
-            mViewDataBinding.btnBack.setOnClickListener {
-                navController = Navigation.findNavController(
-                    requireActivity(),
-                    R.id.nav_host_fragment
-                )
-                navController.navigate(R.id.cartFragment, null, options)
-            }
+        }
+        mViewDataBinding.btnBack.setOnClickListener {
+         popUpStack()
+        }
 
-            mViewModel.productPreview()
+        mViewModel.productPreview()
 
-            mViewModel.productPreviewResponse.observe(requireActivity(), Observer {
-                when (it.status) {
-                    Resource.Status.LOADING -> {
-                        loadingDialog.show()
-                    }
-                    Resource.Status.SUCCESS -> {
-                        loadingDialog.dismiss()
-                        it.data?.let { data ->
-                            mViewDataBinding.ProductName.text = data.name
-                            mViewDataBinding.productDescriptio.text = data.description
-                            mViewDataBinding.productPrice.text = data.price.toString() + " AED"
-                            Picasso.get().load(data.image).into(mViewDataBinding.img)
+        mViewModel.productPreviewResponse.observe(requireActivity(), Observer {
+            when (it.status) {
+                Resource.Status.LOADING -> {
+                    loadingDialog.show()
+                }
+                Resource.Status.SUCCESS -> {
+                    loadingDialog.dismiss()
+                    it.data?.let { data ->
+                        mViewDataBinding.ProductName.text = data.name
+                        mViewDataBinding.productDescriptio.text = data.description
+                        mViewDataBinding.productPrice.text = data.price.toString() + " AED"
+                        Picasso.get().load(data.image).into(mViewDataBinding.img)
 
-                        }
-                    }
-                    Resource.Status.ERROR -> {
-                        loadingDialog.dismiss()
-                        DialogHelperClass.errorDialog(requireContext(), it.message!!)
                     }
                 }
-            })
+                Resource.Status.ERROR -> {
+                    loadingDialog.dismiss()
+                    DialogHelperClass.errorDialog(requireContext(), it.message!!)
+                }
+            }
+        })
 
-
-        }
 
 
     }
-
 
 
 }

@@ -15,47 +15,11 @@ import com.teamx.zeus.MainApplication.Companion.context
 import com.teamx.zeus.databinding.ItemViewpagerBinding
 
 
-/*class ViewPagerAdapter(private val arrayList: ArrayList<Fragment>, context: Context) :
-    RecyclerView.Adapter<ViewPagerAdapter.ViewPagerViewHolder>() {
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewPagerViewHolder {
-        val inflater = LayoutInflater.from(parent.context)
-        val itemViewPagerBinding = ItemViewpagerBinding.inflate(inflater, parent, false)
-        return ViewPagerViewHolder(itemViewPagerBinding)
-
-    }
-
-    override fun onBindViewHolder(holder: ViewPagerViewHolder, position: Int) {
-
-        val ft: FragmentTransaction = context.getSupportFragmentManager().beginTransaction()
-        ft.replace(holder.binding.button3 ,arrayList[position])
-        ft.commit()
-        holder.itemView.setOnClickListener {
-
-        }
-    }
-
-
-    override fun getItemCount(): Int {
-        return arrayList.size
-
-    }*/
-
-//
-//
-//
-//}
-//
 class ViewPagerViewHolder(itemViewPagerBinding: ItemViewpagerBinding) :
     RecyclerView.ViewHolder(itemViewPagerBinding.root) {
     val binding = itemViewPagerBinding
 }
-//
-//private class ScreenSlidePagerAdapter(fa: FragmentActivity) : FragmentStateAdapter(fa) {
-//    override fun getItemCount(): Int = 3
-//
-//
-//    override fun createFragment(position: Int): Fragment = ScreenSlidePageFragment()
+
 
 class ViewPagerAdapter(
     fragmentManager: FragmentManager,

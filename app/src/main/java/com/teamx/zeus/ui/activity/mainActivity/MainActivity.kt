@@ -68,7 +68,7 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
         setupBottomNavMenu(navController!!)
 
         navController!!.addOnDestinationChangedListener { _, destination, _ ->
-            when (destination.id) {
+        when (destination.id) {
                 R.id.homeFragment -> {
                     bottomNav?.visibility = View.VISIBLE
 
@@ -141,12 +141,11 @@ private fun setupBottomNavMenu(navController: NavController) {
     bottomNav?.setupWithNavController(navController)
     bottomNav?.setOnItemSelectedListener {
         when (it.itemId) {
-
             R.id.profile -> {
                 navController.navigate(R.id.editProfileFragment, null)
             }
             R.id.cartFragment -> {
-                navController.navigate(R.id.cartFragment, null)
+                navController.navigate(R.id.viewpagerFragment, null)
             }
             R.id.homeFragment -> {
                 navController.navigate(R.id.homeFragment, null)

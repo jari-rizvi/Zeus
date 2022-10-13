@@ -38,10 +38,6 @@ class PaymentFragment : BaseFragment<FragmentPaymentMethodBinding, AuthViewModel
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        mViewDataBinding.btnBack.setOnClickListener {
-            popUpStack()
-        }
-
 
         paymentAdapter();
 
