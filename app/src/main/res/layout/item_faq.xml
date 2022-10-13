@@ -11,7 +11,7 @@
         android:layout_marginTop="@dimen/_10sdp"
         android:layout_marginStart="@dimen/_15sdp"
         android:layout_marginEnd="@dimen/_15sdp"
-        android:layout_marginBottom="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_4sdp"
         android:elevation="@dimen/_1sdp"
         android:background="@drawable/card_background">
 
@@ -27,7 +27,7 @@
             <RelativeLayout
                 android:id="@+id/rlmainRelative"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_30sdp">
+                android:layout_height="wrap_content">
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/question"
