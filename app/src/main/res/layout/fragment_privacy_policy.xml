@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="@dimen/_22sdp"
+            android:layout_height="@dimen/_22sdp"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:padding="5dp"
+            android:src="@drawable/back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textHead"
+            style="@style/noah_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:text="Privacy Policy"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnBack" />
+
+        <ImageView
+            android:id="@+id/btnNotification"
+            android:layout_width="40dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:padding="5dp"
+            android:src="@drawable/notification"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_450sdp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="@dimen/_15sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textHead">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    style="@style/noah_regular_medium"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus congue dui in diam luctus malesuada. Proin ac faucibus mauris. Aliquam convallis ligula sit amet est semper sollicitudin. Pellentesque malesuada quam massa, quis fringilla justo accumsan sed. Aliquam nec euismod nibh. Etiam ligula massa, feugiat ac tellus sit amet, blandit malesuada mi. Duis posuere ante et fermentum lacinia. Sed posuere cursus lacinia. Donec scelerisque ipsum euismod imperdiet elementum.\n\nMorbi a urna sed erat malesuada pharetra ut vitae ex. Curabitur quis odio vehicula, dictum neque et, dignissim nisi. Ut vitae nunc a eros tincidunt semper. Morbi at egestas nunc, lobortis cursus lacus. Aenean non dolor mi. Duis dictum, enim sed venenatis commodo, magna sem dapibus neque, sed pharetra turpis orci a felis. Phasellus id leo vel velit tristique convallis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer aliquet nibh ut purus vehicula, vitae feugiat tortor porta. Nunc ac leo lacus. Quisque nec pretium augue. Quisque ac pellentesque diam, quis gravida massa. Nam dapibus nunc purus, sit amet fringilla turpis iaculis in. Vestibulum sed dapibus nisl, at viverra dui."
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textHead" />
+
+
+            </LinearLayout>
+
+
+        </ScrollView>
+
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

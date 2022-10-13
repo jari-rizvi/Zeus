@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_navigation_graph"
-    app:startDestination="@id/homeFragment">
+    app:startDestination="@id/privacyPolicyFragment">
 
     <fragment
         android:id="@+id/signInFragment"
@@ -142,6 +142,10 @@
         android:id="@+id/addReviewFragment"
         android:name="com.teamx.zeus.ui.fragments.addReview.AddReviewFragment"
         android:label="AddReviewFragment" />
+    <fragment
+        android:id="@+id/privacyPolicyFragment"
+        android:name="com.teamx.zues.ui.fragments.PrivacyPolicyFragment.PrivacyPolicyFragment"
+        android:label="PrivacyPolicyFragment" />
 
 
 </navigation>
