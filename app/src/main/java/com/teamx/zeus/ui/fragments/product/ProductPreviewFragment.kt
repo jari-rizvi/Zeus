@@ -65,7 +65,6 @@ class ProductPreviewFragment() : BaseFragment<FragmentProductBinding, ProductPre
             navController.navigate(R.id.reviewListFragment, null, options)
         }
 
-
         mViewDataBinding.btnAddtoCart.setOnClickListener {
             mViewModel.productPreviewResponse.value?.data?.let {
                 mViewModel.insertCartProduct(CartTable(0, it))
