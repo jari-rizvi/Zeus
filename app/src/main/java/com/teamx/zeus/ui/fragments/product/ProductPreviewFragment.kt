@@ -45,6 +45,11 @@ class ProductPreviewFragment() : BaseFragment<FragmentProductBinding, ProductPre
 
         }
 
+        mViewDataBinding.btnNotification.setOnClickListener {
+            navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment)
+            navController.navigate(R.id.notificationFragment, null,options)
+        }
+
         mViewDataBinding.btnBack.setOnClickListener {
             popUpStack()
         }

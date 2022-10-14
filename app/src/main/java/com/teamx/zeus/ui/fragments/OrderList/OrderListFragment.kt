@@ -84,7 +84,6 @@ class OrderListFragment() : BaseFragment<FragmentOrderListBinding, OrderListView
 
         orderListAdapter = OrderListAdapter(orderListArrayList,this)
         mViewDataBinding.orderlistRecyclerView.adapter = orderListAdapter
-
     }
 
     override fun OnOrderClickListener(position: String) {
@@ -98,10 +97,7 @@ class OrderListFragment() : BaseFragment<FragmentOrderListBinding, OrderListView
 
     override fun onAddReviewClickListener(position: String) {
         val bundle = Bundle()
-        bundle.putString(
-            "itemId", position
-                .toString()
-        ).toString()
+        bundle.putString("itemId", position).toString()
         navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment)
         navController.navigate(R.id.addReviewFragment, bundle, options)
     }

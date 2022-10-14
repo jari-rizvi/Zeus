@@ -5,6 +5,7 @@ import android.view.View
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavOptions
+import androidx.navigation.Navigation
 import androidx.navigation.navOptions
 import androidx.viewpager2.widget.ViewPager2
 import com.teamx.zeus.BR
@@ -43,6 +44,10 @@ class ViewpagerFragment() : BaseFragment<FragmentViewpagerBinding, CartViewModel
             }
         }
 
+        mViewDataBinding.btnNotification.setOnClickListener {
+            navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment)
+            navController.navigate(R.id.notificationFragment, null,options)
+        }
 
         initializeFeatureProducts()
 

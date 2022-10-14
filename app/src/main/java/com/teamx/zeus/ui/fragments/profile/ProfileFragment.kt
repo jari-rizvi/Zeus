@@ -76,7 +76,8 @@ class ProfileFragment() : BaseFragment<FragmentProfileBinding, ProfileViewModel>
                 dataStoreProvider.removeAll()
             }
 
-            navController.navigate(R.id.signInFragment, null, null)
+            navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment)
+            navController.navigate(R.id.signInFragment)
         }
 
 

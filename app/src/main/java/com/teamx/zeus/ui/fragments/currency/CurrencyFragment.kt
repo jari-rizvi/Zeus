@@ -3,6 +3,7 @@ package com.teamx.zeus.ui.fragments.currency
 import android.os.Bundle
 import android.view.View
 import androidx.navigation.NavOptions
+import androidx.navigation.Navigation
 import androidx.navigation.navOptions
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -50,6 +51,11 @@ class CurrencyFragment() : BaseFragment<FragmentCurrencyBinding, CurrencyViewMod
 
         mViewDataBinding.btnBack.setOnClickListener {
             popUpStack()
+        }
+
+        mViewDataBinding.btnNotification.setOnClickListener {
+            navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment)
+            navController.navigate(R.id.notificationFragment, null,options)
         }
 
         initializeAdapter()

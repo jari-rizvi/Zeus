@@ -77,11 +77,12 @@
                         android:layout_marginStart="@dimen/_15sdp"
                         android:src="@drawable/ic_search" />
 
-                    <com.google.android.material.textfield.TextInputEditText
+                    <TextView
                         android:id="@+id/edit_search"
                         style="@style/noah_medium_large"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:gravity="center_vertical"
                         android:layout_toEndOf="@id/btnSearch"
                         android:background="@android:color/transparent"
                         android:hint="@string/search"

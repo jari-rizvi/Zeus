@@ -45,7 +45,8 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
 
 
     lateinit var progress_bar: ProgressBar
-//    private var mFbHelper: FacebookHelper? = null
+
+    //    private var mFbHelper: FacebookHelper? = null
     lateinit var mGoogleSignInClient: GoogleSignInClient
     lateinit var mGoogleSignInOptions: GoogleSignInOptions
 
@@ -68,7 +69,7 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
         setupBottomNavMenu(navController!!)
 
         navController!!.addOnDestinationChangedListener { _, destination, _ ->
-        when (destination.id) {
+            when (destination.id) {
                 R.id.homeFragment -> {
                     bottomNav?.visibility = View.VISIBLE
 
@@ -95,6 +96,9 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
                     bottomNav?.visibility = View.VISIBLE
                 }
 
+                R.id.searchFragment -> {
+                    bottomNav?.visibility = View.VISIBLE
+                }
 
 
                 else -> {
@@ -157,5 +161,5 @@ private fun setupBottomNavMenu(navController: NavController) {
         return@setOnItemSelectedListener true
     }
 
-    }
+}
 

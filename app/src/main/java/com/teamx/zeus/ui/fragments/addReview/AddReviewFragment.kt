@@ -82,8 +82,6 @@ class AddReviewFragment() : BaseFragment<FragmentAddReviewBinding, AddReviewView
 
     fun method(): JsonObject {
 
-
-
         val gson = Gson()
         var hellou: String? = ""
 
