@@ -43,7 +43,7 @@ class TempFragment : BaseFragment<FragmentTempBinding, TempViewModel>() {
         }
 
 
-        
+
         Handler(Looper.getMainLooper()).postDelayed({
             if (isAdded) {
 
