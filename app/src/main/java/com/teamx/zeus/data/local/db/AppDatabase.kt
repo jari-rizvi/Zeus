@@ -12,10 +12,12 @@ import com.teamx.zeus.data.local.UserConverter
 import com.teamx.zeus.data.models.MusicModel
 import com.teamx.zues.data.local.dbmodel.CartDao
 import com.teamx.zues.data.local.dbmodel.CartTable
+import com.teamx.zues.data.local.dbmodel.UserDao
+import com.teamx.zeus.data.local.dbModel.UserTable
 
 
-@Database(entities = [MusicModel::class, CartTable::class],
-    version = 1,
+@Database(entities = [MusicModel::class, CartTable::class,  UserTable::class],
+    version = 4,
     exportSchema = false
 )
 
@@ -24,6 +26,8 @@ abstract class AppDatabase : RoomDatabase(){
 
     abstract fun appDao(): AppDao
     abstract fun cartDao(): CartDao
+    abstract fun userDao(): UserDao
+
 
     companion object {
         @Volatile private var instance: AppDatabase? = null

@@ -2,6 +2,7 @@ package com.teamx.zeus.ui.fragments.profile
 
 import android.os.Bundle
 import android.view.View
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavOptions
 import androidx.navigation.Navigation
 import androidx.navigation.navOptions
@@ -9,16 +10,17 @@ import com.teamx.zeus.BR
 import com.teamx.zeus.R
 import com.teamx.zeus.baseclasses.BaseFragment
 import com.teamx.zeus.databinding.*
-import com.teamx.zeus.ui.fragments.otp.OtpViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
-class ProfileFragment() : BaseFragment<FragmentProfileBinding, OtpViewModel>() {
+class ProfileFragment() : BaseFragment<FragmentProfileBinding, ProfileViewModel>() {
 
     override val layoutId: Int
         get() = R.layout.fragment_profile
-    override val viewModel: Class<OtpViewModel>
-        get() = OtpViewModel::class.java
+    override val viewModel: Class<ProfileViewModel>
+        get() = ProfileViewModel::class.java
     override val bindingVariable: Int
         get() = BR.viewModel
 
@@ -66,6 +68,15 @@ class ProfileFragment() : BaseFragment<FragmentProfileBinding, OtpViewModel>() {
         mViewDataBinding.btnSettings.setOnClickListener {
             navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment)
             navController.navigate(R.id.settingsFragment, null,options)
+        }
+
+        mViewDataBinding.btnLogout.setOnClickListener {
+            mViewModel.logOutUser()
+            lifecycleScope.launch(Dispatchers.IO) {
+                dataStoreProvider.removeAll()
+            }
+
+            navController.navigate(R.id.signInFragment, null, null)
         }
 
 

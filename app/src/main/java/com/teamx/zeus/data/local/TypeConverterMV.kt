@@ -39,6 +39,7 @@ class ProductConverter {
         return gson.toJson(productById)
     }
 }
+
 class UserConverter {
     @TypeConverter
     fun stringToUser(string: String?): LoginData? {
@@ -52,3 +53,4 @@ class UserConverter {
         return gson.toJson(productById)
     }
 }
+

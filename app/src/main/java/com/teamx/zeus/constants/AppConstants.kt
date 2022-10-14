@@ -26,6 +26,7 @@ object AppConstants {
         DataStore.TOKEN,
         DataStore.DETAILS,
         DataStore.PAYMENT,
+        DataStore.SAVE_ID,
         DataStore.AVATAR,
         DataStore.NAME)
 
@@ -37,6 +38,7 @@ object AppConstants {
             const val TOKEN = "token"
             const val DETAILS = "details"
             const val PAYMENT = "payment"
+            const val SAVE_ID = "save_id"
             const val AVATAR = "avatar"
             const val NAME = "name"
         }

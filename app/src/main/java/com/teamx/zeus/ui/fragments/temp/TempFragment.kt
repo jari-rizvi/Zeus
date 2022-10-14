@@ -52,7 +52,7 @@ class TempFragment : BaseFragment<FragmentTempBinding, TempViewModel>() {
                     val token = it
                     Log.d("Databsae Token ", token.toString())
                     Log.d("Databsae Token ", token.toString())
-                    /*NetworkCallPointsNest.*/TOKENER = token.toString()
+                   TOKENER = token.toString()
 
                     if (token == null) {
                         navController =

@@ -5,15 +5,18 @@ import com.teamx.zeus.data.local.db.AppDao
 import com.teamx.zeus.data.remote.ApiService
 import com.teamx.zues.data.local.dbmodel.CartDao
 import com.teamx.zues.data.local.dbmodel.CartTable
+import com.teamx.zues.data.local.dbmodel.UserDao
+import com.teamx.zeus.data.local.dbModel.UserTable
 import retrofit2.http.Body
-import retrofit2.http.Path
 import retrofit2.http.Query
 import javax.inject.Inject
 
 class MainRepository @Inject constructor(
     private val apiService: ApiService,
     localDataSource: AppDao,
-    var localDataSource2: CartDao
+    var localDataSource2: CartDao,
+    var localDataSource4: UserDao
+
 
 ) {
     suspend fun login(@Body param: JsonObject) = apiService.login(param)
@@ -60,7 +63,13 @@ class MainRepository @Inject constructor(
     // Local Database
     fun getAllProducts2(): List<CartTable> = localDataSource2.getAllProducts2()
 
+
     suspend fun insertCartProduct(cartTable: CartTable) = localDataSource2.insert(cartTable)
+    suspend fun insertUserDetails(userTable: UserTable) = localDataSource4.insert(userTable)
+
+
+    suspend fun deleteUserData() = localDataSource4.deleteUser()
+    suspend fun deleteAllCartItems() = localDataSource2.deleteAllCart()
 
 
 }

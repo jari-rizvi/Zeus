@@ -112,8 +112,9 @@ class LogInFragment() : BaseFragment<FragmentLogInBinding, LoginViewModel>() {
 //                            if (data.flag == 1) {
                             lifecycleScope.launch(Dispatchers.IO) {
                                 dataStoreProvider.saveUserToken(data.token)
+                                dataStoreProvider.saveUserID(data.user._id)
                                 dataStoreProvider.saveUserDetails(
-                                    data.user.name.toString(),
+                                    data.user.name,
                                 )
                             }
 //                            sharedViewModel._profileData.value = it

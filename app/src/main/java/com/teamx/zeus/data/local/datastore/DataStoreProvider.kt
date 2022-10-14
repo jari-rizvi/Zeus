@@ -18,6 +18,7 @@ class DataStoreProvider(var context: Context) {
         val IS_LOCALIZATION_KEY = booleanPreferencesKey(AppConstants.DataStore.LOCALIZATION_KEY_NAME)
         val USER_NAME_KEY = stringPreferencesKey(AppConstants.DataStore.USER_NAME_KEY)
         val TOKEN = stringPreferencesKey(AppConstants.DataStore.TOKEN)
+        val SAVE_ID = stringPreferencesKey(AppConstants.DataStore.SAVE_ID)
         val DETAILS = stringPreferencesKey(AppConstants.DataStore.DETAILS)
         val PAYMENT = intPreferencesKey(AppConstants.DataStore.PAYMENT)
         val AVATAR = stringPreferencesKey(AppConstants.DataStore.AVATAR)
@@ -70,11 +71,28 @@ class DataStoreProvider(var context: Context) {
         }
     }
 
+    //save id by using this functionn
+    suspend fun saveUserID(SAVE_ID1: String) {
+        context.dataStore.edit {
+            it[SAVE_ID] = SAVE_ID1
+        }
+    }
+
     suspend fun saveUserDetails(firstname: String, email: String, avatar: String) {
         context.dataStore.edit {
             it[NAME] = firstname
             it[DETAILS] = email
             it[AVATAR] = avatar
+        }
+    }
+
+    suspend fun removeAll() {
+        context.dataStore.edit {
+            it.remove(TOKEN)
+            it.remove(DETAILS)
+            it.remove(AVATAR)
+            it.remove(NAME)
+
         }
     }
 
