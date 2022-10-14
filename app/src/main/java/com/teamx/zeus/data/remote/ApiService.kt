@@ -19,6 +19,7 @@ import com.teamx.zeus.data.models.productBySlug.ProductBySlugData
 import com.teamx.zeus.data.models.productsShop.ShopProductsData
 import com.teamx.zeus.data.models.resendOtp.ResendOtpData
 import com.teamx.zeus.data.models.shopBySlug.ShopBySlugData
+import com.teamx.zues.dataclasses.orderbyid.OrderByIdData
 import retrofit2.Response
 import retrofit2.http.*
 
@@ -67,6 +68,13 @@ interface ApiService {
         @Header("Authorization") basicCredentials: String =
             "Bearer $TOKENER"
     ): Response<AllOrdersData>
+
+    @GET(NetworkCallPoints.GET_ORDER_BY_ID)
+    suspend fun getOrderDetail(
+        @Path("id") id: String,
+        @Header("Authorization") basicCredentials: String =
+            "Bearer $TOKENER" ?: ""
+    ): Response<OrderByIdData>
 
     @GET(NetworkCallPoints.Currency)
     suspend fun getCurrency(): Response<CurrencyData>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="@dimen/_3sdp"
+        android:layout_marginEnd="@dimen/_3sdp"
+        android:background="@color/colorPrimary"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/_3sdp"
+        android:paddingBottom="@dimen/_3sdp">
+
+        <TextView
+            android:id="@+id/txtitemName"
+            style="@style/noah_medium_medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_7sdp"
+            android:text="Faux Sued Ankle Boots" />
+
+        <TextView
+            android:id="@+id/txtItemIdentifier"
+            style="@style/secondary_light_medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtitemName"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:text="7, Hot Pink" />
+
+        <TextView
+            android:id="@+id/txtItemQuantity"
+            style="@style/secondary_regular_medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtItemIdentifier"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:text="1" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.4dp"
+            android:layout_below="@id/txtItemQuantity"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:layout_marginBottom="@dimen/_3sdp"
+            android:alpha="0.1"
+            android:background="@color/textSecondaryColor" />
+
+
+        <TextView
+            android:id="@+id/btnReview"
+            style="@style/secondary_regular_medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/_16sdp"
+            android:text="Review" />
+
+    </RelativeLayout>
+
+</layout>

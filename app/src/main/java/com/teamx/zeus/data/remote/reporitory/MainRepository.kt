@@ -45,6 +45,9 @@ class MainRepository @Inject constructor(
     suspend fun getOrderList(@Query("page") page: Int, @Query("limit") limit: Int) =
         apiService.getOrders(page, limit)
 
+    suspend fun getOrderDetail(@Query("id") id: String) = apiService.getOrderDetail(id)
+
+
     suspend fun placeReview(param: JsonObject) = apiService.placeReview(params = param)
 
     suspend fun getCurrency() =

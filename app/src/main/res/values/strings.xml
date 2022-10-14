@@ -104,6 +104,8 @@
     <string name="more_to_love">More to love</string>
     <string name="check_out">Check Out</string>
     <string name="update">Update</string>
+    <string name="order_detail">order Detail</string>
+    <string name="items">items :</string>
 
 
 </resources>

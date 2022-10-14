@@ -31,6 +31,10 @@ class OrderListAdapter(
             onOrderListListener.onAddReviewClickListener(orderList._id)
         }
 
+        holder.itemView.setOnClickListener {
+            onOrderListListener.OnOrderClickListener(orderList._id)
+        }
+
     }
 
     override fun getItemCount(): Int {

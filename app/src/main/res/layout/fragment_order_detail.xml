@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary"
+        android:orientation="vertical"
+        android:paddingStart="@dimen/_7sdp"
+        android:paddingTop="@dimen/_16sdp"
+        android:paddingEnd="@dimen/_7sdp"
+        android:weightSum="5"
+        tools:context=".ui.fragments.OrderDeatilsFragment.OrderDetailFragment">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.2"
+            android:orientation="horizontal"
+            android:paddingTop="@dimen/_3sdp"
+            android:paddingBottom="@dimen/_3sdp">
+
+            <ImageView
+                android:id="@+id/btnBack"
+                android:layout_width="@dimen/_21sdp"
+                android:layout_height="@dimen/_21sdp"
+                android:layout_centerVertical="true"
+                android:padding="4dp"
+                android:src="@drawable/back" />
+
+            <TextView
+                style="@style/title_regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/order_detail" />
+
+
+        </RelativeLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_7sdp"
+            android:layout_weight="4.2"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:orientation="vertical"
+                android:paddingTop="@dimen/_7sdp"
+                android:paddingBottom="@dimen/_7sdp">
+
+
+                <TextView
+                    android:id="@+id/orderId"
+                    style="@style/noah_bold_black_medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="id #1327444858" />
+
+                <TextView
+                    android:id="@+id/orderDate"
+                    style="@style/secondary_light_small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="Monday 21 April" />
+
+
+                <TextView
+                    android:id="@+id/dileverTo"
+                    style="@style/noah_bold_black_medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_7sdp"
+                    android:text="Deliver to:" />
+
+                <TextView
+                    android:id="@+id/txtdeliveryAddress"
+                    style="@style/secondary_light_small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:text="No 123, Sub Street, Main Street" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txtCityName"
+                        style="@style/secondary_light_small"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="City Name," />
+
+                    <TextView
+                        android:id="@+id/txtProvienceName"
+                        style="@style/secondary_light_small"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Province" />
+
+
+                </LinearLayout>
+
+
+                <TextView
+                    android:id="@+id/txtCountryName"
+                    style="@style/secondary_light_small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:text="Country" />
+
+                <TextView
+                    android:id="@+id/payemntMethodHeading"
+                    style="@style/noah_bold_black_medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_7sdp"
+                    android:text="@string/payment_method" />
+
+                <TextView
+                    android:id="@+id/payemntMethodType"
+                    style="@style/secondary_light_small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:text="Monday 21 April" />
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:background="@color/textSecondaryColor" />
+
+                <TextView
+                    style="@style/noah_bold_black_medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_7sdp"
+                    android:text="@string/items" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/itemRecyclerview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_7sdp"
+                    tools:listitem="@layout/item_order_detail" />
+
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_weight="0.5"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:layout_marginBottom="@dimen/_3sdp"
+                android:alpha="0.3"
+                android:background="@color/textSecondaryColor"
+                android:layout_centerHorizontal="true"
+                 />
+
+            <TextView
+                style="@style/noah_bold_black_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:text="@string/total" />
+
+            <TextView
+                android:id="@+id/totalprice"
+                style="@style/noah_bold_black_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:text="5685 AED"
+                android:textAllCaps="true" />
+
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+</layout>

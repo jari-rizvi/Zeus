@@ -13,6 +13,7 @@ import androidx.navigation.Navigation
 import androidx.navigation.navOptions
 import com.teamx.zeus.R
 import com.teamx.zeus.baseclasses.BaseFragment
+import com.teamx.zeus.constants.NetworkCallPoints.Companion.TOKENER
 import com.teamx.zeus.databinding.FragmentTempBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -42,11 +43,36 @@ class TempFragment : BaseFragment<FragmentTempBinding, TempViewModel>() {
         }
 
         Handler(Looper.getMainLooper()).postDelayed({
-            navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment)
-            navController.navigate(R.id.signInFragment, null,options)
+            if (isAdded) {
+
+                dataStoreProvider.token.asLiveData().observe(
+                    requireActivity()
+                ) {
+
+                    val token = it
+                    Log.d("Databsae Token ", token.toString())
+                    Log.d("Databsae Token ", token.toString())
+                    /*NetworkCallPointsNest.*/TOKENER = token.toString()
+
+                    if (token == null) {
+                        navController =
+                            Navigation.findNavController(requireActivity(), R.id.nav_host_fragment)
+                        navController.navigate(R.id.signInFragment, null, options)
+
+
+                    } else {
+                        navController =
+                            Navigation.findNavController(requireActivity(), R.id.nav_host_fragment)
+                        navController.navigate(R.id.homeFragment, null, options)
+
+
+                    }
+                }
+
+            }
+
 
         }, 2000)
-
 
         clickListener()
     }

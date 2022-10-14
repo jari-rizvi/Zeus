@@ -88,6 +88,12 @@ class OrderListFragment() : BaseFragment<FragmentOrderListBinding, OrderListView
     }
 
     override fun OnOrderClickListener(position: String) {
+        val bundle = Bundle()
+        bundle.putString(
+            "itemId", position
+        ).toString()
+        navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment)
+        navController.navigate(R.id.orderDetailFragment, bundle, options)
     }
 
     override fun onAddReviewClickListener(position: String) {
