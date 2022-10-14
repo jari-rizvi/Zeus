@@ -4,10 +4,11 @@ import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import androidx.room.TypeConverter
 import com.google.gson.Gson
-import com.teamx.zeus.data.models.login.LoginData
 import com.teamx.zeus.data.models.productBySlug.ProductBySlugData
 import java.io.ByteArrayOutputStream
 
+
+import com.teamx.zues.dataclasses.login.LoginData
 
 class TypeConverterMV {
     @TypeConverter

@@ -18,7 +18,7 @@ data class PopularShop(
     val logo: String,
     val name: String,
     val orders_count: Int,
-    val owner: Owner,
+    val owner: String,
     val products_count: Int,
     val settings: Settings,
     val slug: String,

@@ -14,8 +14,8 @@ import javax.inject.Inject
 class MainRepository @Inject constructor(
     private val apiService: ApiService,
     localDataSource: AppDao,
-    var localDataSource2: CartDao,
-    var localDataSource4: UserDao
+    var localDataSource2: CartDao
+//    var localDataSource4: UserDao
 
 
 ) {
@@ -65,10 +65,10 @@ class MainRepository @Inject constructor(
 
 
     suspend fun insertCartProduct(cartTable: CartTable) = localDataSource2.insert(cartTable)
-    suspend fun insertUserDetails(userTable: UserTable) = localDataSource4.insert(userTable)
+//    suspend fun insertUserDetails(userTable: UserTable) = localDataSource4.insert(userTable)
 
 
-    suspend fun deleteUserData() = localDataSource4.deleteUser()
+//    suspend fun deleteUserData() = localDataSource4.deleteUser()
     suspend fun deleteAllCartItems() = localDataSource2.deleteAllCart()
 
 

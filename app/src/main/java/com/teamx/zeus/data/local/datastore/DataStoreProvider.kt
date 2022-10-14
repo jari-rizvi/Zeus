@@ -11,11 +11,11 @@ import kotlinx.coroutines.flow.map
 class DataStoreProvider(var context: Context) {
 
     //Create the dataStore
-    private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = AppConstants.DataStore.DATA_STORE_NAME)
 
     //Create some keys
 
     companion object {
+    private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = AppConstants.DataStore.DATA_STORE_NAME)
         val IS_LOCALIZATION_KEY = booleanPreferencesKey(AppConstants.DataStore.LOCALIZATION_KEY_NAME)
         val USER_NAME_KEY = stringPreferencesKey(AppConstants.DataStore.USER_NAME_KEY)
         val TOKEN = stringPreferencesKey(AppConstants.DataStore.TOKEN)

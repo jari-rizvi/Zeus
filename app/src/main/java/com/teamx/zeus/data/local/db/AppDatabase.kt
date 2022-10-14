@@ -16,32 +16,39 @@ import com.teamx.zeus.data.local.dbModel.UserDao
 import com.teamx.zeus.data.local.dbModel.UserTable
 
 
-@Database(entities = [MusicModel::class, CartTable::class,  UserTable::class],
+@Database(
+    entities = [MusicModel::class, CartTable::class],
     version = 4,
     exportSchema = false
 )
-
 @TypeConverters(TypeConverterMV::class, ProductConverter::class, UserConverter::class)
-abstract class AppDatabase : RoomDatabase(){
+abstract class AppDatabase : RoomDatabase() {
 
     abstract fun appDao(): AppDao
     abstract fun cartDao(): CartDao
-    abstract fun userDao(): UserDao
+//    abstract fun userDao(): UserDao
 
 
     companion object {
-        @Volatile private var instance: AppDatabase? = null
+        @Volatile
+        private var instance: AppDatabase? = null
 
         fun getDatabase(context: Context): AppDatabase =
             instance
-                ?: synchronized(this) { instance
-                    ?: buildDatabase(
-                        context
-                    )
-                        .also { instance = it } }
+                ?: synchronized(this) {
+                    instance
+                        ?: buildDatabase(
+                            context
+                        )
+                            .also { instance = it }
+                }
 
         private fun buildDatabase(appContext: Context) =
-            Room.databaseBuilder(appContext, AppDatabase::class.java, AppConstants.DbConfiguration.DB_NAME)
+            Room.databaseBuilder(
+                appContext,
+                AppDatabase::class.java,
+                AppConstants.DbConfiguration.DB_NAME
+            )
                 .fallbackToDestructiveMigration()
                 .build()
     }

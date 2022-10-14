@@ -22,7 +22,7 @@ class ProfileViewModel @Inject constructor(
 
     fun logOutUser() {
         viewModelScope.launch(Dispatchers.IO) {
-            mainRepository.deleteUserData()
+//            mainRepository.deleteUserData()
             mainRepository.deleteAllCartItems()
         }
     }

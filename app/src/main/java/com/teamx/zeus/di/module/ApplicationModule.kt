@@ -78,9 +78,9 @@ class ApplicationModule {
     @Provides
     fun provideCartDao(db: AppDatabase) = db.cartDao()
 
-    @Singleton
+/*    @Singleton
     @Provides
-    fun provideUserDao(db: AppDatabase) = db.userDao()
+    fun provideUserDao(db: AppDatabase) = db.userDao()*/
 
     @Singleton
     @Provides
@@ -88,13 +88,13 @@ class ApplicationModule {
         apiService: ApiService,
         localDataSource: AppDao,
         localDataSource2: CartDao,
-        localDataSource4: UserDao,
+//        localDataSource4: UserDao,
 
         ) =
         MainRepository(apiService,
             localDataSource,
-            localDataSource2,
-            localDataSource4
+            localDataSource2
+//            localDataSource4
 
         )
 
