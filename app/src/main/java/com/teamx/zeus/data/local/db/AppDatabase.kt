@@ -10,9 +10,9 @@ import com.teamx.zeus.data.local.ProductConverter
 import com.teamx.zeus.data.local.TypeConverterMV
 import com.teamx.zeus.data.local.UserConverter
 import com.teamx.zeus.data.models.MusicModel
-import com.teamx.zues.data.local.dbmodel.CartDao
-import com.teamx.zues.data.local.dbmodel.CartTable
-import com.teamx.zues.data.local.dbmodel.UserDao
+import com.teamx.zeus.data.local.dbModel.CartDao
+import com.teamx.zeus.data.local.dbModel.CartTable
+import com.teamx.zeus.data.local.dbModel.UserDao
 import com.teamx.zeus.data.local.dbModel.UserTable
 
 

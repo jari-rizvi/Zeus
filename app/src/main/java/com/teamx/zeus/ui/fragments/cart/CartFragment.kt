@@ -3,22 +3,19 @@ package com.teamx.zeus.ui.fragments.cart
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.lifecycle.MutableLiveData
 import androidx.navigation.NavOptions
 import androidx.navigation.navOptions
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.snackbar.Snackbar
 import com.teamx.zeus.BR
 import com.teamx.zeus.R
 import com.teamx.zeus.baseclasses.BaseFragment
 import com.teamx.zeus.data.remote.Resource
 import com.teamx.zeus.databinding.FragmentCartBinding
 import com.teamx.zeus.dummyData.Cart
-import com.teamx.zeus.ui.fragments.forgotPass.ForgotPassViewModel
 import com.teamx.zeus.utils.DialogHelperClass
-import com.teamx.zues.data.local.dbmodel.CartTable
+import com.teamx.zeus.data.local.dbModel.CartTable
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

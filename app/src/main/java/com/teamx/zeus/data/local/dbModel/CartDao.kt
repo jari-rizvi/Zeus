@@ -1,4 +1,4 @@
-package com.teamx.zues.data.local.dbmodel
+package com.teamx.zeus.data.local.dbModel
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao

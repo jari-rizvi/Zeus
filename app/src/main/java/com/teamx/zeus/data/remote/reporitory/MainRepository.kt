@@ -3,9 +3,9 @@ package com.teamx.zeus.data.remote.reporitory
 import com.google.gson.JsonObject
 import com.teamx.zeus.data.local.db.AppDao
 import com.teamx.zeus.data.remote.ApiService
-import com.teamx.zues.data.local.dbmodel.CartDao
-import com.teamx.zues.data.local.dbmodel.CartTable
-import com.teamx.zues.data.local.dbmodel.UserDao
+import com.teamx.zeus.data.local.dbModel.CartDao
+import com.teamx.zeus.data.local.dbModel.CartTable
+import com.teamx.zeus.data.local.dbModel.UserDao
 import com.teamx.zeus.data.local.dbModel.UserTable
 import retrofit2.http.Body
 import retrofit2.http.Query
