@@ -12,8 +12,6 @@ import com.teamx.zeus.data.local.UserConverter
 import com.teamx.zeus.data.models.MusicModel
 import com.teamx.zeus.data.local.dbModel.CartDao
 import com.teamx.zeus.data.local.dbModel.CartTable
-import com.teamx.zeus.data.local.dbModel.UserDao
-import com.teamx.zeus.data.local.dbModel.UserTable
 
 
 @Database(

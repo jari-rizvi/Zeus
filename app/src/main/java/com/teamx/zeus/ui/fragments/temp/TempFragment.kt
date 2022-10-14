@@ -42,8 +42,6 @@ class TempFragment : BaseFragment<FragmentTempBinding, TempViewModel>() {
             }
         }
 
-
-
         Handler(Looper.getMainLooper()).postDelayed({
             if (isAdded) {
 
@@ -54,7 +52,7 @@ class TempFragment : BaseFragment<FragmentTempBinding, TempViewModel>() {
                     val token = it
                     Log.d("Databsae Token ", token.toString())
                     Log.d("Databsae Token ", token.toString())
-                   TOKENER = token.toString()
+                    /*NetworkCallPointsNest.*/TOKENER = token.toString()
 
                     if (token == null) {
                         navController =
@@ -72,7 +70,6 @@ class TempFragment : BaseFragment<FragmentTempBinding, TempViewModel>() {
                 }
 
             }
-
 
         }, 2000)
 

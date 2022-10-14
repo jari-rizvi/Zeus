@@ -2,6 +2,7 @@ package com.teamx.zeus.ui.fragments.addReview
 
 import android.os.Bundle
 import android.text.TextUtils
+import android.util.Log
 import android.view.View
 import androidx.navigation.NavOptions
 import androidx.navigation.navOptions
@@ -31,6 +32,8 @@ class AddReviewFragment() : BaseFragment<FragmentAddReviewBinding, AddReviewView
 
     private var userReview: String? = null
     private var ratingbar: Int? = null
+    private var pid: String? = null
+
     private lateinit var options: NavOptions
 
 
@@ -49,6 +52,13 @@ class AddReviewFragment() : BaseFragment<FragmentAddReviewBinding, AddReviewView
 
         mViewDataBinding.btnBack.setOnClickListener {
             popUpStack()
+        }
+
+        val bundle = arguments
+        if (bundle != null) {
+            pid = bundle.getString("itemId").toString()
+            Log.d("itemidddd",pid.toString())
+
         }
 
         mViewDataBinding.btnAddReview.setOnClickListener {
@@ -72,6 +82,8 @@ class AddReviewFragment() : BaseFragment<FragmentAddReviewBinding, AddReviewView
 
     fun method(): JsonObject {
 
+
+
         val gson = Gson()
         var hellou: String? = ""
 
@@ -79,7 +91,7 @@ class AddReviewFragment() : BaseFragment<FragmentAddReviewBinding, AddReviewView
 
         val add = AddReviewData(
             pivotId= "6318921e6937e0d2e7918678",
-            product= sharedViewModel.productBySlug.toString(),
+            product= pid.toString(),
             shop= "631701eabaf027ab6bd013f0",
             comment= "This is a test review",
             rating= 5,

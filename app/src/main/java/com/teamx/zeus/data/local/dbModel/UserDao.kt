@@ -6,7 +6,6 @@ import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface UserDao {
-
     @Query("SELECT * FROM user_table")
     fun getUserDetailsLive(): Flow<List<UserTable>>
 

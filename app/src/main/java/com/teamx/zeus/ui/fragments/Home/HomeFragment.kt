@@ -132,6 +132,9 @@ class HomeFragment() : BaseFragment<FragmentHomeBinding, HomeViewModel>(), OnTop
 
     override fun onTopproductClick(position: Int) {
         sharedViewModel.setProductBySlug(productArrayList[position].slug)
+        sharedViewModel.setProductId(productArrayList[position]._id)
+
+
         navController = Navigation.findNavController(
             requireActivity(),
             R.id.nav_host_fragment

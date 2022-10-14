@@ -11,6 +11,7 @@ import com.teamx.zues.dataclasses.login.LoginData
     tableName = "user_table",
     indices = [Index(value = ["user_data"], unique = true)]
 )
+
 data class UserTable(
     @PrimaryKey(autoGenerate = true)
     val id: Int = 0,

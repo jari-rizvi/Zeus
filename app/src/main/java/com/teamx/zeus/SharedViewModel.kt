@@ -35,6 +35,14 @@ class SharedViewModel : BaseViewModel() {
         }
     }
 
+    private val _productId = MutableLiveData<String>()
+    val productId: LiveData<String>
+        get() = _productId
+
+    fun setProductId(_productId: String) {
+        this._productId.value = _productId
+    }
+
     fun removeProduct(deleteModel: ProductModel) {
         val list = addToCartProduct.value
         if (list != null && list.size > 0) {
