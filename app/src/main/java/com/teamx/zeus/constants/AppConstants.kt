@@ -28,6 +28,7 @@ object AppConstants {
         DataStore.PAYMENT,
         DataStore.SAVE_ID,
         DataStore.AVATAR,
+        DataStore.NUMBER,
         DataStore.NAME)
 
     annotation class DataStore {
@@ -40,6 +41,7 @@ object AppConstants {
             const val PAYMENT = "payment"
             const val SAVE_ID = "save_id"
             const val AVATAR = "avatar"
+            const val NUMBER = "number"
             const val NAME = "name"
         }
     }

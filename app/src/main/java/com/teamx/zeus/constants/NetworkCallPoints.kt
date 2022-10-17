@@ -20,6 +20,15 @@ class NetworkCallPoints {
         const val COUPOUNS ="coupons";
 
 
+        const val PROFILE_USER = "me"
+        const val UPLOAD_ATTACH = "attachments/images"
+
+
+        //Notifications
+        const val GET_USER_NOTIFICATIONS = "notifications"
+        const val GET_READ_NOTIFICATIONS = "notifications/read"
+        const val GET_UNREAD_NOTIFICATIONS = "notifications?unread=true"
+
         //Orders
         const val ORDER_LIST = "orders"
         const val GET_ORDER_BY_ID = "orders/{id}"

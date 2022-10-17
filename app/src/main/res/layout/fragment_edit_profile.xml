@@ -60,7 +60,7 @@
                 android:background="@drawable/button_gredient"
                 android:gravity="center"
                 android:padding="@dimen/_7sdp"
-                android:text="@string/sign_up"
+                android:text="@string/update"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.504"
@@ -79,7 +79,7 @@
                 android:gravity="center_vertical"
                 android:paddingStart="@dimen/_7sdp"
                 android:paddingEnd="@dimen/_7sdp"
-                android:text="@string/password"
+                android:text="Bio"
                 app:layout_constraintBottom_toTopOf="@+id/relativeLayout4"
                 app:layout_constraintStart_toStartOf="parent" />
 
@@ -105,7 +105,6 @@
                     android:layout_height="match_parent"
                     android:layout_toRightOf="@id/imgPass"
                     android:background="@android:color/transparent"
-                    android:hint="@string/enter_your_password"
                     android:imeOptions="actionNext"
                     android:inputType="textEmailAddress"
                     android:maxLines="1"
@@ -118,7 +117,7 @@
                     android:layout_height="@dimen/_15sdp"
                     android:layout_alignParentStart="true"
                     android:layout_centerVertical="true"
-                    android:src="@drawable/ic_pass" />
+                    android:src="@drawable/ic_profile" />
             </RelativeLayout>
 
 
@@ -158,6 +157,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_toRightOf="@id/img"
+                    android:enabled="false"
+                    android:clickable="false"
                     android:background="@android:color/transparent"
                     android:hint="@string/enter_your_email"
                     android:imeOptions="actionNext"
@@ -212,6 +213,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_toRightOf="@id/imgPhone"
+                    android:enabled="false"
+                    android:clickable="false"
                     android:background="@android:color/transparent"
                     android:hint="@string/enter_phone_number"
                     android:imeOptions="actionNext"

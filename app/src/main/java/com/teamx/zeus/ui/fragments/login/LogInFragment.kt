@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.util.Log
 import android.util.Patterns
 import android.view.View
+import androidx.activity.addCallback
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavOptions
 import androidx.navigation.Navigation
@@ -21,6 +22,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import org.json.JSONException
 import java.util.regex.Pattern
+import kotlin.system.exitProcess
 
 
 @AndroidEntryPoint
@@ -113,8 +115,16 @@ class LogInFragment() : BaseFragment<FragmentLogInBinding, LoginViewModel>() {
                             lifecycleScope.launch(Dispatchers.IO) {
                                 dataStoreProvider.saveUserToken(data.token)
                                 dataStoreProvider.saveUserID(data.user._id)
+
+                                val name = data.user.name
+                                val email = data.user.email
+                                val avatar = data.user.profile.avatar
+                                val number = data.user.contact
+
                                 dataStoreProvider.saveUserDetails(
-                                    data.user.name,
+                                    name,
+                                    email,
+                                    avatar, number
                                 )
                             }
 //                            sharedViewModel._profileData.value = it

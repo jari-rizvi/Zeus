@@ -24,6 +24,7 @@ class DataStoreProvider(var context: Context) {
         val PAYMENT = intPreferencesKey(AppConstants.DataStore.PAYMENT)
         val AVATAR = stringPreferencesKey(AppConstants.DataStore.AVATAR)
         val NAME = stringPreferencesKey(AppConstants.DataStore.NAME)
+        val NUMBER = stringPreferencesKey(AppConstants.DataStore.NUMBER)
     }
 
     //Store data
@@ -46,6 +47,9 @@ class DataStoreProvider(var context: Context) {
     val details: Flow<String?> = context.dataStore.data.map {
         it[DETAILS]
     }
+    val number: Flow<String?> = context.dataStore.data.map {
+        it[NUMBER]
+    }
     val avatar: Flow<String?> = context.dataStore.data.map {
         it[AVATAR]
     }
@@ -53,7 +57,9 @@ class DataStoreProvider(var context: Context) {
     val name: Flow<String?> = context.dataStore.data.map {
         it[NAME]
     }
-
+    val saveId: Flow<String?> = context.dataStore.data.map {
+        it[SAVE_ID]
+    }
     val payment : Flow<Int?> =   context.dataStore.data.map {
         it[PAYMENT]
     }
@@ -101,6 +107,15 @@ class DataStoreProvider(var context: Context) {
         context.dataStore.edit {
             it[DETAILS] = firstname
 
+        }
+    }
+
+    suspend fun saveUserDetails(firstname: String, email: String, avatar: String,number:String) {
+        context.dataStore.edit {
+            it[NAME] = firstname
+            it[DETAILS] = email
+            it[AVATAR] = avatar
+            it[NUMBER] = number
         }
     }
 

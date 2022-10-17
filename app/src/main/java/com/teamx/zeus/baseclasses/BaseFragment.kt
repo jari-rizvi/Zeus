@@ -77,8 +77,6 @@ abstract class BaseFragment<T : ViewDataBinding, V : BaseViewModel> : Fragment()
         super.onCreate(savedInstanceState)
         loadingDialog = DialogHelperClass.loadingDialog(requireContext())
         mViewModel = ViewModelProvider(this).get(viewModel)
-
-
         sharedViewModel = ViewModelProvider(requireActivity()).get(SharedViewModel::class.java)
         dataStoreProvider = DataStoreProvider(requireContext())
         navController = NavController(requireContext())

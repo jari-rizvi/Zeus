@@ -7,6 +7,7 @@ import com.teamx.zeus.data.local.dbModel.CartDao
 import com.teamx.zeus.data.local.dbModel.CartTable
 import com.teamx.zeus.data.local.dbModel.UserDao
 import com.teamx.zeus.data.local.dbModel.UserTable
+import okhttp3.MultipartBody
 import retrofit2.http.Body
 import retrofit2.http.Query
 import javax.inject.Inject
@@ -16,8 +17,6 @@ class MainRepository @Inject constructor(
     localDataSource: AppDao,
     var localDataSource2: CartDao
 //    var localDataSource4: UserDao
-
-
 ) {
     suspend fun login(@Body param: JsonObject) = apiService.login(param)
 
@@ -50,8 +49,14 @@ class MainRepository @Inject constructor(
 
     suspend fun getOrderDetail(@Query("id") id: String) = apiService.getOrderDetail(id)
 
-
     suspend fun placeReview(param: JsonObject) = apiService.placeReview(params = param)
+
+    suspend fun editProfile(/*@Query("id") id: String, @Body param: JsonObject*/) =
+        apiService.editProfile(/*id,param*/)
+
+    suspend fun updateProfile(@Body param: JsonObject) = apiService.updateProfile(param)
+
+    suspend fun updateImgProfile(param: MultipartBody.Part) = apiService.uploadAttachment(param)
 
     suspend fun getCurrency() =
         apiService.getCurrency()
@@ -59,14 +64,19 @@ class MainRepository @Inject constructor(
     suspend fun getCoupun() =
         apiService.getCoupoun()
 
+    suspend fun getNotifications(@Query("user") user: String,/* @Query("limit") limit: Int*/) =
+        apiService.getNotifications(user=user/*page, limit*/)
+
+    suspend fun getReadNotifications() = apiService.getReadNotifications()
+    suspend fun getUnreadNotifications(@Query("page") page: Int, @Query("limit") limit: Int) =
+        apiService.getUnreadNotifications(page, limit)
+
 
     // Local Database
     fun getAllProducts2(): List<CartTable> = localDataSource2.getAllProducts2()
 
-
     suspend fun insertCartProduct(cartTable: CartTable) = localDataSource2.insert(cartTable)
 //    suspend fun insertUserDetails(userTable: UserTable) = localDataSource4.insert(userTable)
-
 
 //    suspend fun deleteUserData() = localDataSource4.deleteUser()
     suspend fun deleteAllCartItems() = localDataSource2.deleteAllCart()

@@ -19,7 +19,13 @@ import com.teamx.zeus.data.models.productBySlug.ProductBySlugData
 import com.teamx.zeus.data.models.productsShop.ShopProductsData
 import com.teamx.zeus.data.models.resendOtp.ResendOtpData
 import com.teamx.zeus.data.models.shopBySlug.ShopBySlugData
+import com.teamx.zues.dataclasses.notification.NotificationData
 import com.teamx.zues.dataclasses.orderbyid.OrderByIdData
+import com.teamx.zues.dataclasses.profile.ProfileData
+import com.teamx.zues.dataclasses.profile.ProfileDataX
+import com.teamx.zues.dataclasses.profile.UploadModelData
+import com.teamx.zues.dataclasses.readallnotification.ReadAllNotification
+import okhttp3.MultipartBody
 import retrofit2.Response
 import retrofit2.http.*
 
@@ -98,5 +104,53 @@ interface ApiService {
         @Body params: JsonObject?
 //        @Header("Authorization") basicCredentials: String = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzYW1hQHRlYW14Lmdsb2JhbCIsInJvbGVzIjpbImN1c3RvbWVyIl0sImlhdCI6MTY2MzE3MzQ3NywiZXhwIjoxNjYzNzc4Mjc3fQ.X_YTIys9MlZbdCqfUz2qu9gkW5Zfsyq7Q3SvvjvuC4Y"
     ): Response<AddReviewData>
+
+    @GET(NetworkCallPoints.PROFILE_USER)
+    suspend fun editProfile(
+        @Header("Authorization") basicCredentials: String = "Bearer $TOKENER" ?: ""
+    ): Response<ProfileDataX>
+
+    @PUT(NetworkCallPoints.PROFILE_USER)
+    suspend fun updateProfile(
+        @Body params: JsonObject?,
+        @Header("Authorization") basicCredentials: String = "Bearer $TOKENER" ?: ""
+    ): Response<ProfileData>
+
+
+    @GET(NetworkCallPoints.GET_USER_NOTIFICATIONS)
+    suspend fun getNotifications(
+        @Query("user") user: String,
+/*        @Query("page") page: Int,
+        @Query("limit") limit: Int,*/
+        @Header("Authorization") basicCredentials: String =
+            "Bearer $TOKENER" ?: ""
+    ): Response<NotificationData>
+
+    @GET(NetworkCallPoints.GET_READ_NOTIFICATIONS)
+    suspend fun getReadNotifications(
+        @Header("Authorization") basicCredentials: String =
+            "Bearer $TOKENER" ?: ""
+
+    ): Response<ReadAllNotification>
+
+
+    @GET(NetworkCallPoints.GET_UNREAD_NOTIFICATIONS)
+    suspend fun getUnreadNotifications(
+        @Query("page") page: Int,
+        @Query("limit") limit: Int,
+        @Header("Authorization") basicCredentials: String =
+            "Bearer $TOKENER" ?: ""
+    ): Response<NotificationData>
+
+
+//    @Multipart
+//    @POST(NetworkCallPoints.UPLOAD_ATTACH)
+//    suspend fun uploadAttachment(@Part filePart: MultipartBody.Part): Response<UploadModelData>
+
+    @Multipart
+    @POST(NetworkCallPoints.UPLOAD_ATTACH)
+    suspend fun uploadAttachment(@Part filePart: MultipartBody.Part): Response<UploadModelData>
+
+
 
 }

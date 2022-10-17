@@ -1,11 +1,16 @@
 package com.teamx.zeus.ui.fragments.profile
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
+import android.widget.ImageView
+import android.widget.TextView
+import androidx.lifecycle.asLiveData
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavOptions
 import androidx.navigation.Navigation
 import androidx.navigation.navOptions
+import com.squareup.picasso.Picasso
 import com.teamx.zeus.BR
 import com.teamx.zeus.R
 import com.teamx.zeus.baseclasses.BaseFragment
@@ -26,6 +31,47 @@ class ProfileFragment() : BaseFragment<FragmentProfileBinding, ProfileViewModel>
 
     private lateinit var options: NavOptions
 
+
+    fun header(){
+        val username = mViewDataBinding.textView47
+        val profilePicture = mViewDataBinding.profilePicture
+        val userEmail = mViewDataBinding.tvEmail
+
+
+
+        var details = ""
+        dataStoreProvider.details.asLiveData().observe(requireActivity()) {
+            val details = it
+            userEmail.text = details.toString()
+            Log.d("USERNAME", details.toString())
+        }
+        if (details.isEmpty()) {
+            dataStoreProvider.details.asLiveData().observe(requireActivity()) {
+                details = it ?: ""
+                userEmail.text = details
+                Log.d("USERNAME", details)
+            }
+        }
+
+        dataStoreProvider.avatar.asLiveData().observe(requireActivity()) {
+            Picasso.get().load(it).into(profilePicture)
+        }
+
+        dataStoreProvider.name.asLiveData().observe(requireActivity()) {
+            username.text = it
+        }
+
+
+        profilePicture.setOnClickListener {
+            navController = Navigation.findNavController(
+                requireActivity(),
+                R.id.nav_host_fragment
+            )
+            navController.navigate(R.id.editProfileFragment, null, null)
+        }
+
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -38,6 +84,7 @@ class ProfileFragment() : BaseFragment<FragmentProfileBinding, ProfileViewModel>
             }
         }
 
+        header()
 
         mViewDataBinding.btnBack.setOnClickListener {
             popUpStack()
@@ -71,13 +118,21 @@ class ProfileFragment() : BaseFragment<FragmentProfileBinding, ProfileViewModel>
         }
 
         mViewDataBinding.btnLogout.setOnClickListener {
-            mViewModel.logOutUser()
-            lifecycleScope.launch(Dispatchers.IO) {
-                dataStoreProvider.removeAll()
-            }
 
-            navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment)
-            navController.navigate(R.id.signInFragment)
+            if(isAdded){
+                mViewModel.logOutUser()
+                lifecycleScope.launch(Dispatchers.IO) {
+                    dataStoreProvider.removeAll()
+
+                }
+
+
+                navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment)
+                navController.popBackStack(R.id.homeFragment, true);
+                navController.navigate(R.id.signInFragment, null, null)
+
+
+            }
         }
 
 

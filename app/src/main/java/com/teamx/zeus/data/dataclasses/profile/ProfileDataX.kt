@@ -20,3 +20,25 @@ data class ProfileDataX(
     val shops: List<Any>,
     val updatedAt: String
 )
+
+@Keep
+data class ProfileData(
+    var __v: Int?,
+    var _id: String?,
+    var address: List<String>?,
+    var createdAt: String?,
+    var email: String?,
+    var is_active: Boolean?,
+    var name: String?,
+    var password: String?,
+    var profile: Profile?,
+    var gender: String?,
+    var roles: List<String>?,
+    var shops: List<Any>?,
+    var contact_verified: Boolean?,
+    var contact: String?,
+    var email_verified: Boolean?,
+    var updatedAt: String
+)
+
+class UploadModelData : ArrayList<String>()
