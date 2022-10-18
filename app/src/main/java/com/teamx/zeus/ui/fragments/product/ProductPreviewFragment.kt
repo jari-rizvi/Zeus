@@ -53,6 +53,7 @@ class ProductPreviewFragment() : BaseFragment<FragmentProductBinding, ProductPre
         mViewDataBinding.btnBack.setOnClickListener {
             popUpStack()
         }
+
         mViewDataBinding.btnReview.setOnClickListener {
 
             Log.d("jsdks", sharedViewModel.productBySlug.value!!)
@@ -78,7 +79,14 @@ class ProductPreviewFragment() : BaseFragment<FragmentProductBinding, ProductPre
          popUpStack()
         }
 
-        mViewModel.productPreview()
+
+        val str = sharedViewModel.productBySlug
+//        mViewModel.productPreview("62a3633db41c6704082d77a7")
+
+        str.observe(requireActivity()) {
+            Log.d("123", "onViewCreated: $it")
+            mViewModel.productPreview(it)
+        }
 
         mViewModel.productPreviewResponse.observe(requireActivity(), Observer {
             when (it.status) {

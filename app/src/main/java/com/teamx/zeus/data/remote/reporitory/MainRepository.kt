@@ -9,6 +9,7 @@ import com.teamx.zeus.data.local.dbModel.UserDao
 import com.teamx.zeus.data.local.dbModel.UserTable
 import okhttp3.MultipartBody
 import retrofit2.http.Body
+import retrofit2.http.Path
 import retrofit2.http.Query
 import javax.inject.Inject
 
@@ -40,7 +41,7 @@ class MainRepository @Inject constructor(
 
     suspend fun productsByShop() = apiService.productsByShop()
 
-    suspend fun productsBySlug() = apiService.productsBySlug()
+    suspend fun productsBySlug(@Path("slug") slug: String) = apiService.productsBySlug(slug)
 
     suspend fun getRatingList() = apiService.getRatingList(/*id, page, limit*/)
 

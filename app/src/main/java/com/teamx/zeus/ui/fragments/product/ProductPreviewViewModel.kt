@@ -26,12 +26,12 @@ class ProductPreviewViewModel @Inject constructor(
     val productPreviewResponse: LiveData<Resource<ProductBySlugData>>
         get() = _productPreviewResponse
 
-    fun productPreview() {
+    fun productPreview(slug: String) {
         viewModelScope.launch {
             _productPreviewResponse.postValue(Resource.loading(null))
             if (networkHelper.isNetworkConnected()) {
                 try {
-                    mainRepository.productsBySlug().let {
+                    mainRepository.productsBySlug(slug).let {
                         if (it.isSuccessful) {
                             _productPreviewResponse.postValue(Resource.success(it.body()!!))
                         } else if (it.code() == 500 || it.code() == 404 || it.code() == 400 || it.code() == 422) {

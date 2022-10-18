@@ -66,7 +66,10 @@ interface ApiService {
     suspend fun productsByShop(): Response<ShopProductsData>
 
     @GET(NetworkCallPoints.PRODUCTS_BY_SLUG)
-    suspend fun productsBySlug(): Response<ProductBySlugData>
+    suspend fun productsBySlug(
+        @Path("slug") slug: String,
+        @Header("Authorization") basicCredentials: String = "Bearer $TOKENER" ?: ""
+    ): Response<ProductBySlugData>
 
     @GET(NetworkCallPoints.ORDER_LIST)
     suspend fun getOrders(
