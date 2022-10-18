@@ -237,7 +237,7 @@
                             android:layout_gravity="center_vertical"
                             android:layout_marginStart="5dp"
                             android:layout_marginEnd="5dp"
-                            android:src="@drawable/faq" />
+                            android:src="@drawable/ic_faq" />
 
                         <TextView
                             style="@style/noah_secondary_bold_medium"
