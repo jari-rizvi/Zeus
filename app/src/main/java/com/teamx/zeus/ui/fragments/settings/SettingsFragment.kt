@@ -48,6 +48,12 @@ class SettingsFragment : BaseFragment<FragmentSettingsBinding, TempViewModel>() 
 
         }
 
+        mViewDataBinding.btnLanguage.setOnClickListener {
+            navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment)
+            navController.navigate(R.id.languageFragment, null,options)
+        }
+
+
     }
 
 }
