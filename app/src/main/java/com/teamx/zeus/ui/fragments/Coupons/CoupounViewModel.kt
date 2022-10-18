@@ -3,10 +3,8 @@ package com.teamx.zeus.ui.fragments.Coupons
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
-import com.google.gson.JsonObject
 import com.teamx.zeus.baseclasses.BaseViewModel
 import com.teamx.zeus.data.dataclasses.coupouns.CoupounData
-import com.teamx.zeus.data.models.login.LoginData
 import com.teamx.zeus.data.remote.Resource
 import com.teamx.zeus.data.remote.reporitory.MainRepository
 import com.teamx.zeus.utils.NetworkHelper

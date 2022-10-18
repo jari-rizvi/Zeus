@@ -126,7 +126,6 @@ class ProfileFragment() : BaseFragment<FragmentProfileBinding, ProfileViewModel>
 
                 }
 
-
                 navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment)
                 navController.popBackStack(R.id.homeFragment, true);
                 navController.navigate(R.id.signInFragment, null, null)

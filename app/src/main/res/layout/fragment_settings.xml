@@ -151,10 +151,15 @@
                             android:text="@string/notifications" />
 
                         <androidx.appcompat.widget.SwitchCompat
+                            android:id="@+id/swOnOff"
                             android:layout_width="0dp"
-                            android:layout_weight="1"
                             android:layout_height="wrap_content"
-                            android:theme="@style/SCBSwitch"/>
+                            android:layout_weight="1"
+                            android:layout_marginStart="@dimen/_65sdp"
+                            android:padding="@dimen/_20sdp"
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            android:thumb="@drawable/custom_thumb"
+                            app:track="@drawable/custom_track" />
 
                     </LinearLayout>
 

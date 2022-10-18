@@ -48,11 +48,6 @@ class SettingsFragment : BaseFragment<FragmentSettingsBinding, TempViewModel>() 
 
         }
 
-
-
-
-
-
     }
 
 }

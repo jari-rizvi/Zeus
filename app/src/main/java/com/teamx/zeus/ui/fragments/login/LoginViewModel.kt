@@ -5,10 +5,10 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.google.gson.JsonObject
 import com.teamx.zeus.baseclasses.BaseViewModel
-import com.teamx.zeus.data.models.login.LoginData
 import com.teamx.zeus.data.remote.Resource
 import com.teamx.zeus.data.remote.reporitory.MainRepository
 import com.teamx.zeus.utils.NetworkHelper
+import com.teamx.zues.dataclasses.login.LoginData
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
