@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import com.teamx.zeus.BR
+import com.teamx.zeus.MainApplication.Companion.context
 import com.teamx.zeus.R
 import com.teamx.zeus.baseclasses.BaseFragment
 import com.teamx.zeus.data.models.productsShop.Doc
@@ -62,9 +63,11 @@ class shopHomePageFragment() : BaseFragment<FragmentShopHomePageBinding, ShopByS
                     loadingDialog.dismiss()
                     it.data?.let {
                         it.let {
-                            Picasso.get().load(it.cover_image).into(mViewDataBinding.coverImg)
+                            Picasso.get().load(it.cover_image).into(mViewDataBinding.img)
                             mViewDataBinding.shopName.text = it.name
-                        }
+                            mViewDataBinding.ratingBar.rating  = it.rating.toFloat()
+                            mViewDataBinding.totalRating.text  = it.ratings_count.toString()+" + ratings"
+                    }
                     }
                 }
 

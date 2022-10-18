@@ -11,35 +11,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <ImageView
-            android:id="@+id/coverImg"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/_200sdp"
-            android:background="@drawable/shape_bottom_round_fill"
-            android:src="@drawable/cover_img"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/btnBack"
-            android:layout_width="@dimen/_30sdp"
-            android:layout_height="@dimen/_30sdp"
-            android:layout_marginStart="@dimen/_25sdp"
-            android:layout_marginTop="@dimen/_15sdp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_back" />
 
-        <ImageView
-            android:id="@+id/btnShare"
-            android:layout_width="@dimen/_30sdp"
-            android:layout_height="@dimen/_30sdp"
-            android:layout_marginTop="@dimen/_15sdp"
-            android:layout_marginEnd="@dimen/_25sdp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_share" />
+
 
         <TextView
             android:id="@+id/shopName"
@@ -67,7 +41,7 @@
             android:id="@+id/totalRating"
             style="@style/manrope_medium_small"
             android:layout_width="wrap_content"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_5sdp"
             android:text="100 + ratings"
             app:layout_constraintBottom_toBottomOf="@+id/ratingBar"
@@ -113,6 +87,50 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/totalRating"
             tools:listitem="@layout/item_shop_home_page" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/coverImg"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_200sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:background="@drawable/shape_bottom_round_fill"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <ImageView
+                android:id="@+id/img"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/cover_img"
+                android:scaleType="fitXY"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/btnBack"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_marginStart="@dimen/_25sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_back" />
+
+            <ImageView
+                android:id="@+id/btnShare"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_25sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_share" />
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
