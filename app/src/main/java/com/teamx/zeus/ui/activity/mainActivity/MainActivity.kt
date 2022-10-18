@@ -68,6 +68,7 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
 
         setupBottomNavMenu(navController!!)
 
+
         navController!!.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
                 R.id.homeFragment -> {
@@ -141,7 +142,6 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
 var bottomNav: BottomNavigationView? = null
 
 private fun setupBottomNavMenu(navController: NavController) {
-
     bottomNav?.setupWithNavController(navController)
     bottomNav?.setOnItemSelectedListener {
         when (it.itemId) {
