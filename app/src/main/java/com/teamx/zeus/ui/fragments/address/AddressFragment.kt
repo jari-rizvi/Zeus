@@ -35,6 +35,10 @@ class AddressFragment() : BaseFragment<FragmentAddressBinding, ForgotPassViewMod
             }
         }
 
+        mViewDataBinding.btnBack.setOnClickListener {
+            popUpStack()
+        }
+
 
     }
 

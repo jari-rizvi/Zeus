@@ -33,7 +33,7 @@ class ProfileFragment() : BaseFragment<FragmentProfileBinding, ProfileViewModel>
 
 
     fun header(){
-        val username = mViewDataBinding.textView47
+        val username = mViewDataBinding.tvName
         val profilePicture = mViewDataBinding.profilePicture
         val userEmail = mViewDataBinding.tvEmail
 
@@ -61,14 +61,15 @@ class ProfileFragment() : BaseFragment<FragmentProfileBinding, ProfileViewModel>
             username.text = it
         }
 
-
-        profilePicture.setOnClickListener {
+        mViewDataBinding.btnEdit.setOnClickListener {
             navController = Navigation.findNavController(
                 requireActivity(),
                 R.id.nav_host_fragment
             )
             navController.navigate(R.id.editProfileFragment, null, null)
         }
+
+
 
     }
 

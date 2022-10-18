@@ -143,7 +143,7 @@
                             style="@style/noah_secondary_bold_medium"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:layout_weight="1"
+                            android:layout_weight="1.2"
                             android:background="@android:color/transparent"
                             android:gravity="center_vertical"
                             android:paddingStart="@dimen/_7sdp"
@@ -154,10 +154,10 @@
                             android:id="@+id/swOnOff"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:layout_marginStart="@dimen/_65sdp"
+                            android:layout_weight="0.9"
+                            android:layout_marginStart="@dimen/_75sdp"
                             android:padding="@dimen/_20sdp"
-                            android:layout_marginEnd="@dimen/_5sdp"
+                            android:layout_marginEnd="@dimen/_3sdp"
                             android:thumb="@drawable/custom_thumb"
                             app:track="@drawable/custom_track" />
 
