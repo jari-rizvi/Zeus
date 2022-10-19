@@ -37,9 +37,9 @@ class MainRepository @Inject constructor(
 
     suspend fun home() = apiService.home()
 
-    suspend fun shopBySlug() = apiService.shopBySlug()
+    suspend fun shopBySlug(@Path("slug") slug: String) = apiService.shopBySlug(slug)
 
-    suspend fun productsByShop() = apiService.productsByShop()
+    suspend fun productsByShopId(@Query("shop") id: String) = apiService.productsByShopID(id)
 
     suspend fun productsBySlug(@Path("slug") slug: String) = apiService.productsBySlug(slug)
 

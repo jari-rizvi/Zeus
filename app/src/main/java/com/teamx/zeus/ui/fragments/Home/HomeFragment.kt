@@ -1,5 +1,6 @@
 package com.teamx.zeus.ui.fragments.Home
 
+import android.opengl.Visibility
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -18,11 +19,12 @@ import com.teamx.zeus.data.remote.Resource
 import com.teamx.zeus.databinding.*
 import com.teamx.zeus.dummyData.Categories
 import com.teamx.zeus.utils.DialogHelperClass
+import com.teamx.zues.dataclasses.dashboard.PopularShop
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class HomeFragment() : BaseFragment<FragmentHomeBinding, HomeViewModel>(), OnTopCategoriesListener,
-    OnTopProductListener {
+    OnTopProductListener, OnTopShopListener {
 
     override val layoutId: Int
         get() = R.layout.fragment_home
@@ -34,8 +36,11 @@ class HomeFragment() : BaseFragment<FragmentHomeBinding, HomeViewModel>(), OnTop
     lateinit var categoriesAdapter: CategoriesAdapter
     lateinit var categoriesArrayList2: ArrayList<Categories>
 
-    lateinit var productAdapter: ProductAdapter
-    lateinit var productArrayList: ArrayList<PopularProduct>
+//    lateinit var productAdapter: ProductAdapter
+//    lateinit var productArrayList: ArrayList<PopularProduct>
+
+    lateinit var shopAdapter: ShopAdapter
+    lateinit var shopArrayList: ArrayList<PopularShop>
 
     private lateinit var options: NavOptions
 
@@ -66,7 +71,6 @@ class HomeFragment() : BaseFragment<FragmentHomeBinding, HomeViewModel>(), OnTop
             navController.navigate(R.id.searchFragment, null,options)
         }
 
-        productRecyclerview()
 
         mViewModel.home()
 
@@ -82,8 +86,11 @@ class HomeFragment() : BaseFragment<FragmentHomeBinding, HomeViewModel>(), OnTop
                     loadingDialog.dismiss()
                     it.data?.let {
                         it.let {
-                            productArrayList.addAll(it.popularProducts)
-                            productAdapter.notifyDataSetChanged()
+//                            productArrayList.addAll(it.popularProducts)
+//                            productAdapter.notifyDataSetChanged()
+                            
+                            shopArrayList.addAll(it.popularShops)
+                            shopAdapter.notifyDataSetChanged()
 
                         }
                     }
@@ -99,13 +106,16 @@ class HomeFragment() : BaseFragment<FragmentHomeBinding, HomeViewModel>(), OnTop
         })
 
         categoriesRecyclerview()
+        shopRecyclerview()
+//        productRecyclerview()
+
 
     }
 
     private fun categoriesRecyclerview() {
         categoriesArrayList2 = ArrayList()
         categoriesArrayList2.add(Categories("Shop", R.drawable.ic_resturant,true))
-        categoriesArrayList2.add(Categories("Popular", R.drawable.ic_resturant,false))
+        categoriesArrayList2.add(Categories("Products", R.drawable.ic_resturant,false))
         categoriesArrayList2.add(Categories("Service", R.drawable.ic_resturant,false))
         categoriesArrayList2.add(Categories("Resturant", R.drawable.ic_resturant,false))
 
@@ -116,14 +126,25 @@ class HomeFragment() : BaseFragment<FragmentHomeBinding, HomeViewModel>(), OnTop
         mViewDataBinding.categoriesRecycler.adapter = categoriesAdapter
     }
 
-    private fun productRecyclerview() {
-        productArrayList = ArrayList()
+//    private fun productRecyclerview() {
+//        productArrayList = ArrayList()
+//
+//        val linearLayoutManager = GridLayoutManager(context, 2, RecyclerView.VERTICAL, false)
+//        mViewDataBinding.ProductRecycler.layoutManager = linearLayoutManager
+//
+//        productAdapter = ProductAdapter(productArrayList, this)
+//        mViewDataBinding.ProductRecycler.adapter = productAdapter
+//
+//    }
+
+    private fun shopRecyclerview() {
+        shopArrayList = ArrayList()
 
         val linearLayoutManager = GridLayoutManager(context, 2, RecyclerView.VERTICAL, false)
-        mViewDataBinding.ProductRecycler.layoutManager = linearLayoutManager
+        mViewDataBinding.ShopRecycler.layoutManager = linearLayoutManager
 
-        productAdapter = ProductAdapter(productArrayList, this)
-        mViewDataBinding.ProductRecycler.adapter = productAdapter
+        shopAdapter = ShopAdapter(shopArrayList, this)
+        mViewDataBinding.ShopRecycler.adapter = shopAdapter
 
     }
 
@@ -136,13 +157,25 @@ class HomeFragment() : BaseFragment<FragmentHomeBinding, HomeViewModel>(), OnTop
     }
 
     override fun onTopproductClick(position: Int) {
-        sharedViewModel.setProductBySlug(productArrayList[position].slug)
+//        sharedViewModel.setProductBySlug(productArrayList[position].slug)
 
         navController = Navigation.findNavController(
             requireActivity(),
             R.id.nav_host_fragment
         )
         navController.navigate(R.id.productFragment, null, options)
+    }
+
+    override fun onTopshopClick(position: Int) {
+        sharedViewModel.setShopBySlug(shopArrayList[position].slug)
+        sharedViewModel.setShopById(shopArrayList[position]._id)
+
+
+        navController = Navigation.findNavController(
+            requireActivity(),
+            R.id.nav_host_fragment
+        )
+        navController.navigate(R.id.shopHomePageFragment, null, options)
     }
 
 }

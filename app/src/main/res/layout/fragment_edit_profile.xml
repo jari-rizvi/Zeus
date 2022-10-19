@@ -42,7 +42,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_30sdp"
             android:background="@drawable/shape_top_round_fill_white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -157,9 +157,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_toRightOf="@id/img"
-                    android:enabled="false"
-                    android:clickable="false"
                     android:background="@android:color/transparent"
+                    android:clickable="false"
+                    android:enabled="false"
                     android:hint="@string/enter_your_email"
                     android:imeOptions="actionNext"
                     android:inputType="textEmailAddress"
@@ -213,9 +213,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_toRightOf="@id/imgPhone"
-                    android:enabled="false"
-                    android:clickable="false"
                     android:background="@android:color/transparent"
+                    android:clickable="false"
+                    android:enabled="false"
                     android:hint="@string/enter_phone_number"
                     android:imeOptions="actionNext"
                     android:inputType="textEmailAddress"
@@ -238,15 +238,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="@dimen/_3sdp"
                 android:background="@android:color/transparent"
                 android:gravity="center_vertical"
                 android:paddingStart="@dimen/_7sdp"
                 android:paddingEnd="@dimen/_7sdp"
+                android:layout_marginBottom="@dimen/_8sdp"
                 android:text="@string/full_name"
                 app:layout_constraintBottom_toTopOf="@+id/relativeLayout3"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/topLayout" />
+                app:layout_constraintStart_toStartOf="parent" />
 
             <RelativeLayout
                 android:id="@+id/relativeLayout3"
@@ -296,9 +295,10 @@
                 android:layout_weight="1"
                 app:layout_constraintBottom_toTopOf="@+id/textView46"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias=".75">
+                app:layout_constraintVertical_bias="0.073">
 
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/profilePicture"

@@ -32,7 +32,7 @@
                 app:cardElevation="1dp">
 
                 <ImageView
-                    android:id="@+id/productImage"
+                    android:id="@+id/shopImage"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="fitXY"
@@ -46,7 +46,7 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:id="@+id/productName"
+                    android:id="@+id/shopName"
                     style="@style/noah_bold_black_small"
                     android:layout_width="@dimen/_60sdp"
                     android:layout_height="wrap_content"
@@ -57,9 +57,18 @@
                     android:paddingStart="5dp"
                     android:text="T-Shirt" />
 
+
+                <ImageView
+                    android:layout_width="@dimen/_10sdp"
+                    android:layout_height="@dimen/_10sdp"
+                    android:layout_marginTop="5dp"
+                    android:layout_toStartOf="@+id/shopDistance"
+                    android:src="@drawable/ic_location_dark" />
+
+
                 <TextView
-                    android:id="@+id/productPrice"
-                    style="@style/noah_bold_black_small"
+                    android:id="@+id/shopDistance"
+                    style="@style/noah_light_extra_small"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
@@ -67,13 +76,13 @@
                     android:layout_marginEnd="@dimen/_5sdp"
                     android:ellipsize="end"
                     android:maxLines="1"
-                    android:text="AED 7.8" />
+                    android:text="20 m" />
 
                 <LinearLayout
                     android:id="@+id/lnType"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/productName"
+                    android:layout_below="@id/shopName"
                     android:orientation="horizontal"
                     android:weightSum="3">
 
@@ -82,12 +91,12 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="5dp"
-                        android:layout_marginTop="@dimen/_5sdp"
+                        android:padding="@dimen/_3sdp"
                         android:layout_weight="0.5"
-                        android:src="@drawable/resturant_black" />
+                        android:src="@drawable/ic_shopping_black" />
 
                     <TextView
-                        android:id="@+id/productType"
+                        android:id="@+id/shopType"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1.1"

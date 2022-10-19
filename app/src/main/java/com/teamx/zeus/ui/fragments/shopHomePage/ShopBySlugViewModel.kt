@@ -24,14 +24,14 @@ class ShopBySlugViewModel @Inject constructor(
     val shopBySlugResponse: LiveData<Resource<ShopBySlugData>>
         get() = _shopBySlugResponse
 
-    fun shopBySlug() {
+    fun shopBySlug(slug: String) {
         viewModelScope.launch {
             _shopBySlugResponse.postValue(Resource.loading(null))
             if (networkHelper.isNetworkConnected()) {
                 try {
                     Log.d("87878787887","starta")
 
-                    mainRepository.shopBySlug() .let {
+                    mainRepository.shopBySlug(slug) .let {
                         if (it.isSuccessful) {
                             _shopBySlugResponse.postValue(Resource.success(it.body()!!))
                             Log.d("87878787887",it.body()!!.toString())
@@ -57,14 +57,14 @@ class ShopBySlugViewModel @Inject constructor(
     val productsByShopResponse: LiveData<Resource<ShopProductsData>>
         get() = _productsByShopResponse
 
-    fun productsByShop() {
+    fun productsByShopId(id: String) {
         viewModelScope.launch {
             _productsByShopResponse.postValue(Resource.loading(null))
             if (networkHelper.isNetworkConnected()) {
                 try {
                     Log.d("87878787887","starta")
 
-                    mainRepository.productsByShop() .let {
+                    mainRepository.productsByShopId(id) .let {
                         if (it.isSuccessful) {
                             _productsByShopResponse.postValue(Resource.success(it.body()!!))
                             Log.d("87878787887",it.body()!!.toString())

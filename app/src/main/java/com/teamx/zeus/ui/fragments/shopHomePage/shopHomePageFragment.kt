@@ -7,6 +7,7 @@ import androidx.lifecycle.Observer
 import androidx.navigation.NavOptions
 import androidx.navigation.navOptions
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import com.teamx.zeus.BR
@@ -29,7 +30,6 @@ class shopHomePageFragment() : BaseFragment<FragmentShopHomePageBinding, ShopByS
     override val bindingVariable: Int
         get() = BR.viewModel
 
-
     private lateinit var options: NavOptions
 
     lateinit var productAdapter: ProductByShopAdapter
@@ -49,9 +49,14 @@ class shopHomePageFragment() : BaseFragment<FragmentShopHomePageBinding, ShopByS
 
         }
 
-        productRecyclerview()
 
-        mViewModel.shopBySlug()
+        val str = sharedViewModel.shopBySlug
+
+        str.observe(requireActivity()) {
+            Log.d("shopByslug", "onViewCreated: $it")
+            mViewModel.shopBySlug(it)
+        }
+
 
         mViewModel.shopBySlugResponse.observe(requireActivity(), Observer {
             when (it.status) {
@@ -65,9 +70,10 @@ class shopHomePageFragment() : BaseFragment<FragmentShopHomePageBinding, ShopByS
                         it.let {
                             Picasso.get().load(it.cover_image).into(mViewDataBinding.img)
                             mViewDataBinding.shopName.text = it.name
-                            mViewDataBinding.ratingBar.rating  = it.rating.toFloat()
-                            mViewDataBinding.totalRating.text  = it.ratings_count.toString()+" + ratings"
-                    }
+                            mViewDataBinding.ratingBar.rating = it.rating.toFloat()
+                            mViewDataBinding.totalRating.text =
+                                it.ratings_count.toString() + " + ratings"
+                        }
                     }
                 }
 
@@ -79,7 +85,13 @@ class shopHomePageFragment() : BaseFragment<FragmentShopHomePageBinding, ShopByS
         })
 
 
-        mViewModel.productsByShop()
+        val r = sharedViewModel.shopById
+
+        r.observe(requireActivity()) {
+            mViewModel.productsByShopId(it)
+
+
+        }
 
         mViewModel.productsByShopResponse.observe(requireActivity(), Observer {
             when (it.status) {
@@ -109,21 +121,20 @@ class shopHomePageFragment() : BaseFragment<FragmentShopHomePageBinding, ShopByS
             }
         })
 
-
+        productRecyclerview()
 
     }
+
 
     private fun productRecyclerview() {
         productArrayList = ArrayList()
 
-        val linearLayoutManager = GridLayoutManager(context, 2, RecyclerView.HORIZONTAL, false)
+        val linearLayoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
         mViewDataBinding.ProductRecycler.layoutManager = linearLayoutManager
 
         productAdapter = ProductByShopAdapter(productArrayList)
         mViewDataBinding.ProductRecycler.adapter = productAdapter
 
     }
-
-
 
 }

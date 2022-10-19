@@ -13,8 +13,8 @@ class NetworkCallPoints {
         const val RESEND_OTP_VERIFY ="register/resend-otp";
         const val RESET_PASS ="reset-password";
         const val FORGOT_PASS ="forget-password";
-        const val SHOP_BY_SLUG ="shops/makeup-store";
-        const val PRODUCTS_BY_ID ="products/{id}";
+        const val SHOP_BY_SLUG ="shops/{slug}";
+        const val PRODUCTS_BY_SHOP_ID ="products";
         const val PRODUCTS_BY_SLUG ="products/{slug}";
         const val Currency ="/settings/currency?currency=PKR";
         const val COUPOUNS ="coupons";

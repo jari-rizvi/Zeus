@@ -60,10 +60,13 @@ interface ApiService {
     suspend fun home(): Response<DashboardData>
 
     @GET(NetworkCallPoints.SHOP_BY_SLUG)
-    suspend fun shopBySlug(): Response<ShopBySlugData>
+    suspend fun shopBySlug(
+        @Path("slug") slug: String): Response<ShopBySlugData>
 
-    @GET(NetworkCallPoints.PRODUCTS_BY_ID)
-    suspend fun productsByShop(): Response<ShopProductsData>
+    @GET(NetworkCallPoints.PRODUCTS_BY_SHOP_ID)
+    suspend fun productsByShopID(
+        @Query("shop") id: String
+    ): Response<ShopProductsData>
 
     @GET(NetworkCallPoints.PRODUCTS_BY_SLUG)
     suspend fun productsBySlug(
