@@ -35,7 +35,6 @@ class shopHomePageFragment() : BaseFragment<FragmentShopHomePageBinding, ShopByS
     lateinit var productAdapter: ProductByShopAdapter
     lateinit var productArrayList: ArrayList<Doc>
 
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -49,7 +48,6 @@ class shopHomePageFragment() : BaseFragment<FragmentShopHomePageBinding, ShopByS
 
         }
 
-
         val str = sharedViewModel.shopBySlug
 
         str.observe(requireActivity()) {
@@ -57,6 +55,9 @@ class shopHomePageFragment() : BaseFragment<FragmentShopHomePageBinding, ShopByS
             mViewModel.shopBySlug(it)
         }
 
+        mViewDataBinding.btnBack.setOnClickListener {
+            popUpStack()
+        }
 
         mViewModel.shopBySlugResponse.observe(requireActivity(), Observer {
             when (it.status) {
@@ -89,8 +90,6 @@ class shopHomePageFragment() : BaseFragment<FragmentShopHomePageBinding, ShopByS
 
         r.observe(requireActivity()) {
             mViewModel.productsByShopId(it)
-
-
         }
 
         mViewModel.productsByShopResponse.observe(requireActivity(), Observer {
