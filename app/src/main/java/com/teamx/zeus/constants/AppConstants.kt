@@ -19,7 +19,6 @@ object AppConstants {
         }
     }
 
-
     @StringDef(DataStore.DATA_STORE_NAME,
         DataStore.LOCALIZATION_KEY_NAME,
         DataStore.USER_NAME_KEY,

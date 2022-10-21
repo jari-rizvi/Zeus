@@ -23,7 +23,12 @@ class DialogHelperClass {
             val dialog = Dialog(context)
             dialog.setContentView(R.layout.dialog_layout_error)
             val errorTextMessage = dialog.findViewById<TextView>(R.id.tv_error_message)
+            if(errorMessage == "Job was canceled"){
+                return
+            }
             errorTextMessage.setText(errorMessage)
+
+
             dialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
             dialog.show()
         }

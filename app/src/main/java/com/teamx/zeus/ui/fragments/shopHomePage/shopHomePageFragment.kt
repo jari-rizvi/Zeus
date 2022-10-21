@@ -6,12 +6,10 @@ import android.view.View
 import androidx.lifecycle.Observer
 import androidx.navigation.NavOptions
 import androidx.navigation.navOptions
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import com.teamx.zeus.BR
-import com.teamx.zeus.MainApplication.Companion.context
 import com.teamx.zeus.R
 import com.teamx.zeus.baseclasses.BaseFragment
 import com.teamx.zeus.data.models.productsShop.Doc
@@ -85,7 +83,6 @@ class shopHomePageFragment() : BaseFragment<FragmentShopHomePageBinding, ShopByS
             }
         })
 
-
         val r = sharedViewModel.shopById
 
         r.observe(requireActivity()) {
@@ -107,7 +104,7 @@ class shopHomePageFragment() : BaseFragment<FragmentShopHomePageBinding, ShopByS
                             productArrayList.addAll(it.docs)
                             productAdapter.notifyDataSetChanged()
 
-                        }
+                                                    }
                     }
                 }
 
@@ -123,7 +120,6 @@ class shopHomePageFragment() : BaseFragment<FragmentShopHomePageBinding, ShopByS
         productRecyclerview()
 
     }
-
 
     private fun productRecyclerview() {
         productArrayList = ArrayList()

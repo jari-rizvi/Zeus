@@ -36,8 +36,8 @@ class HomeFragment() : BaseFragment<FragmentHomeBinding, HomeViewModel>(), OnTop
     lateinit var categoriesAdapter: CategoriesAdapter
     lateinit var categoriesArrayList2: ArrayList<Categories>
 
-//    lateinit var productAdapter: ProductAdapter
-//    lateinit var productArrayList: ArrayList<PopularProduct>
+    lateinit var productAdapter: ProductAdapter
+    lateinit var productArrayList: ArrayList<PopularProduct>
 
     lateinit var shopAdapter: ShopAdapter
     lateinit var shopArrayList: ArrayList<PopularShop>
@@ -86,8 +86,8 @@ class HomeFragment() : BaseFragment<FragmentHomeBinding, HomeViewModel>(), OnTop
                     loadingDialog.dismiss()
                     it.data?.let {
                         it.let {
-//                            productArrayList.addAll(it.popularProducts)
-//                            productAdapter.notifyDataSetChanged()
+                            productArrayList.addAll(it.popularProducts)
+                            productAdapter.notifyDataSetChanged()
                             
                             shopArrayList.addAll(it.popularShops)
                             shopAdapter.notifyDataSetChanged()
@@ -107,7 +107,7 @@ class HomeFragment() : BaseFragment<FragmentHomeBinding, HomeViewModel>(), OnTop
 
         categoriesRecyclerview()
         shopRecyclerview()
-//        productRecyclerview()
+        productRecyclerview()
 
 
     }
@@ -126,16 +126,16 @@ class HomeFragment() : BaseFragment<FragmentHomeBinding, HomeViewModel>(), OnTop
         mViewDataBinding.categoriesRecycler.adapter = categoriesAdapter
     }
 
-//    private fun productRecyclerview() {
-//        productArrayList = ArrayList()
-//
-//        val linearLayoutManager = GridLayoutManager(context, 2, RecyclerView.VERTICAL, false)
-//        mViewDataBinding.ProductRecycler.layoutManager = linearLayoutManager
-//
-//        productAdapter = ProductAdapter(productArrayList, this)
-//        mViewDataBinding.ProductRecycler.adapter = productAdapter
-//
-//    }
+    private fun productRecyclerview() {
+        productArrayList = ArrayList()
+
+        val linearLayoutManager = GridLayoutManager(context, 2, RecyclerView.VERTICAL, false)
+        mViewDataBinding.ProductRecycler.layoutManager = linearLayoutManager
+
+        productAdapter = ProductAdapter(productArrayList, this)
+        mViewDataBinding.ProductRecycler.adapter = productAdapter
+
+    }
 
     private fun shopRecyclerview() {
         shopArrayList = ArrayList()
@@ -152,12 +152,16 @@ class HomeFragment() : BaseFragment<FragmentHomeBinding, HomeViewModel>(), OnTop
         for(cat in categoriesArrayList2){
             cat.isChecked = false
         }
+
         categoriesArrayList2.get(position).isChecked = true
+//        if(position == 1){
+//
+//        }
         categoriesAdapter.notifyDataSetChanged()
     }
 
     override fun onTopproductClick(position: Int) {
-//        sharedViewModel.setProductBySlug(productArrayList[position].slug)
+        sharedViewModel.setProductBySlug(productArrayList[position].slug)
 
         navController = Navigation.findNavController(
             requireActivity(),

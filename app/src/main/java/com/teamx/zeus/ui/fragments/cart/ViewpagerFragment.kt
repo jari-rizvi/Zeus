@@ -15,6 +15,7 @@ import com.teamx.zeus.databinding.FragmentViewpagerBinding
 import com.teamx.zeus.ui.fragments.checkout.CheckoutFragment
 import com.teamx.zeus.ui.fragments.paymentMethod.PaymentFragment
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.android.synthetic.main.item_cart.*
 
 @AndroidEntryPoint
 class ViewpagerFragment() : BaseFragment<FragmentViewpagerBinding, CartViewModel>() {
@@ -25,7 +26,6 @@ class ViewpagerFragment() : BaseFragment<FragmentViewpagerBinding, CartViewModel
         get() = CartViewModel::class.java
     override val bindingVariable: Int
         get() = BR.viewModel
-
 
     lateinit var featureProductAdapter: ViewPagerAdapter
     lateinit var featureProductArrayList: ArrayList<Fragment>
@@ -44,10 +44,15 @@ class ViewpagerFragment() : BaseFragment<FragmentViewpagerBinding, CartViewModel
             }
         }
 
+        mViewDataBinding.btnBack.setOnClickListener {
+            popUpStack()
+        }
+
         mViewDataBinding.btnNotification.setOnClickListener {
             navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment)
             navController.navigate(R.id.notificationFragment, null,options)
         }
+
 
         initializeFeatureProducts()
 
@@ -67,6 +72,10 @@ class ViewpagerFragment() : BaseFragment<FragmentViewpagerBinding, CartViewModel
                 requireActivity().lifecycle,
                 featureProductArrayList
             )
+
+
+
+
 
         mViewDataBinding.viewPager.adapter = featureProductAdapter
         mViewDataBinding.viewPager.orientation = ViewPager2.ORIENTATION_HORIZONTAL;
