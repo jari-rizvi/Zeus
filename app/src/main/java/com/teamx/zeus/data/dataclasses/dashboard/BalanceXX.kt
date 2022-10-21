@@ -1,6 +1,6 @@
 package com.teamx.zeus.data.dataclasses.dashboard
 
-data class BalanceX(
+data class BalanceXX(
     val _id: String,
     val admin_commission_rate: Int,
     val current_balance: Int,

@@ -4,8 +4,8 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
+import com.teamx.zeus.data.dataclasses.dashboard.PopularShop
 import com.teamx.zeus.databinding.ItemTopShopBinding
-import com.teamx.zues.dataclasses.dashboard.PopularShop
 
 class ShopAdapter(val arrayList: ArrayList<PopularShop>, val onTopShopListener: OnTopShopListener ) : RecyclerView.Adapter<ShopAdapter.TopShopViewHolder>() {
 
@@ -23,6 +23,7 @@ class ShopAdapter(val arrayList: ArrayList<PopularShop>, val onTopShopListener: 
         holder.binding.shopName.text = shop.name
         holder.binding.shopDistance.text = "5m"
         holder.binding.shopType.text = shop.slug
+        holder.binding.productRating.rating = shop.rating.toFloat()
         Picasso.get().load(shop.logo).into(holder.binding.shopImage)
 
 

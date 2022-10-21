@@ -1,9 +1,5 @@
-package com.teamx.zues.dataclasses.dashboard
+package com.teamx.zeus.data.dataclasses.dashboard
 
-import androidx.annotation.Keep
-
-
-@Keep
 data class Dashboard(
     val __v: Int,
     val _id: String,

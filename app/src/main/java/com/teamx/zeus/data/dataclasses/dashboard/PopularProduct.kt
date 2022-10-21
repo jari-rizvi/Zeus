@@ -1,13 +1,5 @@
-package com.teamx.zues.dataclasses.dashboard
+package com.teamx.zeus.data.dataclasses.dashboard
 
-import com.teamx.zues.dataclasses.Shop
-import com.teamx.zues.dataclasses.VariationOption
-
-
-import androidx.annotation.Keep
-
- 
-@Keep
 data class PopularProduct(
     val __v: Int,
     val _id: String,
@@ -29,7 +21,7 @@ data class PopularProduct(
     val quantity: Int,
     val rating_count: List<RatingCount>,
     val ratings: Int,
-    val sale_price: Any,
+    val sale_price: Int,
     val shop: Shop,
     val sku: String,
     val slug: String,

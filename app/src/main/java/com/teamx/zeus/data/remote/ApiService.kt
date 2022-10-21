@@ -5,11 +5,11 @@ import com.google.gson.JsonObject
 import com.teamx.zues.dataclasses.addreview.AddReviewData
 import com.teamx.zues.dataclasses.allorders.AllOrdersData
 import com.teamx.zues.dataclasses.allreviews.AllReviews
-import com.teamx.zues.dataclasses.dashboard.DashboardData
 import com.teamx.zeus.constants.NetworkCallPoints
 import com.teamx.zeus.constants.NetworkCallPoints.Companion.TOKENER
 import com.teamx.zeus.data.dataclasses.coupouns.CoupounData
 import com.teamx.zeus.data.dataclasses.currency.CurrencyData
+import com.teamx.zeus.data.dataclasses.dashboard.DashboardData
 import com.teamx.zeus.data.models.ResetPass.ResetPassData
 import com.teamx.zeus.data.models.SignUp.RegisterData
 import com.teamx.zeus.data.models.forgotPass.ForgotData

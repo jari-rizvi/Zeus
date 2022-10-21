@@ -1,6 +1,6 @@
 package com.teamx.zeus.data.dataclasses.dashboard
 
-data class Location(
+data class LocationX(
     val _id: String,
     val city: String,
     val coordinates: List<Double>,
@@ -9,5 +9,6 @@ data class Location(
     val lat: Double,
     val lng: Double,
     val state: String,
-    val type: String
+    val type: String,
+    val zip: String
 )

@@ -1,16 +1,10 @@
-package com.teamx.zues.dataclasses.dashboard
+package com.teamx.zeus.data.dataclasses.dashboard
 
-import com.teamx.zues.dataclasses.Address
-
-import androidx.annotation.Keep
-
-
-@Keep
 data class ShopX(
     val __v: Int,
     val _id: String,
     val address: Address,
-    val balance: BalanceX,
+    val balance: BalanceXX,
     val cover_image: String,
     val createdAt: String,
     val description: String,
@@ -20,7 +14,8 @@ data class ShopX(
     val orders_count: Int,
     val owner: String,
     val products_count: Int,
-    val settings: Settings,
+    val rating: Int,
+    val settings: SettingsXXX,
     val slug: String,
     val staffs: List<Any>,
     val updatedAt: String

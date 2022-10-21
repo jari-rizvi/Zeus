@@ -1,9 +1,8 @@
 package com.teamx.zeus.data.dataclasses.dashboard
 
-data class Settings(
+data class SettingsXXX(
     val _id: String,
     val contact: String,
-    val location: Location,
     val socials: List<Any>,
     val website: String
 )

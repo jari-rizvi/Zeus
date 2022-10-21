@@ -1,15 +1,10 @@
-package com.teamx.zues.dataclasses.dashboard
+package com.teamx.zeus.data.dataclasses.dashboard
 
-import com.teamx.zues.dataclasses.VariationOption
+import com.teamx.zues.dataclasses.allorders.RatingCountX
 
-import androidx.annotation.Keep
-
-
-@Keep
 data class TopRatedProduct(
     val __v: Int,
     val _id: String,
-    val categories: List<Category>,
     val createdAt: String,
     val description: String,
     val gallery: List<String>,
@@ -25,18 +20,16 @@ data class TopRatedProduct(
     val price: Int,
     val product_type: String,
     val quantity: Int,
-    val rating_count: List<RatingCount>,
+    val rating_count: List<RatingCountX>,
     val ratings: Int,
-    val sale_price: Any,
+    val sale_price: Int,
     val shop: ShopX,
     val sku: String,
     val slug: String,
     val status: String,
-    val tags: List<Tag>,
     val type: TypeX,
     val unit: String,
     val updatedAt: String,
-    val variation_options: List<VariationOption>,
-    val variations: List<Variation>,
+    val variation_options: List<VariationOptionX>,
     val width: String
 )

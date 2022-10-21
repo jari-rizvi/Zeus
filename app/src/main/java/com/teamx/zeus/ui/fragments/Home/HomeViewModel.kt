@@ -4,8 +4,8 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
-import com.teamx.zues.dataclasses.dashboard.DashboardData
 import com.teamx.zeus.baseclasses.BaseViewModel
+import com.teamx.zeus.data.dataclasses.dashboard.DashboardData
 import com.teamx.zeus.data.remote.Resource
 import com.teamx.zeus.data.remote.reporitory.MainRepository
 import com.teamx.zeus.utils.NetworkHelper

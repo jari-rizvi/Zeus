@@ -1,9 +1,5 @@
-package com.teamx.zues.dataclasses.dashboard
+package com.teamx.zeus.data.dataclasses.dashboard
 
-import androidx.annotation.Keep
-
- 
-@Keep
 data class TypeX(
     val __v: Int,
     val _id: String,
@@ -12,7 +8,6 @@ data class TypeX(
     val icon: String,
     val name: String,
     val promotional_sliders: List<String>,
-    val settings: Settings,
     val slug: String,
     val updatedAt: String
 )

@@ -1,11 +1,9 @@
 package com.teamx.zeus.data.dataclasses.dashboard
 
-data class Variation(
-    val __v: Int,
+data class Option(
     val _id: String,
-    val attribute: String,
     val createdAt: String,
-    val meta: String,
+    val name: String,
     val updatedAt: String,
     val value: String
 )

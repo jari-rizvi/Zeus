@@ -1,10 +1,10 @@
 package com.teamx.zeus.data.dataclasses.dashboard
 
-data class PopularShop(
+data class Shop(
     val __v: Int,
     val _id: String,
     val address: Address,
-    val balance: BalanceX,
+    val balance: Balance,
     val cover_image: String,
     val createdAt: String,
     val description: String,
@@ -14,10 +14,8 @@ data class PopularShop(
     val orders_count: Int,
     val owner: String,
     val products_count: Int,
-    val rating: Double,
-    val ratings_count: Int,
-    val reviews: List<Review>,
-    val settings: SettingsXX,
+    val rating: Int,
+    val settings: Settings,
     val slug: String,
     val staffs: List<Any>,
     val updatedAt: String

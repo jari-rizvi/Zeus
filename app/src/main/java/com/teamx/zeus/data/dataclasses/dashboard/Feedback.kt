@@ -1,11 +1,10 @@
 package com.teamx.zeus.data.dataclasses.dashboard
 
-data class Variation(
-    val __v: Int,
+data class Feedback(
     val _id: String,
-    val attribute: String,
     val createdAt: String,
-    val meta: String,
+    val negative: Boolean,
+    val positive: Boolean,
     val updatedAt: String,
-    val value: String
+    val user: String
 )

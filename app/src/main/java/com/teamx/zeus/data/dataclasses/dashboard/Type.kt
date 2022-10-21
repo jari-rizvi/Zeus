@@ -1,11 +1,5 @@
-package com.teamx.zues.dataclasses.dashboard
+package com.teamx.zeus.data.dataclasses.dashboard
 
-import com.teamx.zues.dataclasses.SettingsX
-
-import androidx.annotation.Keep
-
- 
-@Keep
 data class Type(
     val __v: Int,
     val _id: String,
