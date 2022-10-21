@@ -70,30 +70,6 @@ class PaymentFragment : BaseFragment<FragmentPaymentMethodBinding, AuthViewModel
         paymentArrayList.get(position).value = true
         paymentAdapter.notifyDataSetChanged()
 
-
-
-//
-//        lifecycleScope.launch(Dispatchers.IO) {
-//        dataStoreProvider.savePaymentMethod(paymentArrayList[position].paymentId)
-//        }
-//
-//        dataStoreProvider.payment.asLiveData().observe(
-//            requireActivity()
-//        ) {
-//            val payment = it
-//            Log.e("valjueeeof", payment.toString())
-//            if (payment != null) {
-//
-//                paymentAdapter.row_index = 1
-//
-//            } else {
-//
-//            }
-//        }
-
-
-//        showToast(""+ recomendedArrayList[position].paymentName)
-
     }
 
 

@@ -122,7 +122,6 @@
                     android:layout_below="@id/lnType"
                     android:layout_marginStart="@dimen/_5sdp"
                     android:numStars="5"
-                    android:progressBackgroundTint="@color/ratingBarColor"
                     app:mrb_progressTint="@color/ratingBarColor" />
 
 

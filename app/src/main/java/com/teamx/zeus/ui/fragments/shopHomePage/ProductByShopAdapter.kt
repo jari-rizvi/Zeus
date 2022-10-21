@@ -6,8 +6,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import com.teamx.zeus.data.models.productsShop.Doc
 import com.teamx.zeus.databinding.ItemShopHomePageBinding
+import com.teamx.zeus.ui.fragments.Home.OnTopProductListener
 
-class ProductByShopAdapter(val arrayList: ArrayList<Doc>) : RecyclerView.Adapter<ProductByShopAdapter.ShopProductViewHolder>() {
+class ProductByShopAdapter(val arrayList: ArrayList<Doc>, val onTopProductListener: OnTopProductListener) : RecyclerView.Adapter<ProductByShopAdapter.ShopProductViewHolder>() {
 
 
 
@@ -24,6 +25,9 @@ class ProductByShopAdapter(val arrayList: ArrayList<Doc>) : RecyclerView.Adapter
         holder.binding.name.text = product.name
         Picasso.get().load(product.image).into(holder.binding.productimg)
 
+        holder.itemView.setOnClickListener {
+            onTopProductListener.onTopproductClick(position)
+        }
 
     }
 

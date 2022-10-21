@@ -151,9 +151,11 @@
             <TextView
                 android:id="@+id/productCat"
                 style="@style/noah_bold_black_medium"
-                android:layout_width="wrap_content"
+                android:layout_width="@dimen/_80sdp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
+                android:maxLines="1"
+                android:ellipsize="end"
                 android:layout_marginTop="@dimen/_5sdp"
                 android:text="@string/rio_s_coffee_bar"
                 app:layout_constraintStart_toStartOf="parent"
@@ -172,16 +174,18 @@
             <me.zhanghai.android.materialratingbar.MaterialRatingBar
                 android:id="@+id/ratingBar"
                 style="@style/Widget.MaterialRatingBar.RatingBar.Indicator.Small"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:numStars="5"
+                android:rating="3"
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="4dp"
                 android:layout_weight="1"
-                android:numStars="5"
-                android:progressBackgroundTint="@color/ratingBarColor"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/productCat"
                 app:mrb_progressTint="@color/ratingBarColor" />
+
 
             <TextView
                 android:id="@+id/textView29"

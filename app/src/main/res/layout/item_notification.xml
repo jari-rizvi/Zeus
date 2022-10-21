@@ -7,75 +7,66 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_70sdp"
+        android:layout_height="@dimen/_80sdp"
         android:layout_gravity="center"
         android:layout_marginHorizontal="@dimen/_5sdp"
         android:layout_marginVertical="@dimen/_2sdp"
-
         android:background="@drawable/notification_round_item"
         android:backgroundTint="@color/white">
 
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/notificationImage"
-            android:layout_width="113dp"
-            android:layout_height="43dp"
+            android:layout_width="@dimen/_70sdp"
+            android:layout_height="@dimen/_40sdp"
             android:layout_gravity="center_vertical"
             android:src="@drawable/ic_profile"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/notificationDescription"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintBottom_toTopOf="@+id/view3"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/notificationDescription"
             style="@style/noah_light_medium"
-            android:layout_width="@dimen/_150sdp"
+            android:layout_width="0dp"
+            android:layout_marginEnd="@dimen/_15sdp"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
-            android:layout_marginHorizontal="@dimen/_3sdp"
-            android:layout_marginTop="24dp"
-            android:layout_marginEnd="88dp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_15sdp"
             android:layout_toStartOf="@id/notification_time"
-            android:maxLines="1"
+            android:maxLines="2"
             android:text="Smiley’s Store marked your order #1982984 as shipped."
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/notificationImage"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/notification_time"
             style="@style/noah_light_medium"
-            android:layout_width="96dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:layout_marginTop="8dp"
-
-            android:layout_marginEnd="132dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginTop="@dimen/_2sdp"
             android:text="21/09/2022"
             app:layout_constraintBottom_toTopOf="@+id/view3"
-            app:layout_constraintEnd_toStartOf="@+id/unreadCheck"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/notificationImage"
-            app:layout_constraintTop_toBottomOf="@+id/notificationDescription"
-            app:layout_constraintVertical_bias="0.125" />
+            app:layout_constraintStart_toStartOf="@+id/notificationDescription"
+            app:layout_constraintTop_toBottomOf="@+id/notificationDescription" />
+
 
         <CheckedTextView
             android:id="@+id/unreadCheck"
             style="@style/noah_light_medium"
             android:layout_width="9dp"
             android:layout_height="10dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="44dp"
+            android:layout_marginBottom="24dp"
             android:background="@drawable/switch_notification"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/view3"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/notificationDescription"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias=".8" />
-
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/notification_time" />
 
         <View
             android:id="@+id/view3"
@@ -85,7 +76,8 @@
             android:background="#25787878"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.995" />
+            app:layout_constraintVertical_bias="1.0"
+            tools:layout_editor_absoluteX="36dp" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

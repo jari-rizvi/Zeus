@@ -116,8 +116,8 @@ class HomeFragment() : BaseFragment<FragmentHomeBinding, HomeViewModel>(), OnTop
         categoriesArrayList2 = ArrayList()
         categoriesArrayList2.add(Categories("Shop", R.drawable.ic_resturant,true))
         categoriesArrayList2.add(Categories("Products", R.drawable.ic_resturant,false))
-        categoriesArrayList2.add(Categories("Service", R.drawable.ic_resturant,false))
-        categoriesArrayList2.add(Categories("Resturant", R.drawable.ic_resturant,false))
+        categoriesArrayList2.add(Categories("Popular Products", R.drawable.ic_resturant,false))
+        categoriesArrayList2.add(Categories("Categories", R.drawable.ic_resturant,false))
 
         val linearLayoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
         mViewDataBinding.categoriesRecycler.layoutManager = linearLayoutManager

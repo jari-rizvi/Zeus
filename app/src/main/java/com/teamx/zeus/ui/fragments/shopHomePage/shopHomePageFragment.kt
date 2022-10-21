@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.View
 import androidx.lifecycle.Observer
 import androidx.navigation.NavOptions
+import androidx.navigation.Navigation
 import androidx.navigation.navOptions
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -15,11 +16,13 @@ import com.teamx.zeus.baseclasses.BaseFragment
 import com.teamx.zeus.data.models.productsShop.Doc
 import com.teamx.zeus.data.remote.Resource
 import com.teamx.zeus.databinding.*
+import com.teamx.zeus.ui.fragments.Home.OnTopProductListener
 import com.teamx.zeus.utils.DialogHelperClass
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class shopHomePageFragment() : BaseFragment<FragmentShopHomePageBinding, ShopBySlugViewModel>() {
+class shopHomePageFragment() : BaseFragment<FragmentShopHomePageBinding, ShopBySlugViewModel>(),
+    OnTopProductListener {
 
     override val layoutId: Int
         get() = R.layout.fragment_shop_home_page
@@ -70,8 +73,7 @@ class shopHomePageFragment() : BaseFragment<FragmentShopHomePageBinding, ShopByS
                             Picasso.get().load(it.cover_image).into(mViewDataBinding.img)
                             mViewDataBinding.shopName.text = it.name
                             mViewDataBinding.ratingBar.rating = it.rating.toFloat()
-                            mViewDataBinding.totalRating.text =
-                                it.ratings_count.toString() + " + ratings"
+                            mViewDataBinding.totalRating.text = it.ratings_count.toString() + " + ratings"
                         }
                     }
                 }
@@ -127,9 +129,18 @@ class shopHomePageFragment() : BaseFragment<FragmentShopHomePageBinding, ShopByS
         val linearLayoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
         mViewDataBinding.ProductRecycler.layoutManager = linearLayoutManager
 
-        productAdapter = ProductByShopAdapter(productArrayList)
+        productAdapter = ProductByShopAdapter(productArrayList,this)
         mViewDataBinding.ProductRecycler.adapter = productAdapter
 
     }
 
+    override fun onTopproductClick(position: Int) {
+        sharedViewModel.setProductBySlug(productArrayList[position].slug)
+
+        navController = Navigation.findNavController(
+            requireActivity(),
+            R.id.nav_host_fragment
+        )
+        navController.navigate(R.id.productFragment, null, options)
+    }
 }

@@ -98,6 +98,8 @@ class ProductPreviewFragment() : BaseFragment<FragmentProductBinding, ProductPre
                     it.data?.let { data ->
                         mViewDataBinding.ProductName.text = data.name
                         mViewDataBinding.productDescriptio.text = data.description
+                        mViewDataBinding.productCat.text = data.slug
+                        mViewDataBinding.ratingBar.rating = data.ratings.toFloat()
                         mViewDataBinding.productPrice.text = data.price.toString() + " AED"
                         Picasso.get().load(data.image).into(mViewDataBinding.img)
 

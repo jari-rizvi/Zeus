@@ -51,6 +51,10 @@ class NotificationFragment() : BaseFragment<FragmentNotificationBinding, Notific
 
         }
 
+        mViewDataBinding.btnBack.setOnClickListener {
+            popUpStack()
+        }
+
         dataStoreProvider.saveId.asLiveData().observe(viewLifecycleOwner) {
             it?.let {
                 mViewModel.getNotification(it)

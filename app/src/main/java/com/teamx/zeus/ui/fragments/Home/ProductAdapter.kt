@@ -23,6 +23,8 @@ class ProductAdapter(val arrayList: ArrayList<PopularProduct>, val onTopProductL
         holder.binding.productName.text = product.name
         holder.binding.productPrice.text = "AED "+product.price.toString()
         holder.binding.productType.text = product.product_type
+        holder.binding.productType .text = product.product_type
+        holder.binding.productRating.rating = product.ratings.toFloat()
         Picasso.get().load(product.image).into(holder.binding.productImage)
 
 

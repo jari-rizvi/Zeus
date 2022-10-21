@@ -105,16 +105,20 @@
                 </LinearLayout>
 
 
+
                 <me.zhanghai.android.materialratingbar.MaterialRatingBar
                     android:id="@+id/productRating"
                     style="@style/Widget.MaterialRatingBar.RatingBar.Indicator.Small"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_16sdp"
+                    android:numStars="5"
+                    android:rating="3"
                     android:layout_below="@id/lnType"
                     android:layout_marginStart="@dimen/_5sdp"
-                    android:numStars="5"
-                    android:progressBackgroundTint="@color/ratingBarColor"
                     app:mrb_progressTint="@color/ratingBarColor" />
+
+
 
 
             </RelativeLayout>
