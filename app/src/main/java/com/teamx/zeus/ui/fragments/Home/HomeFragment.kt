@@ -20,6 +20,7 @@ import com.teamx.zeus.databinding.*
 import com.teamx.zeus.dummyData.Categories
 import com.teamx.zeus.utils.DialogHelperClass
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.android.synthetic.main.call_now_dialog.view.*
 
 @AndroidEntryPoint
 class HomeFragment() : BaseFragment<FragmentHomeBinding, HomeViewModel>(), OnTopCategoriesListener,
@@ -115,7 +116,7 @@ class HomeFragment() : BaseFragment<FragmentHomeBinding, HomeViewModel>(), OnTop
         categoriesArrayList2 = ArrayList()
         categoriesArrayList2.add(Categories("Shop", R.drawable.ic_resturant,true))
         categoriesArrayList2.add(Categories("Products", R.drawable.ic_resturant,false))
-        categoriesArrayList2.add(Categories("Popular Products", R.drawable.ic_resturant,false))
+        categoriesArrayList2.add(Categories("TopProducts", R.drawable.ic_resturant,false))
         categoriesArrayList2.add(Categories("Categories", R.drawable.ic_resturant,false))
 
         val linearLayoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
@@ -152,6 +153,21 @@ class HomeFragment() : BaseFragment<FragmentHomeBinding, HomeViewModel>(), OnTop
             cat.isChecked = false
         }
 
+        when(position){
+            0 -> {
+                mViewDataBinding.ShopRecycler.visibility = View.VISIBLE
+                mViewDataBinding.ProductRecycler.visibility = View.GONE
+            }
+
+            1 -> {
+                mViewDataBinding.ShopRecycler.visibility = View.GONE
+                mViewDataBinding.ProductRecycler.visibility = View.VISIBLE
+            }
+            2 -> {
+                mViewDataBinding.ShopRecycler.visibility = View.GONE
+                mViewDataBinding.ProductRecycler.visibility = View.VISIBLE
+            }
+        }
         categoriesArrayList2.get(position).isChecked = true
 //        if(position == 1){
 //
