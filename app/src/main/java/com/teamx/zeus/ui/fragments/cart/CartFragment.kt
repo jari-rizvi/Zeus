@@ -68,8 +68,6 @@ class CartFragment() : BaseFragment<FragmentCartBinding, CartViewModel>(),
 
 
 
-
-
         loadCart()
         initializeAdapter()
         mViewModel.getCarts()

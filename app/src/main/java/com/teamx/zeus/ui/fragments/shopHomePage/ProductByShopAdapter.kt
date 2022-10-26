@@ -23,6 +23,8 @@ class ProductByShopAdapter(val arrayList: ArrayList<Doc>, val onTopProductListen
         val product : Doc = arrayList[position]
 
         holder.binding.name.text = product.name
+        holder.binding.type.text = product.product_type
+        holder.binding.totalAmount.text = product.price.toString()+" AED"
         Picasso.get().load(product.image).into(holder.binding.productimg)
 
         holder.itemView.setOnClickListener {

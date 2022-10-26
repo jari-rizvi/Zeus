@@ -80,6 +80,7 @@ class ProductPreviewFragment() : BaseFragment<FragmentProductBinding, ProductPre
         }
 
 
+
         val str = sharedViewModel.productBySlug
 //        mViewModel.productPreview("62a3633db41c6704082d77a7")
 

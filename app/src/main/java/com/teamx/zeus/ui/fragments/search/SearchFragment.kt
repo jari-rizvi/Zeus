@@ -51,7 +51,4 @@ class SearchFragment() : BaseFragment<FragmentTrackBinding, OtpViewModel>() {
 
     }
 
-
-
-
 }

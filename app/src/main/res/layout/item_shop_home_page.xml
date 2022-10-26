@@ -11,7 +11,7 @@
         android:layout_height="wrap_content">
 
         <TextView
-            android:id="@+id/speed"
+            android:id="@+id/type"
             style="@style/manrope_regular_black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -63,8 +63,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_5sdp"
             android:text="AED 7.8"
-            app:layout_constraintStart_toStartOf="@+id/speed"
-            app:layout_constraintTop_toBottomOf="@+id/speed" />
+            app:layout_constraintStart_toStartOf="@+id/type"
+            app:layout_constraintTop_toBottomOf="@+id/type" />
 
         <View
             android:layout_width="match_parent"

@@ -9,8 +9,6 @@ import com.teamx.zeus.databinding.ItemTopProductBinding
 
 class ProductAdapter(val arrayList: ArrayList<PopularProduct>, val onTopProductListener: OnTopProductListener ) : RecyclerView.Adapter<ProductAdapter.TopProductViewHolder>() {
 
-
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TopProductViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         val itemTopProductBinding = ItemTopProductBinding.inflate(inflater, parent, false)

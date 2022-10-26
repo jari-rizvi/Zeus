@@ -44,6 +44,7 @@ class ViewpagerFragment() : BaseFragment<FragmentViewpagerBinding, CartViewModel
             }
         }
 
+
         mViewDataBinding.btnBack.setOnClickListener {
             popUpStack()
         }
@@ -72,10 +73,6 @@ class ViewpagerFragment() : BaseFragment<FragmentViewpagerBinding, CartViewModel
                 requireActivity().lifecycle,
                 featureProductArrayList
             )
-
-
-
-
 
         mViewDataBinding.viewPager.adapter = featureProductAdapter
         mViewDataBinding.viewPager.orientation = ViewPager2.ORIENTATION_HORIZONTAL;

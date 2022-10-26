@@ -23,8 +23,8 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.call_now_dialog.view.*
 
 @AndroidEntryPoint
-class HomeFragment() : BaseFragment<FragmentHomeBinding, HomeViewModel>(), OnTopCategoriesListener,
-    OnTopProductListener, OnTopShopListener {
+class HomeFragment() : BaseFragment<FragmentHomeBinding, HomeViewModel>(),
+    OnTopCategoriesListener, OnTopProductListener, OnTopShopListener {
 
     override val layoutId: Int
         get() = R.layout.fragment_home
@@ -106,7 +106,9 @@ class HomeFragment() : BaseFragment<FragmentHomeBinding, HomeViewModel>(), OnTop
         })
 
         categoriesRecyclerview()
+
         shopRecyclerview()
+
         productRecyclerview()
 
 
@@ -149,6 +151,7 @@ class HomeFragment() : BaseFragment<FragmentHomeBinding, HomeViewModel>(), OnTop
     }
 
     override fun onTopSellerClick(position: Int) {
+
         for(cat in categoriesArrayList2){
             cat.isChecked = false
         }
@@ -169,9 +172,7 @@ class HomeFragment() : BaseFragment<FragmentHomeBinding, HomeViewModel>(), OnTop
             }
         }
         categoriesArrayList2.get(position).isChecked = true
-//        if(position == 1){
-//
-//        }
+
         categoriesAdapter.notifyDataSetChanged()
     }
 
